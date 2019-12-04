@@ -25,4 +25,28 @@
 <img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/12_Filter.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
 
 <img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/14_Newsletter_Popup.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/02_Features_List.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+
+<h2>Main Features</h2>
+
+<ul>
+    <li>Support Magento 2.1.x, 2.2.x, 2.3.3</li>
+    <li>Support 3 layouts for pages: 1, 2 or 3 columns</li>
+    <li>One-click import demo data</li>
+    <li>Integrated Google Fonts</li>
+    <li>Support wide and boxed layout </li>
+    <li>Responsive layout for PCs and Mobiles</li>
+    <li>Include premium extensions: SM Filter Products</li>
+    <li>Support multi-currency, multi-language</li>
+    <li>Support Cloud Zoom and Pop-up images on the detail page</li>
+    <li>Support 6 different types of products profile</li>
+    <li>Custom Product labels Included</li>
+    <li>Cross-browser: IE 10+, Safari, Mozilla Firefox, Opera 9+ and Chrome</li>
+    <li>W3C XHTML 1.0 Transitional Valid</li>
+    <li>100% table-less design, based on CSS3 with many animated effects</li>
+    <li>Additional Footer, Back to top button and Navigation links</li>
+</ul>
+
+<h2>CHANGE LOGS</h2>
+<strong>Version 1.0.0</strong> - Released on 22-Nov-2019
+
++ Initial Release
