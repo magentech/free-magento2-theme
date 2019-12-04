@@ -1,0 +1,152 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog available for import template
+ *
+ * @var $block \Magento\Backend\Block\Template
+ */
+?>
+
+<table class="available-imports">
+    <tr>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.location='<?= $block->escapeUrl($block->getUrl('blog/import/wordpress')) ?>'">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/wordpress.png')) ?>" />
+                            <br/>
+                            <span class="lable">Import from WordPress<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.location='<?= $block->escapeUrl($block->getUrl('blog/import/aw')) ?>'">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/aw_blog.png')) ?>" />
+                            <br/>
+                            <span class="lable">Import from AheadWorks<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="goToMgImport();">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/mageplaza.png')) ?>" />
+                            <br/>
+                            <span class="lable">Import from Mageplaza<br/><br/></span>
+                            <form id="start_mg_import" action="<?= $block->escapeUrl($block->getUrl('blog/import/run')) ?>" method="post">
+                                <input type="hidden" name="type" value="mageplaza" />
+                                <?= $block->getLayout()->getBlock('formkey')->toHtml() ?>
+                            </form>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.open('https://magefan.com/migrate-joomla-to-magento2?utm_source=m2admin_blog_import&utm_medium=link&utm_campaign=regular')">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/joomla.jpg')) ?>" />
+                            <br/>
+                            <span class="lable">Import from Joomla<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.open('https://magefan.com/migrate-blogger-to-magento2?utm_source=m2admin_blog_import&utm_medium=link&utm_campaign=regular')">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/bloger.jpg')) ?>" />
+                            <br/>
+                            <span class="lable">Import from Blogger.com<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.open('https://magefan.com/migrate-drupal-to-magento2?utm_source=m2admin_blog_import&utm_medium=link&utm_campaign=regular')">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/drupal.jpg')) ?>" />
+                            <br/>
+                            <span class="lable">Import from Drupal<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.open('https://magefan.com/import-xml-csv-to-magento2-blog?utm_source=m2admin_blog_import&utm_medium=link&utm_campaign=regular')">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/csv.jpg')) ?>" />
+                            <br/>
+                            <span class="lable">Import from CSV File<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.open('https://magefan.com/import-xml-csv-to-magento2-blog?utm_source=m2admin_blog_import&utm_medium=link&utm_campaign=regular')">
+                            <img class="img" src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/xml.jpg')) ?>" />
+                            <br/>
+                            <span class="lable">Import from XML File<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item">
+            <table>
+                <tr>
+                    <td>
+                        <div class="itm-hld" onclick="window.open('http://magefan.com/contact?utm_source=m2admin_blog_import&utm_medium=link&utm_campaign=regular')">
+                            <h2 class="img more">Need More?<br/><br/>Other CMS or Extension</h2>
+                            <span class="lable">Contact Magefan Team<br/><br/></span>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+        </td>
+        <td class="item"></td>
+        <td class="item"></td>
+    </tr>
+</table>
+<script type="text/javascript">
+    function goToMgImport()
+    {
+        if (confirm('Are you sure you want to start import from Mageplaza Blog? Attention! Do not run this import again.')) {
+            document.getElementById('start_mg_import').submit();
+        }
+    }
+</script>

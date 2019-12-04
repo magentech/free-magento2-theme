@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head.additional">
+            <block class="Sm\Themecore\Block\Template" name="config.theme.setting"
+                   template="Sm_Themecore::html/head.phtml" after="-"/>
+        </referenceContainer>
+
+        <referenceContainer name="page.bottom">
+            <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe.popup" as="form.subscribe.popup"
+                   before="-" template="subscribe-popup.phtml"
+                   ifconfig="themecore/advanced/newsletter_group/show_newsletter_popup"/>
+
+            <block class="Magento\Framework\View\Element\Template" name="backtotop"
+                   template="Sm_Themecore::html/backtotop.phtml"
+                   ifconfig="themecore/advanced/backtotop_group/show_backtotop"/>
+        </referenceContainer>
+
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="custom.js"
+                   template="Sm_Themecore::html/custom-js.phtml"
+                   ifconfig="themecore/advanced/developer_group/enable_custom_js" after="-"/>
+        </referenceContainer>
+    </body>
+</page>

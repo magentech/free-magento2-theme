@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<root>
+	<pages>
+		<cms_item>
+			<title>Home page</title>
+			<identifier>home-demo-01</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-1 title-block-1 bottom-title" style="padding-top: 20px;">
+	<div class="container">
+		<div class="slider-show nav-style-1 nav-position-center dot-style-1 dot-white dot-position-bottom hover-to-show" style="margin-bottom: 20px;">
+			<div data-owl="owl-slider" data-autoplay="true" data-nav="true" data-dots="true" data-screen0="1" data-screen481="1" data-screen768="1" data-screen992="1" data-screen1200="1" data-screen1441="1" data-screen1681="1" data-screen1920="1" data-margin="1" data-autoplayhoverpause="true" data-loop="true" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+				<div class="owl-carousel owl-theme">
+					<div class="item"><a title="Slide 1" href="#"><img src="{{media url="wysiwyg/slidershow/home-1/item-1.jpg"}}" alt="Slide Image" width="1170" height="1170"></a></div>
+					<div class="item"><a title="Slide 2" href="#"><img src="{{media url="wysiwyg/slidershow/home-1/item-2.jpg"}}" alt="Slide Image" width="1170" height="1170"></a></div>
+					<div class="item"><a title="Slide 3" href="#"><img src="{{media url="wysiwyg/slidershow/home-1/item-3.jpg"}}" alt="Slide Image" width="1170" height="1170"></a></div>
+				</div>
+				
+				<div class="loading-content"><span class="hidden">Loading...</span></div>
+			</div>
+		</div>
+		
+		<div class="list-services" style="margin-bottom: 40px;">
+			<ul class="clearfix">
+				<li>
+					<div class="item">
+						<div class="sv-icon">
+							<img src="{{media url="wysiwyg/services/item-1.png"}}" alt="Slide Image" width="57" height="57">
+						</div>
+						
+						<div class="sv-info">
+							<div class="top-sv">Free Shipping</div>
+							<div class="bottom-sv">on orders over $49</div>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="item">
+						<div class="sv-icon">
+							<img src="{{media url="wysiwyg/services/item-2.png"}}" alt="Slide Image" width="57" height="57">
+						</div>
+						
+						<div class="sv-info">
+							<div class="top-sv">Money Guarantee</div>
+							<div class="bottom-sv">30 days money back</div>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="item">
+						<div class="sv-icon">
+							<img src="{{media url="wysiwyg/services/item-3.png"}}" alt="Slide Image" width="57" height="57">
+						</div>
+						
+						<div class="sv-info">
+							<div class="top-sv">Online Support</div>
+							<div class="bottom-sv">24/24h on day</div>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="item">
+						<div class="sv-icon">
+							<img src="{{media url="wysiwyg/services/item-4.png"}}" alt="Slide Image" width="57" height="57">
+						</div>
+						
+						<div class="sv-info">
+							<div class="top-sv">Gift Promotion</div>
+							<div class="bottom-sv">For all first guest</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="slider-product-home" style="margin-bottom: 20px;">
+			<div class="stagepadding-slider nav-style-2">
+				<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="2" data-screen768="3" data-screen992="3" data-screen1200="4" data-screen1441="4" data-screen1681="4" data-screen1920="4" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="15" data-mousedrag="true" data-touchdrag="true">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::slider.phtml" title_module="Deal Of The Day" product_source="special_products" select_category="3,4,5,6" product_limitation="6" display_countdown="1" date_to=""}}
+				</div>
+			</div>
+		</div>
+		
+		<div class="group-banner" style="margin-bottom: 30px;">
+			<div class="row">
+				<div class="col-lg-3 col-sm-3">
+					<div class="banner-left">
+						<div class="banner-image">
+							<a href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/item-1.jpg"}}" alt="Banner Image" width="285" height="235"></a>
+						</div>
+						
+						<div class="banner-image">
+							<a href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/item-2.jpg"}}" alt="Banner Image" width="285" height="235"></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-sm-3">
+					<div class="banner-center">
+						<div class="banner-image">
+							<a href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/item-3.jpg"}}" alt="Banner Image" width="285" height="480"></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-6 col-sm-6">
+					<div class="banner-right">
+						<div class="banner-image">
+							<a href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/item-4.jpg"}}" alt="Banner Image" width="580" height="235"></a>
+						</div>
+						
+						<div class="banner-image">
+							<a href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/item-5.jpg"}}" alt="Banner Image" width="580" height="235"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="slider-product-home" style="margin-bottom: 20px;">
+			<div class="stagepadding-slider nav-style-2">
+				<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="2" data-screen768="3" data-screen992="3" data-screen1200="4" data-screen1441="4" data-screen1681="4" data-screen1920="4" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="15" data-mousedrag="true" data-touchdrag="true">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::slider.phtml" title_module="Best Sellers" product_source="best_sellers" select_category="3,4,5,6" product_limitation="6" display_countdown="0" date_to=""}}
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner-bottom">
+			<div class="banner-image" style="margin-bottom: 40px;">
+				<a href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/item-6.jpg"}}" alt="Banner Image" width="1170" height="130"></a>
+			</div>
+		</div>
+		
+		<div class="group-product-list">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="nav-style-2" style="margin-bottom: 50px;">
+						<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="1" data-screen768="1" data-screen992="1" data-screen1200="1" data-screen1441="1" data-screen1681="1" data-screen1920="1" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+							{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::list-slider.phtml" row_items="3" title_module="New Arrivals" product_source="lastest_products" select_category="3,4,5,6" product_limitation="6" display_countdown="0" date_to=""}}
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="nav-style-2" style="margin-bottom: 50px;">
+						<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="1" data-screen768="1" data-screen992="1" data-screen1200="1" data-screen1441="1" data-screen1681="1" data-screen1920="1" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+							{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::list-slider.phtml" row_items="3" title_module="Featured Products" product_source="featured_products" select_category="3,4,5,6" product_limitation="6" display_countdown="0" date_to=""}}
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="nav-style-2" style="margin-bottom: 50px;">
+						<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="1" data-screen768="1" data-screen992="1" data-screen1200="1" data-screen1441="1" data-screen1681="1" data-screen1920="1" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+							{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::list-slider.phtml" row_items="3" title_module="Special Products" product_source="special_products" select_category="3,4,5,6" product_limitation="6" display_countdown="0" date_to=""}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="brand-slider hover-to-show" style="margin-bottom: 40px;">
+			<div class="nav-style-3 nav-position-center">
+				<div data-owl="owl-slider" data-autoplay="true" data-nav="true" data-dots="false" data-screen0="2" data-screen481="4" data-screen768="5" data-screen992="5" data-screen1200="6" data-screen1441="6" data-screen1681="6" data-screen1920="6" data-margin="20" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+					<div class="owl-carousel owl-theme">
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-1.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-2.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-3.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-4.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-5.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-6.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-1.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+						<div class="item"><a title="Brand 1" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brands/item-2.jpg"}}" alt="Brand Image" width="170" height="100"></a></div>
+					</div>
+					
+					<div class="loading-content"><span class="hidden">Loading...</span></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="block-news" style="margin-bottom: 50px;">
+			<div class="nav-style-2">
+				<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="2" data-screen768="3" data-screen992="3" data-screen1200="4" data-screen1441="4" data-screen1681="4" data-screen1920="4" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+					{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest News" number_of_posts="6" category_id="0" tag_id="0" author_id="0" custom_template="Magefan_Blog::widget/recent-slider.phtml" type_name="Recent Blog Posts"}}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="testimonial-full" style="background-color: #f9f9f9; padding: 40px 0 35px;">
+		<div class="container">
+			<div class="testimonial-slider hover-to-show">
+				<div class="nav-style-3 nav-position-center">
+					<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="1" data-screen768="1" data-screen992="1" data-screen1200="1" data-screen1441="1" data-screen1681="1" data-screen1920="1" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+						<div class="owl-carousel owl-theme">
+							<div class="item">
+								<div class="client-image">
+									<img class="mark-lazy" src="{{media url="wysiwyg/clients/item-1.jpg"}}" alt="Client Image" width="90" height="90">
+								</div>
+								
+								<div class="client-info">
+									<div class="client-say">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</div>
+									
+									<div class="client-name">Johny Walker</div>
+								</div>
+							</div>
+							
+							<div class="item">
+								<div class="client-image">
+									<img class="mark-lazy" src="{{media url="wysiwyg/clients/item-1.jpg"}}" alt="Client Image" width="90" height="90">
+								</div>
+								
+								<div class="client-info">
+									<div class="client-say">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</div>
+									
+									<div class="client-name">Johny Walker</div>
+								</div>
+							</div>
+							
+							<div class="item">
+								<div class="client-image">
+									<img class="mark-lazy" src="{{media url="wysiwyg/clients/item-1.jpg"}}" alt="Client Image" width="90" height="90">
+								</div>
+								
+								<div class="client-info">
+									<div class="client-say">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</div>
+									
+									<div class="client-name">Johny Walker</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="loading-content"><span class="hidden">Loading...</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<!--
+    <referenceContainer name="right">
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+    </referenceContainer>-->]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>404 Not Found - SM</title>
+			<identifier>sm-no-route</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="sm-notfound"><img src="{{media url="wysiwyg/404page/not-found.png"}}" alt="404 Image">
+<div class="not-found-title">Oops, Sorry We Can't Find That Page</div>
+<p class="not-found-subtitle">Either something went wrong of the page doesn't exist anymore.</p>
+<a class="back2home" href="{{store url=""}}">Back to home</a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+	</pages>
+</root>

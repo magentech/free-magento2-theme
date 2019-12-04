@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head.additional">
+            <block class="Sm\Magetheme\Block\Template" name="theme.config"/>
+        </referenceContainer>
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">217</argument>
+                <argument name="logo_img_height" xsi:type="number">57</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="page.wrapper">
+            <block class="Sm\Magetheme\Block\Header" name="theme_header"
+                   template="Sm_Magetheme::html/header.phtml" before="-">
+                <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language"
+                       template="switch/languages.phtml"/>
+                <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch"
+                       template="Magento_Search::form.mini.phtml"/>
+
+                <container name="search-header" label="Search" as="search-header" htmlTag="div"
+                           htmlClass="search-wrapper"/>
+
+                <block class="Magento\Theme\Block\Html\Header" name="welcome-customer" as="welcome-customer"
+                       template="Sm_Magetheme::html/customer.phtml">
+                    <arguments>
+                        <argument name="show_part" xsi:type="string">welcome</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">header links</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Wishlist\Block\Customer\Sidebar" name="wishlist_header" as="wishlist.header"
+                       template="Magento_Wishlist::wishlist-header.phtml"/>
+
+                <block class="Magento\Framework\View\Element\Template" name="top.search.mobile" as="topSearchMobile"
+                       template="Magento_Search::form.mini.mobile.phtml"/>
+                <block class="Magento\Store\Block\Switcher" name="store.settings.language"
+                       template="switch/languages.phtml">
+                    <arguments>
+                        <argument name="id_modifier" xsi:type="string">nav</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Directory\Block\Currency" name="store.settings.currency"
+                       template="currency.phtml">
+                    <arguments>
+                        <argument name="id_modifier" xsi:type="string">nav</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Theme\Block\Html\Topmenu" name="nav.mobile" as="nav.mobile"
+                       template="Sm_Magetheme::html/mobile/nav-mobile.phtml"/>
+
+                <block class="Magento\Theme\Block\Html\Topmenu" name="vertical-css"
+                       template="Sm_Magetheme::html/menu-css/vertical-css.phtml"/>
+
+                <block class="Magento\Theme\Block\Html\Topmenu" name="horizontal-css"
+                       template="Sm_Magetheme::html/menu-css/horizontal-css.phtml"/>
+            </block>
+        </referenceContainer>
+
+        <!--<move element="catalog.topnav" destination="theme_header"/>-->
+        <move element="catalog.compare.link" destination="theme_header" before="-"/>
+        <move element="top.search" destination="search-header"/>
+        <move element="minicart" destination="theme_header"/>
+        <move element="currency" destination="theme_header"/>
+        <move element="logo" destination="theme_header"/>
+        <move element="skip_to_content" destination="theme_header"/>
+        <move element="page.main.title" destination="content.top" before="-"/>
+        <move element="copyright" destination="footer_block"/>
+
+        <referenceContainer name="catalog.topnav" remove="1"/>
+        <referenceContainer name="header.container" remove="1"/>
+        <referenceContainer name="header.panel" remove="1"/>
+        <referenceContainer name="header-wrapper" remove="1"/>
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceContainer name="footer" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+
+        <referenceContainer name="footer-container">
+            <block class="Magento\Framework\View\Element\Template" name="footer_block"
+                   template="Sm_Magetheme::html/footer.phtml">
+                <block class="Magento\Store\Block\Switcher" name="footer.store_switcher"
+                       template="switch/stores.phtml"/>
+                <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="html/copyright.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

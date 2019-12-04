@@ -1,0 +1,65 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Magetheme - Version 1.0.0
+# Copyright (c) 2016 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+?>
+
+<script>
+require(['prototype'], function(){
+
+//<![CDATA[
+    function import<?php echo $block->getImportType(); ?>() {
+
+        var resultMessage = $('import_result<?php echo $block->getImportType(); ?>');
+
+        params = {
+            import_type: '<?php echo $block->getImportType(); ?>'
+        };
+
+        new Ajax.Request('<?php echo $block->getAjaxUrl() ?>', {
+            parameters: params,
+            onSuccess: function(response) {
+                var validationMessage = document.getElementById("import_result<?php echo $block->getImportType(); ?>");
+                var result = '<?php echo __('Error during Import CMS Datas.') ?>';
+                try {
+                    if (response.responseText.isJSON()) {
+                        response = response.responseText.evalJSON();
+                        result = response.message;
+                    }
+                    if (response.valid == 1) {
+                        validationMessage.removeClassName('hidden').addClassName('success').addClassName('message-success')
+                    } else {
+                        validationMessage.removeClassName('hidden').addClassName('error').addClassName('message-error')
+                    }
+                } catch (e) {
+                    validationMessage.removeClassName('hidden').addClassName('error').addClassName('message-error')
+                }
+                validationMessage.update(result);
+                setTimeout(function(){
+                    location.reload();
+                },3000);
+            }
+        });
+    }
+
+    window.import<?php echo $block->getImportType(); ?> = import<?php echo $block->getImportType(); ?>;
+//]]>
+
+});
+</script>
+<style type="text/css">
+#import_result<?php echo $block->getDemoVersion(); ?>:before{
+    top: 20px;
+    margin: 0;
+}
+</style>
+<div class="actions actions-import-data">
+    <button onclick="javascript:import<?php echo $block->getImportType(); ?>(); return false;" class="action-import-data" type="button" id="<?php echo $block->getHtmlId() ?>">
+        <span><?php echo $block->escapeHtml($block->getButtonLabel()) ?></span>
+    </button>
+    <div id="import_result<?php echo $block->getImportType(); ?>" class="message-validation hidden message"></div>
+</div>

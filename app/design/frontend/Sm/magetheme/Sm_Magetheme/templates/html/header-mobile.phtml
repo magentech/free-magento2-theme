@@ -1,0 +1,92 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+
+$_config     = $this->helper('Sm\Magetheme\Helper\Data');
+$_configCore = $this->helper('Sm\Themecore\Helper\Data');
+$mediaSrc    = $_config->getMediaUrl();
+$logoMobile  = $_configCore->getGeneral('mobile_layout/logo_mobile');
+$menuType    = $_configCore->getGeneral('navigation_group/menu_style');
+$breakPoint  = $_configCore->getGeneral('mobile_layout/mobile_break_point');
+?>
+
+<div class="header-mobile" id="sm-header-mobile" data-menutype="<?php echo $menuType; ?>"
+     data-breakpoint="<?php echo $breakPoint; ?>">
+    <div class="mobile-top">
+        <div class="container">
+            <div class="mobile-header-content">
+                <div class="mobile-menu">
+                    <a id="btn-nav-mobile" href="javascript:void(0);">
+                        <span class="s-top"></span>
+                        <span class="s-middle"></span>
+                        <span class="s-bottom"></span>
+                    </a>
+                </div>
+
+                <div class="mobile-logo">
+                    <a href="<?php echo $this->getUrl('') ?>">
+                        <img src="<?php echo $mediaSrc . 'logomobile/' . $logoMobile; ?>"
+                             alt="<?php /* @escapeNotVerified */
+                             echo $block->getLogoAlt() ?>"
+                             width="<?php echo $_configCore->getGeneral('mobile_layout/logomobile_width'); ?>"
+                             height="<?php echo $_configCore->getGeneral('mobile_layout/logomobile_height'); ?>"/>
+                    </a>
+                </div>
+
+                <div class="mobile-cart">
+                    <div id="minicart-mobile" class="minicart-mobile"><span
+                                class="hidden"><?php echo __('Cart Mobile'); ?></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-bottom">
+        <div class="container">
+            <?php echo $this->getChildHtml("topSearchMobile"); ?>
+        </div>
+    </div>
+
+    <div class="sidebar-nav-mobile">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="menu-mobile-tab" data-toggle="tab" href="#menu-mobile"
+                   role="tab" aria-controls="menu-mobile" aria-selected="true"><?php echo __('Menu') ?></a>
+
+                <a class="nav-item nav-link" id="my-account-mobile-tab" data-toggle="tab" href="#account-mobile"
+                   role="tab" aria-controls="account-mobile" aria-selected="false"><?php echo __('Account') ?></a>
+
+                <a class="nav-item nav-link" id="setting-mobile-tab" data-toggle="tab" href="#setting-mobile"
+                   role="tab" aria-controls="setting-mobile" aria-selected="false"><?php echo __('Setting') ?></a>
+            </div>
+        </nav>
+
+        <div class="tab-content-mobile" id="nav-tabContent">
+            <div class="tab-panel fade show active" id="menu-mobile" role="tabpanel"
+                 aria-labelledby="menu-mobile-tab">
+                <?php echo $this->getChildHtml("nav.mobile"); ?>
+            </div>
+
+            <div class="tab-panel fade" id="account-mobile" role="tabpanel" aria-labelledby="account-mobile-tab">
+                <div id="customer-mobile"><span class="hidden"><?php echo __('Mobile Customer'); ?></span></div>
+            </div>
+
+            <div class="tab-panel fade" id="setting-mobile" role="tabpanel" aria-labelledby="setting-mobile-tab">
+                <?php
+                echo $this->getChildHtml("store.settings.language");
+                echo $this->getChildHtml("store.settings.currency");
+                ?>
+            </div>
+        </div>
+
+    </div>
+</div>
+

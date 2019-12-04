@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="blog.posts.list">
+            <block class="Magefan\Blog\Block\Post\PostList\Item" name="blog.posts.list.item" template="post/list/item.phtml">
+                <block class="Magefan\Blog\Block\Post\Info" name="blog.post.info" template="post/info.phtml" />
+                <action method="setPostInfoBlockName">
+                    <argument name="name" xsi:type="string">blog.post.info</argument>
+                </action>
+            </block>
+            <block class="Magefan\Blog\Block\Post\PostList\Toolbar" name="post_list_toolbar" template="post/list/toolbar.phtml">
+                <block class="Magefan\Blog\Block\Post\PostList\Toolbar\Pager" name="post_list_toolbar_pager">
+                    <action ifconfig="mfblog/post_list/lazyload_enabled" method="setTemplate">
+                        <argument name="template" xsi:type="string">Magefan_Blog::post/list/toolbar/lazyload.phtml</argument>
+                    </action>
+                    <arguments>
+                        <argument name="lazyload_js" xsi:type="string">Magefan_Blog/js/lazyload</argument>
+                        <argument name="list_wrapper" xsi:type="string">.post-list-wrapper .post-list, .blog-list-wrapper .blog-list</argument>
+                    </arguments>
+                </block>
+            </block>
+            <action method="setToolbarBlockName">
+                <argument name="name" xsi:type="string">post_list_toolbar</argument>
+            </action>
+
+            <block class="Magefan\Blog\Block\Social\AddThis" name="addthis.js.init" as="addthisJs" template="Magefan_Blog::addthis-js.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

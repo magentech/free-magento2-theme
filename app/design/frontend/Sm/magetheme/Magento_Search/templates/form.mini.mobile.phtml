@@ -1,0 +1,55 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper(\Magento\Search\Helper\Data::class);
+?>
+<div class="block-search-mobile">
+    <div class="block-content">
+        <form class="form minisearch" id="search_mini_form_mobile" action="<?= /* @escapeNotVerified */
+        $helper->getResultUrl() ?>" method="get">
+            <div class="field search">
+                <div class="control">
+                    <input id="search-mobile"
+                           data-mage-init='{"quickSearch":{
+                                "formSelector":"#search_mini_form_mobile",
+                                "url":"<?= /* @escapeNotVerified */
+                           $helper->getSuggestUrl() ?>",
+                                "destinationSelector":"#search_autocomplete_mobile"}
+                           }'
+                           type="text"
+                           name="<?= /* @escapeNotVerified */
+                           $helper->getQueryParamName() ?>"
+                           value="<?= /* @escapeNotVerified */
+                           $helper->getEscapedQueryText() ?>"
+                           placeholder="<?= /* @escapeNotVerified */
+                           __('Search entire store here...') ?>"
+                           class="input-text"
+                           maxlength="<?= /* @escapeNotVerified */
+                           $helper->getMaxQueryLength() ?>"
+                           role="combobox"
+                           aria-haspopup="false"
+                           aria-autocomplete="both"
+                           autocomplete="off"/>
+                    <div id="search_autocomplete_mobile" class="search-autocomplete"></div>
+                    <?= $block->getChildHtml() ?>
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit"
+                        title="<?= $block->escapeHtml(__('Search')) ?>"
+                        class="action search">
+                    <span><?= /* @escapeNotVerified */
+                        __('Search') ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

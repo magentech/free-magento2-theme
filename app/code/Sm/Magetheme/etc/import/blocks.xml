@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<root>
+	<blocks>
+		<cms_item>
+			<title>Magetheme - Footer 1 Content</title>
+			<identifier>footer-1-content</identifier>
+			<content>
+				<![CDATA[<div class="footer-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-6">
+				<div class="block-footer block-footer-contact">
+					<div class="block-footer-title">Contact Us</div>
+					
+					<div class="block-footer-content footer-contact">
+						<ul>
+							<li class="address">5611 Wellington Road, Suite 115, Gainesville, VA 20155</li>
+							<li class="phone">888 9344 6000 - 888 1234 6789</li>
+							<li class="email">magentechservice@gmail.com</li>
+							<li class="time">7 Days a week from 10-00 am to 6-00 pm</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-sm-6">
+				<div class="block-footer block-links">
+					<div class="block-footer-title">Information</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Shipping &amp; Returns</a></li>
+							<li><a href="#">Secure Shopping</a></li>
+							<li><a href="#">Order Status</a></li>
+							<li><a href="#">International Shipping</a></li>
+							<li><a href="#">Payment Method</a></li>
+							<li><a href="{{store url=""}}about-us.html">About Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-sm-6">
+				<div class="block-footer block-links">
+					<div class="block-footer-title">Our Services</div>
+					
+					<div class="block-footer-content">
+						<ul>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Customer Service</a></li>
+							<li><a href="#">Orders and Returns</a></li>
+							<li><a href="{{store url=""}}contact">Contact Us</a></li>
+							<li><a href="#">Track Your Orders</a></li>
+							<li><a href="#">Footer Links</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-sm-6">
+				<div class="block-footer newsletter-footer">
+					<div class="block-footer-title">Sign up for Newsletter</div>
+					
+					<div class="block-footer-content">
+						{{block class="Magento\Newsletter\Block\Subscribe" template="subscribe-footer.phtml"}}
+					</div>
+				</div>
+				
+				<div class="block-footer social-footer">
+					<div class="block-footer-title">Connect us with</div>
+					
+					<div class="block-footer-content">
+						<div class="social-footer">
+							<ul>
+								<li class="facebook"><a class="icon-facebook" title="Facebook" href="https://www.facebook.com/MagenTech"> <span class="hidden">Facebook</span> </a></li>
+								<li class="youtube"><a class="icon-youtube1" title="Youtube" href="https://www.youtube.com/user/smartaddons"> <span class="hidden">Youtube</span> </a></li>
+								<li class="twitter"><a class="icon-twitter" title="Twitter" href="https://twitter.com/MagenTech"> <span class="hidden">Twitter</span> </a></li>
+								<li class="instagram"><a class="icon-instagram" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+								<li class="linkedin"><a class="icon-linkedin" title="Linkedin" href="https://www.linkedin.com/in/magentech/"> <span class="hidden">Linkedin</span> </a></li>
+								<li class="linkedin"><a class="icon-rss" title="RSS" href="#"> <span class="hidden">RSS</span> </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Magetheme - Footer Payments</title>
+			<identifier>footer-payments</identifier>
+			<content>
+				<![CDATA[<div class="footer-payments"><img class="mark-lazy" src="{{media url="wysiwyg/payments/payment-footer.png"}}" alt="Payments" width="370" height="32"></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Theme - About Us Content</title>
+			<identifier>about-us-content</identifier>
+			<content>
+				<![CDATA[<div class="about-container">
+<div class="page-title-wrapper">
+<h1 class="page-title">About Us</h1>
+</div>
+<div class="about-image"><img src="{{media url="wysiwyg/about-us/about-image.jpg"}}" alt="About Image"></div>
+<div class="row">
+<div class="col-lg-8">
+<div class="block-welcome">
+<div class="bonus-title"><strong>Welcome to Topmart</strong></div>
+<div class="bonus-content">
+<p>Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus. Donec eu dolor dui, vel posuere mauris. Nulla auctor mauris ut dui luctus semper. metus eget con sequat ornare, augue dolor blandit purus, vitae lacinia nisi tellus in erat. Nulla ac justo eget massa aliquet sodales.</p>
+<p>Pellentesque semper congue sodales. In consequat, metus eget con sequat ornare, augue dolor blandit purus, vitae lacinia nisi tellus in erat. Nulla ac justo eget massa aliquet sodales. Maecenas mattis male suada sem, in fringilla massa dapibus quis. Suspendisse aliquam leo id neque auctor molestie. Etiam at nulla tellus.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="block-whychoose">
+<div class="bonus-title"><strong>Why Choose Us</strong></div>
+<div class="bonus-content">
+<div id="accordionExample" class="accordion">
+<div class="card">
+<div id="headingOne" class="card-header"><a class="title-collapse collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Shipping &amp; Returns </a></div>
+<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div class="card-body">Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus.</div>
+</div>
+</div>
+<div class="card">
+<div id="headingTwo" class="card-header"><a class="title-collapse collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Secure Shopping </a></div>
+<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+<div class="card-body">Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus.</div>
+</div>
+</div>
+<div class="card">
+<div id="headingThree" class="card-header"><a class="title-collapse collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> International Shipping </a></div>
+<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+<div class="card-body">Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus.</div>
+</div>
+</div>
+<div class="card">
+<div id="headingFour" class="card-header"><a class="title-collapse collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> Affiliates </a></div>
+<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+<div class="card-body">Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus.</div>
+</div>
+</div>
+<div class="card">
+<div id="headingFive" class="card-header"><a class="title-collapse collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> Group Sales </a></div>
+<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+<div class="card-body">Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="our-member">
+<div class="bonus-title"><strong>Why Choose Us</strong></div>
+<div class="bonus-content">
+<div class="nav-style-1 hover-to-show absolute-nav">
+<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="2" data-screen768="3" data-screen992="4" data-screen1200="4" data-screen1441="4" data-screen1681="4" data-screen1920="4" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+<div class="owl-carousel owl-theme">
+<div class="item">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-1.jpg"}}" alt="Member Image">
+<ul class="member-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="member-info">
+<div class="member-name">Mark Levinson</div>
+<div class="member-job">Founder &amp; CEO</div>
+</div>
+</div>
+<div class="item">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-2.jpg"}}" alt="Member Image">
+<ul class="member-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="member-info">
+<div class="member-name">Ria Sakurai</div>
+<div class="member-job">Testing</div>
+</div>
+</div>
+<div class="item">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-3.jpg"}}" alt="Member Image">
+<ul class="member-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="member-info">
+<div class="member-name">Shiego Tokuda</div>
+<div class="member-job">Marketing</div>
+</div>
+</div>
+<div class="item">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-4.jpg"}}" alt="Member Image">
+<ul class="member-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="member-info">
+<div class="member-name">Tom Lymaskira</div>
+<div class="member-job">Designer</div>
+</div>
+</div>
+<div class="item">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-1.jpg"}}" alt="Member Image">
+<ul class="member-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="member-info">
+<div class="member-name">Ria Sakurai</div>
+<div class="member-job">Testing</div>
+</div>
+</div>
+<div class="item">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member/item-2.jpg"}}" alt="Member Image">
+<ul class="member-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+</ul>
+</div>
+</div>
+<div class="member-info">
+<div class="member-name">Tom Lymaskira</div>
+<div class="member-job">Developer</div>
+</div>
+</div>
+</div>
+<div class="loading-content"><span class="hidden">Loading...</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="our-client-say">
+<div class="nav-style-1 hover-to-show absolute-nav">
+<div data-owl="owl-slider" data-autoplay="false" data-nav="true" data-dots="false" data-screen0="1" data-screen481="1" data-screen768="1" data-screen992="1" data-screen1200="1" data-screen1441="1" data-screen1681="1" data-screen1920="1" data-margin="30" data-autoplayhoverpause="true" data-loop="false" data-center="false" data-stagepadding="0" data-mousedrag="true" data-touchdrag="true">
+<div class="owl-carousel owl-theme">
+<div class="item">
+<div class="client-image"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/client/item-1.png"}}" alt="Client Image"></div>
+<div class="client-info">
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+<div class="client-name-localtion">Amanda Cerny San Francisco</div>
+</div>
+</div>
+<div class="item">
+<div class="client-image"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/client/item-1.png"}}" alt="Client Image"></div>
+<div class="client-info">
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+<div class="client-name-localtion">Amanda Cerny San Francisco</div>
+</div>
+</div>
+<div class="item">
+<div class="client-image"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/client/item-1.png"}}" alt="Client Image"></div>
+<div class="client-info">
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+<div class="client-name-localtion">Amanda Cerny San Francisco</div>
+</div>
+</div>
+</div>
+<div class="loading-content"><span class="hidden">Loading...</span></div>
+</div>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Theme - Google Map</title>
+			<identifier>google-map</identifier>
+			<content>
+				<![CDATA[<div class="map"><iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8352535722393!2d144.95373531573256!3d-37.8173276797518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1svi!2s!4v1558405327045!5m2!1svi!2s" allowfullscreen="allowfullscreen" width="600" height="450" frameborder="0"></iframe></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Theme - Contact Us Info</title>
+			<identifier>contact-us-info</identifier>
+			<content>
+				<![CDATA[<div class="contact-us-info">
+<div class="bonus-title"><strong>Contact Us</strong></div>
+<div class="bonus-content">
+<ul class="info-contact">
+<li class="address">5611 Wellington Road, Suite 115, Gainesville,<br>VA 20155</li>
+<li class="phone">888 9344 6000 - 888 1234 6789</li>
+<li class="email">topmart-store@magentech.com</li>
+<li class="time">7 Days a week from 10-00 am to 6-00 pm</li>
+</ul>
+<ul class="contact-social">
+<li><a class="icon-facebook" title="Facebook" href="#"> <span class="hidden">Facebook</span> </a></li>
+<li><a class="icon-twitter" title="Twitter" href="#"> <span class="hidden">Twitter</span> </a></li>
+<li><a class="icon-instagram2" title="Instagram" href="#"> <span class="hidden">Instagram</span> </a></li>
+<li><a class="icon-youtube1" title="Youtube" href="#"> <span class="hidden">Youtube</span> </a></li>
+<li><a class="icon-linkedin" title="Linkedin" href="#"> <span class="hidden">Linkedin</span> </a></li>
+</ul>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Theme - Newsletter Popup Image</title>
+			<identifier>newsletter-popup-image</identifier>
+			<content>
+				<![CDATA[<div><a title="Image Newsletter" href="#"><img src="{{media url="wysiwyg/newsletter/image-newsletter-popup.jpg"}}" alt="Image Newsletter" width="355" height="370"></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Theme - Newsletter Popup Description</title>
+			<identifier>newsletter-popup-description</identifier>
+			<content>
+				<![CDATA[<div class="news-top-title text-theme-color">Daily Promotion</div>
+<div class="news-bottom-title">SIGN UP NEWSLETTER</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Magetheme - Product List - Sidebar</title>
+			<identifier>product-sidebar</identifier>
+			<content>
+				<![CDATA[<div class="product-sidebar hidden-rating">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::list.phtml" title_module="Bestsellers" product_source="best_sellers" select_category="" product_limitation="4" display_countdown="0" date_to=""}}</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Shoppo - Banner - Sidebar</title>
+			<identifier>banner-sidebar</identifier>
+			<content>
+				<![CDATA[<div class="banner-image"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner/banner-sidebar.jpg"}}" alt="Banner Image"></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Magetheme - Megamenu Horizontal Configuration</title>
+			<identifier>megamenu-horizontal</identifier>
+			<content>
+				<![CDATA[<div class="install-sm">Please install <a href="https://www.magentech.com/magento/magento-extensions/item/246-sm-mega-menu-responsive-magento-module" target="_blank" rel="noopener"><strong>SM - MEGAMENU</strong></a> and contact <a href="https://www.magentech.com/submit-a-ticket/submit-ticket" target="_blank"><strong>Custom Work Department</strong></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Magetheme - Support Header</title>
+			<identifier>support-header</identifier>
+			<content>
+				<![CDATA[<div class="block-right block-call">
+                            <div class="top-title">Call Us Free</div>
+                            <div class="block-content">+888 1900 8668</div>
+                        </div>
+
+                        <div class="block-right block-email">
+                            <div class="top-title">Email Address</div>
+                            <div class="block-content">megentech@gmail.com</div>
+                        </div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+	</blocks>
+</root>

@@ -1,0 +1,174 @@
+/**
+ * Product label
+ */
+
+.product-labels {
+    .product-label {
+        position: absolute;
+        top: 10px;
+        font-size: 85.714%;
+        z-index: 4;
+        color: #fff;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        line-height: 44px;
+        text-transform: uppercase;
+        .border-radius(50%);
+
+        &.new-label {
+            left: 10px;
+            background-color: #0088cc;
+        }
+
+        &.sale-label {
+            right: 10px;
+            background-color: #ff4157;
+        }
+    }
+}
+
+.products-grid {
+    .product-item {
+        margin-bottom: 30px;
+    }
+
+    .product-item-info {
+        width: unset !important;
+        border: 1px solid #e5e5e5;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        .border-radius(10px);
+        .transition(.1s);
+
+        .reviews-actions {
+            display: none !important;
+        }
+
+        .image-product {
+            position: relative;
+            text-align: center;
+        }
+
+        .product-item-photo {
+            display: block;
+            line-height: 0;
+            position: relative;
+        }
+
+        .product-item-details {
+            padding: 10px 14px 18px;
+            text-align: center;
+            position: relative;
+
+            .product-item-name {
+                margin: 0 0 5px;
+
+                a {
+                    padding: 6px 0;
+                }
+            }
+
+            .swatch-option {
+                float: none;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .product-reviews-summary {
+                display: inline-block;
+            }
+
+            .price-box {
+                margin: 2px 0 0;
+
+                .price {
+                    font-size: 114.285%;
+                }
+
+                .old-price .price {
+                    position: relative;
+                    top: 2px;
+                    font-size: 100%;
+                }
+            }
+
+            div[class^="swatch-opt-"] {
+                margin-bottom: 0;
+            }
+
+            .product-item-actions {
+                padding: 0 45px;
+                position: relative;
+                display: inline-block;
+
+                .actions-primary {
+                    vertical-align: top;
+
+                    .tocart {
+                        height: 40px;
+                        line-height: 40px;
+                        padding: 0 20px;
+                        background-color: #f5f5f5;
+                        color: #222;
+                        text-transform: uppercase;
+                        .border-radius(3px);
+                        .transition(.1s);
+                    }
+                }
+
+                .actions-secondary {
+                    vertical-align: top;
+
+                    .action {
+                        background-color: #f5f5f5;
+                        display: block;
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: #222;
+                        position: absolute;
+                        top: 0;
+                        .border-radius(3px);
+                        .transition(.1s);
+
+                        &:before {
+                            display: none;
+                        }
+
+                        &.towishlist {
+                            left: 0;
+
+                            &:after {
+                                .icomoon(e93f, 14px);
+                            }
+                        }
+
+                        &.tocompare {
+                            right: 0;
+
+                            &:after {
+                                .icomoon(e953, 14px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .swatch-option.color {
+                margin: 0 10px 0 3px;
+            }
+        }
+
+        &:hover {
+            border-color: #fff;
+            .box-shadow(0 0 15px rgba(0, 0, 0, 0.15));
+        }
+    }
+}
+
+.product-1-style .title-block-1 .stagepadding-slider .block .block-title {
+    margin-bottom: 15px !important;
+}

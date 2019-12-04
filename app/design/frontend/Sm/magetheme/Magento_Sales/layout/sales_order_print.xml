@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <move element="logo_theme" destination="logo.top"/>
+        <referenceContainer name="page.wrapper">
+            <container name="logo.top" label="Logo Top" as="logo.top" htmlTag="div" htmlClass="container container-logo"
+                       before="-"/>
+        </referenceContainer> -->
+
+        <referenceBlock name="theme_header" remove="true"/>
+        <referenceBlock name="form.subscribe.popup" remove="true"/>
+        <referenceBlock name="back.to.top" remove="true"/>
+    </body>
+</page>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="blog_default"/>
+    <update handle="blog_post_opengraph" />
+    <update handle="blog_post_richsnippets" />
+    <body>
+        <referenceContainer name="content">
+            <block class="Magefan\Blog\Block\Post\View" name="blog.post" template="post/view.phtml">
+                <block class="Magefan\Blog\Block\Post\Info" name="blog.post.info" template="post/info.phtml" />
+                <action method="setPostInfoBlockName">
+                    <argument name="name" xsi:type="string">blog.post.info</argument>
+                </action>
+                <block class="Magento\Framework\View\Element\Text\ListText" name="blog.post.bottom">
+                    <block class="Magefan\Blog\Block\Post\View\Gallery" name="blog.post.gallery" as="gallery"  template="Magefan_Blog::post/view/gallery.phtml" />
+                    <block class="Magefan\Blog\Block\Post\View\NextPrev" name="blog.post.nextprev" as="nextprev"  template="Magefan_Blog::post/view/nextprev.phtml" />
+                    <block class="Magefan\Blog\Block\Post\View\RelatedPosts" name="blog.post.relatedposts" as="relatedposts"  template="Magefan_Blog::post/view/relatedposts.phtml" />
+                    <block class="Magefan\Blog\Block\Post\View\RelatedProducts" name="blog.post.relatedproducts" as="relatedproducts"  template="Magefan_Blog::post/view/relatedproducts.phtml" />
+                    <container name="blog.post.comments" label="Comments Container" htmlTag="div" htmlClass="block comments" >
+                        <block class="Magefan\Blog\Block\Post\View\Comments\Magefan" name="blog.post.comments.magefan" template="post/view/comments/magefan.phtml">
+                            <block class="Magento\Framework\View\Element\Template" name="display_privacy_policy_checkbox" template="Magefan_Blog::post/view/comments/privacy_policy_checkbox.phtml"/>
+                            <arguments>
+                                <argument name="jsLayout" xsi:type="array">
+                                    <item name="components" xsi:type="array">
+                                        <item name="magefan-comments.js" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magefan_Blog/js/magefan-comments</item>
+                                        </item>
+                                    </item>
+                                </argument>
+                            </arguments>
+                            <container name="blog.post.comments.magefan.additional" label="Comments Recaptcha" />
+                        </block>
+                        <block class="Magefan\Blog\Block\Post\View\Comments\Facebook" name="blog.post.comments.facebook" template="post/view/comments/facebook.phtml" />
+                        <block class="Magefan\Blog\Block\Post\View\Comments\Disqus" name="blog.post.comments.disqus" template="post/view/comments/disqus.phtml" />
+                        <block class="Magefan\Blog\Block\Post\View\Comments\Google" name="blog.post.comments.google" template="post/view/comments/google.phtml" />
+                    </container>
+                    <block class="Magefan\Blog\Block\Social\AddThis" name="addthis.js.init" as="addthisJs" template="Magefan_Blog::addthis-js.phtml"/>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Language switcher template
+ */
+?>
+
+<?php if (count($block->getStores()) > 1): ?>
+    <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : '' ?>
+    <div class="switcher language switcher-language" data-ui-id="language-switcher"
+         id="switcher-language<?php /* @escapeNotVerified */
+         echo $id ?>">
+        <strong class="label switcher-label"><span><?php /* @escapeNotVerified */
+                echo __('Language') ?></span></strong>
+        <div class="switcher-content">
+            <div class="action-switcher" id="switcher-language-trigger<?php /* @escapeNotVerified */
+            echo $id ?>">
+                <div class="heading-switcher view-<?php echo $block->escapeHtml($block->getCurrentStoreCode()) ?>"
+                     style="background-repeat: no-repeat; background-image:url('<?php /* @escapeNotVerified */
+                     echo $block->getViewFileUrl('images/flags/flag_' . $block->getCurrentStoreCode() . '.svg') ?>');">
+                    <span><?php echo $block->escapeHtml($block->getStoreName()) ?></span>
+                </div>
+            </div>
+
+            <div class="dropdown-switcher">
+                <ul class="list-item">
+                    <?php foreach ($block->getStores() as $_lang): ?>
+                        <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+                            <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+                                <a href="#" data-post='<?php /* @escapeNotVerified */
+                                echo $block->getTargetStorePostData($_lang); ?>'>
+                                <span style="background-repeat: no-repeat; background-image:url('<?php /* @escapeNotVerified */
+                                echo $block->getViewFileUrl('images/flags/flag_' . $_lang->getCode() . '.svg') ?>');"><?php echo $block->escapeHtml($_lang->getName()) ?></span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,139 @@
+.product-info-main .stock.available,
+.product-info-main .stock.unavailable {
+    margin-left: 23px;
+    margin-right: 0;
+}
+
+/**
+ * Compare, wishlist, email to friend
+ */
+.product-info-main {
+    .product-options-wrapper {
+        .fieldset {
+            .label {
+                color: #222;
+            }
+        }
+    }
+
+    .product-social-links,
+    .product-addto-links {
+        .action {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            float: right;
+            margin-right: 5px;
+            padding: 0;
+            color: #222 !important;
+            background-color: #f5f5f5;
+            border: none !important;
+            text-align: center;
+            line-height: 40px;
+            .border-radius(4px);
+            .transition(.1s);
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .stock.available:before {
+        margin-left: 2px;
+        vertical-align: middle;
+        top: -1px;
+        position: relative;
+        .icomoon(e92d, 14px);
+    }
+}
+
+.product-info-main .box-tocart, .product-options-bottom .box-tocart {
+    float: right;
+    display: inline-block;
+}
+
+.product-info-main .product-social-links {
+    float: right;
+    display: inline-block;
+    width: 140px;
+    vertical-align: top;
+    padding-top: 27px;
+}
+
+.product-info-main .box-tocart .field.qty, .product-options-bottom .box-tocart .field.qty {
+    padding-left: 10px;
+    float: right;
+}
+
+.product-info-main .box-tocart .actions, .product-options-bottom .box-tocart .actions {
+    float: right;
+    padding-top: 27px !important;
+}
+
+.magnifier-preview {
+    right: 100% !important;
+    top: 0 !important;
+    margin-right: 20px;
+}
+
+/**
+ * Table attributes product
+ */
+
+.default-style {
+    .resp-tabs-list {
+        border-bottom: 1px solid #e5e5e5;
+        margin: 0;
+
+        li {
+            float: right;
+            border: none;
+            background: none !important;
+            padding: 0 0 15px !important;
+            margin: 0 0 0 40px;
+            font-size: 128.571%;
+            color: #222;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 2px;
+                left: 0;
+                right: 0;
+                bottom: -1px;
+            }
+        }
+    }
+
+    .resp-tabs-container {
+        background: none;
+        padding: 25px 0 0;
+        border: none;
+    }
+}
+
+.product.data.items.accordion-style .item.title.resp-accordion {
+    padding: 10px 20px 8px !important;
+    background-color: #fff;
+
+    a {
+        text-transform: uppercase;
+        font-weight: normal;
+        color: #333;
+    }
+}
+
+/**
+ * Related upsell crossell product slider
+ */
+
+.product-slider {
+    .nav-style-2 .owl-theme .owl-nav {
+        position: absolute;
+        margin: 0;
+        top: -67px;
+        left: 11px;
+    }
+}

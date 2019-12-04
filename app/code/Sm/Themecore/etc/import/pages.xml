@@ -1,0 +1,3505 @@
+<?xml version="1.0"?>
+<root>
+	<pages>
+		<cms_item>
+			<title>404 Not Found</title>
+			<identifier>no-route</identifier>
+			<content_heading>Whoops, our bad...</content_heading>
+			<content>
+				<![CDATA[<dl>
+<dt>The page you requested was not found, and we have a fine guess why.</dt>
+<dd>
+<ul class="disc">
+<li>If you typed the URL directly, please make sure the spelling is correct.</li>
+<li>If you clicked on a link to get here, the link is outdated.</li>
+</ul></dd>
+</dl>
+<dl>
+<dt>What can you do?</dt>
+<dd>Have no fear, help is near! There are many ways you can get back on track with Magento Store.</dd>
+<dd>
+<ul class="disc">
+<li><a href="#" onclick="history.go(-1); return false;">Go back</a> to the previous page.</li>
+<li>Use the search bar at the top of the page to search for your products.</li>
+<li>Follow these links to get you back on track!<br /><a href="{{store url=""}}">Store Home</a> <span class="separator">|</span> <a href="{{store url="customer/account"}}">My Account</a></li></ul></dd></dl>
+]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>2columns-right</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 1</title>
+			<identifier>home-demo-01</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-1">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-12">
+	{{block class="Sm\CategoriesMenu\Block\CategoriesMenu" template="Sm_CategoriesMenu::default.phtml"}}
+</div>
+<div class="col-lg-9 col-md-12">
+<div class="slider-home-container" style="margin-left: -10px;">
+<div class="slider-home owl-carousel">
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-1/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img style="border: 1px solid #ddd;" src="{{media url="wysiwyg/slider/home-1/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-1/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-home").owlCarousel({
+			items:1,
+			autoplay:true,
+			loop:true,
+			nav : true, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:1,
+		});	  
+	});	
+					
+</script>
+</div>
+</div>
+</div>
+<div class="services-inline">
+<ul>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-1.png"}}" alt="Shipping" /></div>
+<div class="service-info">
+<h2>Free Shipping &amp; Return</h2>
+<p>Free shipping on orders over $49</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-2.png"}}" alt="Money Guarantee" /></div>
+<div class="service-info">
+<h2>Money Guarantee</h2>
+<p>30 days money back guarantee</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-3.png"}}" alt="Online Support" /></div>
+<div class="service-info">
+<h2>Online Support</h2>
+<p>We support online 24 hours a day</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="deal-slider-wrapper">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-deal.phtml" title_module="Deals Of The Week" select_category="16,17,18,19,20,21,22" display_countdown="1" product_source="special_products" product_limitation="6"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".deal-slider-wrapper .product-items").owlCarousel({
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:1
+				},
+				768:{
+					items:1
+				},
+				992:{
+					items:2
+				},
+				1200:{
+					items:2
+				}
+			},
+			
+			autoplay:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:30,
+		});	  
+	});	
+			
+</script>
+</div>
+<div class="banner-home-wrapper lazyload-container">
+<div class="row row-1">
+<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="banner-home lef-banner banner-image"><a title="Banner Image" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-1.jpg"}}" alt="Banner Image" /> </a></div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="banner-home right-banner banner-image"><a title="Banner Image" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-2.jpg"}}" alt="Banner Image" /> </a></div>
+</div>
+</div>
+<div class="row row-2">
+<div class="col-lg-3 col-md-3 col-sm-3">
+<div class="banner-home lef-banner banner-image"><a title="Banner Image" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-3.jpg"}}" alt="Banner Image" /> </a></div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="banner-home center-banner banner-image"><a title="Banner Image" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-4.jpg"}}" alt="Banner Image" /> </a></div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3">
+<div class="banner-home right-banner banner-image"><a title="Banner Image" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-5.jpg"}}" alt="Banner Image" /> </a></div>
+</div>
+</div>
+</div>
+<div class="slider-product-home slider-single-1">{{block class="Sm\FilterProducts\Block\FilterProducts" name="product.slider" select_category="16,17,18,19,20,21,22" template="Sm_FilterProducts::default-grid.phtml"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-single-1 .product-items").owlCarousel({
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:2
+				},
+				768:{
+					items:4
+				},
+				992:{
+					items:4
+				},
+				1200:{
+					items:5
+				}
+			},
+			
+			autoplay:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:20,
+		});	  
+	});	
+			
+</script>
+</div>
+<div class="latest-post-wrapper">{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest Blog" number_of_posts="5" custom_template="Magefan_Blog::widget/latest-post-index.phtml"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-post").owlCarousel({
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:2
+				},
+				768:{
+					items:3
+				},
+				992:{
+					items:4
+				},
+				1200:{
+					items:4
+				}
+			},
+			
+			autoplay:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:19,
+		});	  
+	});	
+			
+</script>
+</div>
+<div class="bottom-products">
+<div class="row">
+<div class="col-lg-3 col-md-6 col-sm-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="New Arrivals" select_category="16,17,18,19,20,21,22" display_countdown="0" product_source="lastest_products" product_limitation="3"}}</div>
+<div class="col-lg-3 col-md-6 col-sm-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="Bestsellers" select_category="16,17,18,19,20,21,22" display_countdown="0" product_source="best_sellers" product_limitation="3"}}</div>
+<div class="col-lg-3 col-md-6 col-sm-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="Featured" select_category="16,17,18,19,20,21,22" display_countdown="0" product_source="featured_products" product_limitation="3"}}</div>
+<div class="col-lg-3 col-md-6 col-sm-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="Most Viewed" select_category="16,17,18,19,20,21,22" display_countdown="0" product_source="viewed_products" product_limitation="3"}}</div>
+</div>
+</div>
+<div class="slider-brand-wrapper">
+<div class="primary-title">
+<h2>Featured Brands</h2>
+</div>
+<div class="slider-brand lazyload-container">
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-1.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-2.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-3.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-4.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-5.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-6.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-1.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-2.jpg"}}" alt="Slider Brand" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-brand").owlCarousel({
+			responsive:{
+				0:{
+					items:2
+				},
+				480:{
+					items:3
+				},
+				768:{
+					items:5
+				},
+				992:{
+					items:6
+				},
+				1200:{
+					items:6
+				}
+			},
+			
+			autoplay:false,
+			loop:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:30,
+		});	  
+	});	
+</script>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 2</title>
+			<identifier>home-demo-02</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-2">
+<div class="slider-full">
+<div class="slider-home">
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-2/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-2/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-2/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-full .slider-home").owlCarousel({
+			items:1,
+			autoplay:true,
+			loop:true,
+			nav : true, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:1,
+		});	  
+	});	
+		
+</script>
+</div>
+<div class="service-wrapper">
+<div class="container">
+<div class="services-inline">
+<ul>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-1.png"}}" alt="Shipping" /></div>
+<div class="service-info">
+<h2>Free Shipping &amp; Return</h2>
+<p>Free shipping on orders over $49</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-2.png"}}" alt="Money Guarantee" /></div>
+<div class="service-info">
+<h2>Money Guarantee</h2>
+<p>30 days money back guarantee</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-3.png"}}" alt="Online Support" /></div>
+<div class="service-info">
+<h2>Online Support</h2>
+<p>We support online 24 hours a day</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-3">
+<div class="home-sidebar">
+<div class="deal-slider-wrapper">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-deal2.phtml" title_module="Special Offers" select_category="" display_countdown="1" product_source="special_products" product_limitation="6"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".deal-slider-wrapper .product-items").owlCarousel({
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:2
+				},
+				768:{
+					items:2
+				},
+				992:{
+					items:1
+				},
+				1200:{
+					items:1
+				}
+			},
+			
+			autoplay:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:30,
+		});	  
+	});	
+						
+</script>
+</div>
+<div class="client-wrapper lazyload-container">
+<div class="primary-title">
+<h2>Testimonials</h2>
+</div>
+<div class="client-slider">
+<div class="item">
+<div class="client-description">Lorem ipsum dolor sit amet, conmetur asdipiscing elit,sed doeius tempo lorem ipsum raLorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod.</div>
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-1.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+</div>
+<div class="item">
+<div class="client-description">Lorem ipsum dolor sit amet, conmetur asdipiscing elit,sed doeius tempo lorem ipsum raLorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod.</div>
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-2.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+</div>
+<div class="item">
+<div class="client-description">Lorem ipsum dolor sit amet, conmetur asdipiscing elit,sed doeius tempo lorem ipsum raLorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod.</div>
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-3.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".client-slider").owlCarousel({
+			items:1,
+			autoplay:true,
+			loop:true,
+			nav : false, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:20,
+		});	  
+	});	
+						
+</script>
+</div>
+<div class="latest-post-wrapper">{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest Blog" number_of_posts="5" custom_template="Magefan_Blog::widget/latest-post-index2.phtml"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+			jQuery(".slider-post").owlCarousel({
+				responsive:{
+					0:{
+						items:1
+					},
+					480:{
+						items:2
+					},
+					768:{
+						items:3
+					},
+					992:{
+						items:1
+					},
+					1200:{
+						items:1
+					}
+				},
+				
+				autoplay:false,
+				nav : true, 
+				dots: false,
+				autoplaySpeed : 500,
+				navSpeed : 500,
+				dotsSpeed : 500,
+				autoplayHoverPause: true,
+				margin:19,
+			});	  
+		});	
+							
+	
+</script>
+</div>
+{{block class="Magento\\Cms\\Block\\Block" block_id="banner-image-sidebar"}}</div>
+</div>
+<div class="col-lg-9">
+<div class="home-content">
+<div class="slider-product-home slider-single-1">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="Digital &amp; Electronics" select_category="16,17,18,19,20,21,22" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-single-1 .product-items").owlCarousel({
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:2
+				},
+				768:{
+					items:4
+				},
+				992:{
+					items:3
+				},
+				1200:{
+					items:4
+				}
+			},
+			
+			autoplay:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:14,
+		});	  
+	});	
+						
+</script>
+</div>
+<div class="slider-product-home slider-single-2">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="Fashion &amp; Jewelry" select_category="24,25,26,27,33,36" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-single-2 .product-items").owlCarousel({
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:2
+				},
+				768:{
+					items:4
+				},
+				992:{
+					items:3
+				},
+				1200:{
+					items:4
+				}
+			},
+			
+			autoplay:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:14,
+		});	  
+	});	
+						
+</script>
+</div>
+<div class="banner-home banner-image lazyload-container">
+<ul>
+<li><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-6.jpg"}}" alt="Slider Image" /></a></li>
+<li><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-7.jpg"}}" alt="Slider Image" /></a></li>
+</ul>
+</div>
+<div class="row">
+<div class="col-lg-4">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="New Arrivals" select_category="24,25,26,27,33,36" display_countdown="0" product_source="lastest_products" product_limitation="3"}}</div>
+<div class="col-lg-4">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="Bestsellers" select_category="24,25,26,27,33,36" display_countdown="0" product_source="best_sellers" product_limitation="3"}}</div>
+<div class="col-lg-4">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="Most Viewed" select_category="24,25,26,27,33,36" display_countdown="0" product_source="viewed_products" product_limitation="3"}}</div>
+</div>
+<div class="slider-brand-wrapper">
+<div class="primary-title">
+<h2>Featured Brands</h2>
+</div>
+<div class="slider-brand lazyload-container">
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-1.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-2.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-3.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-4.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-5.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-6.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-1.jpg"}}" alt="Slider Brand" /></a></div>
+<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-2.jpg"}}" alt="Slider Brand" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-brand").owlCarousel({
+			responsive:{
+				0:{
+					items:2
+				},
+				480:{
+					items:3
+				},
+				768:{
+					items:5
+				},
+				992:{
+					items:5
+				},
+				1200:{
+					items:5
+				}
+			},
+			
+			autoplay:false,
+			loop:false,
+			nav : true, 
+			dots: false,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:30,
+		});	  
+	});	
+						
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 3</title>
+			<identifier>home-demo-03</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-3">
+<div class="slider-home-container">
+<div class="slider-home">
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-3/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-3/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-3/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+				jQuery(".slider-home").owlCarousel({
+					items:1,
+					autoplay:true,
+					loop:true,
+					nav : true, 
+					dots: true,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:1,
+				});	  
+			});	
+		
+</script>
+</div>
+<div class="services-block">
+<ul>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-1.png"}}" alt="Shipping" /></div>
+<div class="service-info">
+<h2>Free Shipping &amp; Return</h2>
+<p>Free shipping on orders over $49</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-2.png"}}" alt="Money Guarantee" /></div>
+<div class="service-info">
+<h2>Money Guarantee</h2>
+<p>30 days money back guarantee</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-3.png"}}" alt="Online Support" /></div>
+<div class="service-info">
+<h2>Online Support</h2>
+<p>We support online 24 hours a day</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="banner-full lazyload-container">
+<div class="banner-left">
+<div class="banner-image"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-8.jpg"}}" alt="Banner Image" /></a></div>
+</div>
+<div class="banner-right">
+<div class="banner-top">
+<div class="banner-image"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-9.jpg"}}" alt="Banner Image" /></a></div>
+</div>
+<div class="banner-bottom">
+<div class="item-left">
+<div class="banner-image"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-10.jpg"}}" alt="Banner Image" /></a></div>
+</div>
+<div class="item-right">
+<div class="banner-image"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-11.jpg"}}" alt="Banner Image" /></a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-wrapper">
+<div class="container">
+<div class="title-block-primary">
+<h2>New Arrivals</h2>
+</div>
+<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />incididunt ut labore et dolore magna aliqua.</p>
+<div class="product-slider-1">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="24,25,26,27,33,36" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+						jQuery(".product-slider-1 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:3
+								},
+								1200:{
+									items:3
+								}
+							},
+							
+							autoplay:false,
+							nav : true, 
+							dots: false,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:30,
+						});	  
+					});	
+				
+</script>
+</div>
+</div>
+</div>
+<div class="categories-wrapper lazyload-container">
+<ul>
+<li>
+<div class="category-image banner-image"><a title="title" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/categories/item-1.jpg"}}" alt="Image Category" /> <span class="category-name"> <span>Clothing</span> </span> </a></div>
+</li>
+<li>
+<div class="category-image banner-image"><a title="title" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/categories/item-2.jpg"}}" alt="Image Category" /> <span class="category-name"> <span>Leather Bag</span> </span> </a></div>
+</li>
+<li>
+<div class="category-image banner-image"><a title="title" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/categories/item-3.jpg"}}" alt="Image Category" /> <span class="category-name"> <span>Men's Shoes</span> </span> </a></div>
+</li>
+<li>
+<div class="category-image banner-image"><a title="title" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/categories/item-4.jpg"}}" alt="Image Category" /> <span class="category-name"> <span>Watches</span> </span> </a></div>
+</li>
+<li>
+<div class="category-image banner-image"><a title="title" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/categories/item-5.jpg"}}" alt="Image Category" /> <span class="category-name"> <span>Accessories</span> </span> </a></div>
+</li>
+</ul>
+</div>
+<div class="product-wrapper">
+<div class="container">
+<div class="title-block-primary">
+<h2>Featured Products</h2>
+</div>
+<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />incididunt ut labore et dolore magna aliqua.</p>
+<div class="product-slider-2">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="24,25,26,27,33,36" display_countdown="0" product_source="viewed_products" product_limitation="6"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+						jQuery(".product-slider-2 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:4
+								},
+								1200:{
+									items:4
+								}
+							},
+							
+							autoplay:false,
+							nav : true, 
+							dots: false,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:30,
+						});	  
+					});	
+				
+</script>
+</div>
+</div>
+</div>
+<div class="slider-latest-post">
+<div class="container">{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest News" number_of_posts="5" custom_template="Magefan_Blog::widget/latest-post-index3.phtml"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+					jQuery(".slider-post").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:3
+							},
+							992:{
+								items:3
+							},
+							1200:{
+								items:3
+							}
+						},
+						
+						autoplay:false,
+						nav : true, 
+						dots: false,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+					});	  
+				});	
+			
+</script>
+</div>
+</div>
+<div class="slider-brand-wrapper-home lazyload-container">
+<div class="container">
+<div class="slider-brand-content">
+<div class="slider-brand">
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-7.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-8.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-9.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-10.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-11.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-12.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-7.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-8.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+				jQuery(".slider-brand").owlCarousel({
+					responsive:{
+						0:{
+							items:2
+						},
+						480:{
+							items:3
+						},
+						768:{
+							items:5
+						},
+						992:{
+							items:5
+						},
+						1200:{
+							items:6
+						}
+					},
+					
+					autoplay:false,
+					nav : true, 
+					dots: false,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:30,
+				});	  
+			});	
+		
+</script>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 4</title>
+			<identifier>home-demo-04</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-4">
+<div class="slideshow-categories">
+<div class="container-full">
+<div class="slider-home">
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-4/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-4/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-4/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+					jQuery(".slider-home").owlCarousel({
+						items:1,
+						autoplay:true,
+						loop:true,
+						nav : true, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:1,
+					});	  
+				});	
+								
+			
+</script>
+<div class="hot-categories lazyload-container">
+<div class="container">
+<ul>
+<li><a class="image-category" title="Clothing" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/icon/cat-1.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Clothing" href="#">Clothing</a></h2>
+</li>
+<li><a class="image-category" title="Shoes" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/icon/cat-2.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Shoes" href="#">Shoes</a></h2>
+</li>
+<li><a class="image-category" title="HandBags" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/icon/cat-3.png"}}" alt="Slider Image" /> </a>
+<h2><a title="HandBags" href="#">HandBags</a></h2>
+</li>
+<li><a class="image-category" title="Sunglasses" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/icon/cat-4.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Sunglasses" href="#">Sunglasses</a></h2>
+</li>
+<li><a class="image-category" title="Accessories" href="#"> <img class="mark-lazy" src="{{media url="wysiwyg/icon/cat-5.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Accessories" href="#">Accessories</a></h2>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="product-container">
+<div class="container">
+<div class="title-block-primary">
+<h2>New Arrivals</h2>
+</div>
+<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />incididunt ut labore et dolore magna aliqua.</p>
+<div class="single-products row">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="36" display_countdown="0" product_source="lastest_products" product_limitation="8"}}</div>
+</div>
+</div>
+<div class="banner-home-fashion lazyload-container">
+<div class="container-full">
+<ul>
+<li>
+<div class="image-box"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-12.jpg"}}" alt="Banner Image" />
+<div class="info-banner">
+<h2><a title="Men's Collection" href="#">Men's Collection</a></h2>
+<a class="button-category" title="View Collection" href="#">View Collection</a></div>
+</div>
+</li>
+<li>
+<div class="image-box"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-13.jpg"}}" alt="Banner Image" />
+<div class="info-banner">
+<h2><a title="Women's Collection" href="#">Women's Collection</a></h2>
+<a class="button-category" title="View Collection" href="#">View Collection</a></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="latest-post-dots">
+<div class="container">{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest Blogs" number_of_posts="8" custom_template="Magefan_Blog::widget/latest-post-index4.phtml"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+					jQuery(".slider-post-dots").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:1
+							},
+							768:{
+								items:2
+							},
+							992:{
+								items:2
+							},
+							1200:{
+								items:2
+							}
+						},
+						
+						autoplay:false,
+						nav : false, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+					});	  
+				});	
+			
+</script>
+</div>
+</div>
+<div class="list-brand lazyload-container">
+<div class="container">
+<ul>
+<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-7.jpg"}}" alt="Brand Image" /></a></li>
+<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-8.jpg"}}" alt="Brand Image" /></a></li>
+<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-9.jpg"}}" alt="Brand Image" /></a></li>
+<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-10.jpg"}}" alt="Brand Image" /></a></li>
+<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-11.jpg"}}" alt="Brand Image" /></a></li>
+</ul>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<move element="page.messages" destination="after.body.start" before="-"/>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 5</title>
+			<identifier>home-demo-05</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-5">
+<div class="container-full">
+<div class="slider-full-index slider-home">
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-5/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-5/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-5/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+				jQuery(".slider-full-index").owlCarousel({
+					items:1,
+					autoplay:true,
+					loop:true,
+					nav : true, 
+					dots: false,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:1,
+				});	  
+			});	
+							
+		
+</script>
+<div class="categories-featured">
+<ul>
+<li><a title="Collection For Men" href="#">Collection For Men</a></li>
+<li><a title="Women's Handbags" href="#">Women's Handbags</a></li>
+<li><a title="Specials Ofeers" href="#">Specials Ofeers</a></li>
+</ul>
+</div>
+<div class="banner-home-fashion banner-subcat lazyload-container">
+<div class="container-full">
+<ul>
+<li>
+<div class="image-box"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-14.jpg"}}" alt="Banner Image" />
+<div class="info-banner">
+<h2><a title="For Men" href="#">For Men</a></h2>
+<ul>
+<li><a title="Clothing" href="#">Clothing</a></li>
+<li><a title="Dresses" href="#">Dresses</a></li>
+<li><a title="Jumpsuit" href="#">Jumpsuit</a></li>
+<li><a title="Accessories" href="#">Accessories</a></li>
+<li><a title="Jewelry" href="#">Jewelry</a></li>
+<li><a title="Watches" href="#">Watches</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<div class="image-box"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-15.jpg"}}" alt="Banner Image" />
+<div class="info-banner">
+<h2><a title="For Women" href="#">For Women</a></h2>
+<ul>
+<li><a title="Clothing" href="#">Clothing</a></li>
+<li><a title="Dresses" href="#">Dresses</a></li>
+<li><a title="Jumpsuit" href="#">Jumpsuit</a></li>
+<li><a title="Accessories" href="#">Accessories</a></li>
+<li><a title="Jewelry" href="#">Jewelry</a></li>
+<li><a title="Watches" href="#">Watches</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<div class="image-box"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-home-16.jpg"}}" alt="Banner Image" />
+<div class="info-banner">
+<h2><a title="Accessories" href="#">Accessories</a></h2>
+<ul>
+<li><a title="Clothing" href="#">Clothing</a></li>
+<li><a title="Dresses" href="#">Dresses</a></li>
+<li><a title="Jumpsuit" href="#">Jumpsuit</a></li>
+<li><a title="Accessories" href="#">Accessories</a></li>
+<li><a title="Jewelry" href="#">Jewelry</a></li>
+<li><a title="Watches" href="#">Watches</a></li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="single-slider-products">
+<div class="title-block-primary">
+<h2>Latest Products</h2>
+</div>
+<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />incididunt ut labore et dolore magna aliqua.</p>
+{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="85,86,87" display_countdown="0" product_source="other_products" product_order_by="created_at" product_limitation="10"}}
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+					jQuery(".single-slider-products .product-items").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:4
+							},
+							992:{
+								items:5
+							},
+							1200:{
+								items:5
+							}
+						},
+						
+						autoplay:false,
+						nav : false, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:29,
+					});	  
+				});	
+			
+</script>
+</div>
+<div class="hot-categories hot-cat-background">
+<div class="container">
+<div class="title-block-primary">
+<h2>Our Collections</h2>
+</div>
+<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />incididunt ut labore et dolore magna aliqua.</p>
+<ul>
+<li><a class="image-category" title="Clothing" href="#"> <img src="{{media url="wysiwyg/icon/cat-1-white.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Clothing" href="#">Clothing</a></h2>
+</li>
+<li><a class="image-category" title="Shoes" href="#"> <img src="{{media url="wysiwyg/icon/cat-2-white.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Shoes" href="#">Shoes</a></h2>
+</li>
+<li><a class="image-category" title="HandBags" href="#"> <img src="{{media url="wysiwyg/icon/cat-3-white.png"}}" alt="Slider Image" /> </a>
+<h2><a title="HandBags" href="#">HandBags</a></h2>
+</li>
+<li><a class="image-category" title="Sunglasses" href="#"> <img src="{{media url="wysiwyg/icon/cat-4-white.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Sunglasses" href="#">Sunglasses</a></h2>
+</li>
+<li><a class="image-category" title="Accessories" href="#"> <img src="{{media url="wysiwyg/icon/cat-5-white.png"}}" alt="Slider Image" /> </a>
+<h2><a title="Accessories" href="#">Accessories</a></h2>
+</li>
+</ul>
+</div>
+</div>
+<div class="client-wrapper lazyload-container">
+<div class="client-slider-fashion">
+<div class="item">
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-1.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+</div>
+<div class="item">
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-2.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+</div>
+<div class="item">
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-3.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+</div>
+<div class="item">
+<div class="client-info"><img class="mark-lazy" src="{{media url="wysiwyg/clients/client-1.jpg"}}" alt="Online Support" />
+<h5>Johny Walker</h5>
+<p>CEO Envato - Themeforest</p>
+</div>
+<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+					jQuery(".client-slider-fashion").owlCarousel({
+						items:1,
+						autoplay:true,
+						loop:false,
+						nav : false, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:20,
+					});	  
+				});					
+			
+</script>
+</div>
+<div class="social-block-home lazyload-container"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/bg-itg.jpg"}}" alt="Slider Image" />
+<div class="social-box">
+<div class="social-box-content">
+<h2>#Themecore</h2>
+<p>Fashion Style of Life (on Instagram)</p>
+<a class="portfolio-btn" title="View Portfolio" href="#">View Portfolio</a></div>
+</div>
+</div>
+<div class="newsletter-fashion">
+<div class="title-block-primary">
+<h2>Newsletter</h2>
+</div>
+<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br />incididunt ut labore et dolore magna aliqua.</p>
+{{block class="Magento\Newsletter\Block\Subscribe" template="subscribe-home.phtml"}}</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore Mobile - Responsive Magento Theme</title>
+			<identifier>home-demo-mobile</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="cms-mobile">
+	<div class="slider-home owl-carousel">
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/slider/slide-1.jpg"}}" alt="Slider Image" /></a></div>
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/slider/slide-2.jpg"}}" alt="Slider Image" /></a></div>
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/slider/slide-3.jpg"}}" alt="Slider Image" /></a></div>
+	</div>
+	<script type="text/javascript">
+		require([
+			'jquery',
+			'owlcarousel'
+		], function ($) {
+			$(".slider-home").owlCarousel({
+				items:1,
+				autoplay:true,
+				loop:true,
+				nav : false, 
+				dots: true,
+				autoplaySpeed : 500,
+				navSpeed : 500,
+				dotsSpeed : 500,
+				autoplayHoverPause: true,
+				margin:1,
+			});	  
+		});			
+	</script>
+	
+	<div class="list-services-home">
+		<ul>
+			<li><a href="#" title="Free Shipping on over oders $49"><em class="fa fa-truck"></em>Free Shipping on over oders $49</a></li>
+			<li><a href="#" title="30days Money back Guarantee"><em class="fa fa-usd"></em>30days Money back Guarantee</a></li>
+			<li><a href="#" title="we support online 24/24 on day"><em class="fa fa-life-ring"></em>we support online 24/24 on day</a></li>
+		</ul>
+	</div>
+	
+	<div class="scroll-container">
+		{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-deal.phtml" title_module="Deals Of The Week" display_countdown="1" product_source="special_products"}}
+	</div>
+	
+	<div class="banner-home banner-image lazyload-container">
+		<div class="banner-item">
+			<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/banner/banner-1.jpg"}}" alt="Banner Image" /></a>
+		</div>
+		
+		<div class="banner-item">
+			<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/banner/banner-2.jpg"}}" alt="Banner Image" /></a>
+		</div>
+		
+		<div class="banner-item">
+			<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/banner/banner-3.jpg"}}" alt="Banner Image" /></a>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="banner-item">
+					<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/banner/banner-4.jpg"}}" alt="Banner Image" /></a>
+				</div>
+			</div>
+			
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="banner-item">
+					<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/mobile-layout/banner/banner-5.jpg"}}" alt="Banner Image" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="scroll-container">
+		{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml"}}
+	</div>
+	
+	<div class="scroll-container">
+		{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest Blog" number_of_posts="5" custom_template="Magefan_Blog::widget/latest-post-index.phtml"}}
+	</div>
+	
+	<div class="scroll-container">
+		{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list-home.phtml" title_module="New Arrivals" select_category="" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+	</div>
+	
+	<div class="scroll-container">
+		{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list-home.phtml" title_module="Bestsellers" select_category="" display_countdown="0" product_source="best_sellers" product_limitation="6"}}
+	</div>
+	
+	<div class="scroll-container lazyload-container">
+		<div class="primary-title">
+			<h2>Featured Brands</h2>
+		</div>
+		
+		<div class="scroll-block">
+			<div class="item-table">
+				<div class="item-table-cell">
+					<div class="brand-item">
+						<a href="#" title="Brand"><img src="{{media url="wysiwyg/mobile-layout/brand/brand-1.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="item-table-cell">
+					<div class="brand-item">
+						<a href="#" title="Brand"><img src="{{media url="wysiwyg/mobile-layout/brand/brand-2.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="item-table-cell">
+					<div class="brand-item">
+						<a href="#" title="Brand"><img src="{{media url="wysiwyg/mobile-layout/brand/brand-3.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="item-table-cell">
+					<div class="brand-item">
+						<a href="#" title="Brand"><img src="{{media url="wysiwyg/mobile-layout/brand/brand-1.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="item-table-cell">
+					<div class="brand-item">
+						<a href="#" title="Brand"><img src="{{media url="wysiwyg/mobile-layout/brand/brand-2.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 6</title>
+			<identifier>home-demo-06</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-6">
+	<div class="slider-home owl-carousel">
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-6/item-1.jpg"}}" alt="Slider Image" /></a></div>
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-6/item-2.jpg"}}" alt="Slider Image" /></a></div>
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-6/item-3.jpg"}}" alt="Slider Image" /></a></div>
+	</div>
+	
+	<script type="text/javascript">
+		require([
+			'jquery',
+			'owlcarousel',
+			'domReady!'
+		], function ($) {
+			jQuery(".slider-home").owlCarousel({
+				items:1,
+				autoplay:true,
+				loop:true,
+				nav : true, 
+				dots: true,
+				autoplaySpeed : 500,
+				navSpeed : 500,
+				dotsSpeed : 500,
+				autoplayHoverPause: true,
+				margin:1,
+			});	  
+		});	
+						
+	</script>
+	
+	<div class="content-index-6">
+		{{block class="Magento\\Cms\\Block\\Block" block_id="footer-services-footer"}}
+		
+		<div class="banner-home lazyload-container">
+			<div class="row-1">
+				<div class="wide-banner fl-left banner-image">
+					<a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-1-6.jpg"}}" alt="Slider Image" /></a>
+				</div>
+				
+				<div class="box-banner fl-right banner-image">
+					<a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-2-6.jpg"}}" alt="Slider Image" /></a>
+				</div>
+			</div>
+			
+			<div class="row-2">
+				<div class="box-banner fl-left banner-image">
+					<a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-3-6.jpg"}}" alt="Slider Image" /></a>
+				</div>
+				
+				<div class="wide-banner fl-right banner-image">
+					<a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-4-6.jpg"}}" alt="Slider Image" /></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="listing-tabs-wrapper">
+			{{block class="Sm\ListingTabs\Block\ListingTabs" template="Sm_ListingTabs::default.phtml"}}
+		</div>
+		
+		<div class="client-wrapper lazyload-container">
+			<div class="client-slider-fashion">
+				<div class="item">
+					<div class="client-info">
+						<div class="image-client">
+							<img class="mark-lazy" src="{{media url="wysiwyg/clients/client-1.jpg"}}" alt="Online Support" />
+						</div>
+						<h5>Johny Walker</h5>
+						<p>CEO Envato - Themeforest</p>
+					</div>
+					<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+				</div>
+				
+				<div class="item">
+					<div class="client-info">
+						<div class="image-client">
+							<img class="mark-lazy" src="{{media url="wysiwyg/clients/client-5.jpg"}}" alt="Online Support" />
+						</div>
+						<h5>Anna Johanson</h5>
+						<p>Marketing - Themeforest</p>
+					</div>
+					<div class="client-description">Consectetur adipiscing elit, lorem ipsum dolor sit amet, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+				</div>
+				
+				<div class="item">
+					<div class="client-info">
+						<div class="image-client">
+							<img class="mark-lazy" src="{{media url="wysiwyg/clients/client-2.jpg"}}" alt="Online Support" />
+						</div>
+						<h5>David Hank</h5>
+						<p>Designer Envato - Themeforest</p>
+					</div>
+					<div class="client-description">Sed do eiusmod tempor, lorem ipsum dolor sit amet, consectetur adipiscing elit<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+				</div>
+				
+				<div class="item">
+					<div class="client-info">
+						<div class="image-client">
+							<img class="mark-lazy" src="{{media url="wysiwyg/clients/client-6.jpg"}}" alt="Online Support" />
+						</div>
+						<h5>Michel Honnor</h5>
+						<p>Tester Envato - Themeforest</p>
+					</div>
+					<div class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br /> laboris nisi ut aliquip ex ea commodo consequat.</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel',
+					'domReady!'
+				], function ($) {
+					jQuery(".client-slider-fashion").owlCarousel({
+						items:1,
+						autoplay:false,
+						loop:false,
+						nav : false, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:20,
+					});	  
+				});					
+						
+			</script>
+		</div>
+		
+		<div class="slider-latest-post">
+			{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest News" number_of_posts="5" custom_template="Magefan_Blog::widget/latest-post-index6.phtml"}}
+			
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel',
+					'domReady!'
+				], function ($) {
+								jQuery(".slider-post").owlCarousel({
+									responsive:{
+										0:{
+											items:1
+										},
+										480:{
+											items:2
+										},
+										768:{
+											items:3
+										},
+										992:{
+											items:3
+										},
+										1200:{
+											items:4
+										}
+									},
+									
+									autoplay:false,
+									nav : false, 
+									dots: true,
+									autoplaySpeed : 500,
+									navSpeed : 500,
+									dotsSpeed : 500,
+									autoplayHoverPause: true,
+									margin:20,
+								});	  
+							});	
+						
+			</script>
+		</div>
+		
+		<div class="brand-list-home lazyload-container">
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-1.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-2.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-3.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-4.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-5.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-6.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-1.jpg"}}" alt="Brand Image" /></a></div>
+		</div>
+	</div>
+	
+	
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 7</title>
+			<identifier>home-demo-07</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-7">
+	<div class="banner-group">
+		<div class="col-banner">
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/img-1-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+			
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/img-2-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+		
+		<div class="col-banner">
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/img-3-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+			
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/img-4-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="services-block">
+		<ul>
+			<li>
+				<div class="box-icon"><img src="{{media url="wysiwyg/icon/sv-1.png"}}" alt="Shipping" /></div>
+				<div class="service-info">
+				<h2>Free Shipping &amp; Return</h2>
+				<p>Free shipping on orders over $49</p>
+				</div>
+			</li>
+			<li>
+				<div class="box-icon"><img src="{{media url="wysiwyg/icon/sv-2.png"}}" alt="Money Guarantee" /></div>
+				<div class="service-info">
+				<h2>Money Guarantee</h2>
+				<p>30 days money back guarantee</p>
+				</div>
+			</li>
+			<li>
+				<div class="box-icon"><img src="{{media url="wysiwyg/icon/sv-3.png"}}" alt="Online Support" /></div>
+				<div class="service-info">
+				<h2>Online Support</h2>
+				<p>We support online 24 hours a day</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="block-slider-product">
+		<div class="block-product-home product-slider-1">
+			<div class="primary-title">
+				<h2>Bestsellers</h2>
+			</div>
+			
+			<p class="short-des-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+				incididunt ut labore et dolore magna aliqua.</p>
+
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="64,65" display_countdown="0" product_source="lastest_products" product_limitation="7"}}
+			
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel'
+				], function ($) {
+					jQuery(".product-slider-1 .product-items").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:3
+							},
+							992:{
+								items:4
+							},
+							1200:{
+								items:5
+							}
+						},
+						
+						autoplay:false,
+						nav : true, 
+						dots: false,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+					});	  
+				});	
+						
+			</script>
+		</div>
+	</div>
+	
+	<div class="banner-product-slider">
+		<div class="banner-image-wrapper">
+			<div class="banner-item lazyload-container">
+				<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-1-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+		
+		<div class="product-wrapper-slider">
+			<div class="block-product-home product-slider-2">
+				<div class="primary-title">
+					<h2>Fitness & yoga</h2>
+				</div>
+				
+				<p class="short-des-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+					incididunt ut labore et dolore magna aliqua.</p>
+
+				{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="64" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+				
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".product-slider-2 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:3
+								},
+								1200:{
+									items:3
+								}
+							},
+							
+							autoplay:false,
+							nav : false, 
+							dots: true,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:20,
+						});	  
+					});	
+							
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="banner-product-slider product-left">
+		<div class="banner-image-wrapper">
+			<div class="banner-item lazyload-container">
+				<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-2-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+		
+		<div class="product-wrapper-slider">
+			<div class="block-product-home product-slider-3">
+				<div class="primary-title">
+					<h2>Football & Tennis</h2>
+				</div>
+				
+				<p class="short-des-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+					incididunt ut labore et dolore magna aliqua.</p>
+
+				{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="65" display_countdown="0" product_source="featured_products" product_limitation="6"}}
+				
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".product-slider-3 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:3
+								},
+								1200:{
+									items:3
+								}
+							},
+							
+							autoplay:false,
+							nav : false, 
+							dots: true,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:20,
+						});	  
+					});	
+							
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="categories-slider-wrapper lazyload-container">
+		<div class="categories-slider">
+			<div class="item">
+				<div class="image-box">
+					<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-1-7.jpg"}}" alt="Banner Image" /></a>
+				</div>
+				
+				<h3><a href="Clothings" title="Clothings">Clothings</a></h3>
+			</div>
+			
+			<div class="item">
+				<div class="image-box">
+					<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-2-7.jpg"}}" alt="Banner Image" /></a>
+				</div>
+				
+				<h3><a href="#" title="Bag & BackPack">Bag & BackPack</a></h3>
+			</div>
+			
+			<div class="item">
+				<div class="image-box">
+					<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-3-7.jpg"}}" alt="Banner Image" /></a>
+				</div>
+				
+				<h3><a href="#" title="Shoes">Shoes</a></h3>
+			</div>
+			
+			<div class="item">
+				<div class="image-box">
+					<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-4-7.jpg"}}" alt="Banner Image" /></a>
+				</div>
+				
+				<h3><a href="#" title="Gym Equipment ">Gym Equipment </a></h3>
+			</div>
+			
+			<div class="item">
+				<div class="image-box">
+					<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-5-7.jpg"}}" alt="Banner Image" /></a>
+				</div>
+				
+				<h3><a href="#" title="Accessories">Accessories</a></h3>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+				jQuery(".categories-slider").owlCarousel({
+					responsive:{
+						0:{
+							items:1
+						},
+						480:{
+							items:2
+						},
+						768:{
+							items:4
+						},
+						992:{
+							items:3
+						},
+						1200:{
+							items:5
+						}
+					},
+					
+					autoplay:false,
+					nav : false, 
+					dots: false,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:30,
+				});	  
+			});	
+					
+		</script>
+	</div>
+	
+	<div class="brand-wrapper lazyload-container">
+		<div class="brand-slider">
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-1-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-2-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-3-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-4-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-5-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-1-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-2-7.jpg"}}" alt="Brand Image" /></a></div>
+			<div class="item"><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-3-7.jpg"}}" alt="Brand Image" /></a></div>
+		</div>
+	</div>
+	
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 8</title>
+			<identifier>home-demo-08</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-8">
+	<div class="slider-home owl-carousel">
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-8/item-1.jpg"}}" alt="Slider Image" /></a></div>
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-8/item-2.jpg"}}" alt="Slider Image" /></a></div>
+		<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-8/item-3.jpg"}}" alt="Slider Image" /></a></div>
+	</div>
+	<script type="text/javascript">
+		require([
+			'jquery',
+			'owlcarousel'
+		], function ($) {
+			jQuery(".slider-home").owlCarousel({
+				items:1,
+				autoplay:true,
+				loop:true,
+				nav : true, 
+				dots: false,
+				autoplaySpeed : 500,
+				navSpeed : 500,
+				dotsSpeed : 500,
+				autoplayHoverPause: true,
+				margin:1,
+			});	  
+		});	
+						
+	</script>
+	
+	<div class="container">
+		<div class="services-list-small">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="item">
+						<div class="image-services">
+							<img src="{{media url="wysiwyg/icon/sv-1-8.png"}}" alt="Services Image" />
+						</div>
+						
+						<div class="info-services">
+							<h3>Free Shipping on Orders Over $99</h3>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="item">
+						<div class="image-services">
+							<img src="{{media url="wysiwyg/icon/sv-2-8.png"}}" alt="Services Image" />
+						</div>
+						
+						<div class="info-services">
+							<h3>30 Days Money Back Guarantee</h3>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="item">
+						<div class="image-services">
+							<img src="{{media url="wysiwyg/icon/sv-3-8.png"}}" alt="Services Image" />
+						</div>
+						
+						<div class="info-services">
+							<h3>Support Online 24/24 On Day</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="deal-slider-wrapper">
+		<div class="container">
+			<div class="primary-title">
+				<h2>Deals Of The Day</h2>
+			</div>
+			
+			<p class="short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+			incididunt ut labore et dolore magna aliqua.</p>
+			
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-deal3.phtml" title_module="" select_category="67,68,69,70,71,72" display_countdown="1" product_source="special_products" product_limitation="6"}}
+		</div>
+		
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+				jQuery(".deal-slider-wrapper .product-items").owlCarousel({
+					responsive:{
+						0:{
+							items:1
+						},
+						480:{
+							items:1
+						},
+						768:{
+							items:1
+						},
+						992:{
+							items:2
+						},
+						1200:{
+							items:2
+						}
+					},
+					
+					autoplay:false,
+					nav : false, 
+					dots: true,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:30,
+				});	  
+			});	
+					
+		</script>
+	</div>
+	
+	<div class="collection-categories lazyload-container">
+		<div class="container">
+			<div class="primary-title">
+				<h2>Our Collections</h2>
+			</div>
+			
+			<p class="short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+			incididunt ut labore et dolore magna aliqua.</p>
+			
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-4 item-cat">
+					<div class="item">
+						<div class="box-image">
+							<a href="#" title="Men Watches"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-1-8.jpg"}}" alt="Category Image" /></a>
+						</div>
+						
+						<h3><a href="#" title="Men Watches">Men Watches</a></h3>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-4 item-cat">
+					<div class="item">
+						<div class="box-image">
+							<a href="#" title="Men Watches"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-2-8.jpg"}}" alt="Category Image" /></a>
+						</div>
+						
+						<h3><a href="#" title="Women Watches">Women watches</a></h3>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-4 item-cat">
+					<div class="item">
+						<div class="box-image">
+							<a href="#" title="Men Watches"><img class="mark-lazy" src="{{media url="wysiwyg/categories/cat-3-8.jpg"}}" alt="Category Image" /></a>
+						</div>
+						
+						<h3><a href="#" title="Luxury Watches">Luxury Watches</a></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="brand-list lazyload-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-4 col-6">
+					<div class="item">
+						<a href="#" title="Brand Image"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-7.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-6">
+					<div class="item">
+						<a href="#" title="Brand Image"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-8.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-6">
+					<div class="item">
+						<a href="#" title="Brand Image"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-9.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-6">
+					<div class="item">
+						<a href="#" title="Brand Image"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-10.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-6">
+					<div class="item">
+						<a href="#" title="Brand Image"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-11.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-6">
+					<div class="item">
+						<a href="#" title="Brand Image"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-12.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="listing-tabs-wrapper">
+		<div class="container">
+			<div class="primary-title">
+				<h2>Bestsellers</h2>
+			</div>
+			<p class="short-description">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+				<br>
+				incididunt ut labore et dolore magna aliqua.
+			</p>
+			
+			{{block class="Sm\ListingTabs\Block\ListingTabs" template="Sm_ListingTabs::default.phtml" type_filter="categories" category_tabs="67,68,69,70,71,72"}}
+		</div>
+	</div>
+	
+	<div class="latest-post-wrapper">
+		<div class="container">
+			<div class="primary-title">
+				<h2>Latest Post</h2>
+			</div>
+			
+			<p class="short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+			incididunt ut labore et dolore magna aliqua.</p>
+			
+			{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest Blog" number_of_posts="8" custom_template="Magefan_Blog::widget/latest-post-index8.phtml"}}
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel'
+				], function ($) {
+					jQuery(".latest-post-slider").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:3
+							},
+							992:{
+								items:4
+							},
+							1200:{
+								items:4
+							}
+						},
+						
+						autoplay:false,
+						nav : false, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+					});	  
+				});	
+						
+			</script>
+		</div>
+	</div>
+	
+	
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 9</title>
+			<identifier>home-demo-09</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-9">
+	<div class="slider-full">
+		<div class="owl-carousel slider-home">
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-9/item-1.jpg"}}" alt="Slider Image" /></a></div>
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-9/item-2.jpg"}}" alt="Slider Image" /></a></div>
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-9/item-3.jpg"}}" alt="Slider Image" /></a></div>
+		</div>
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+				jQuery(".slider-full .slider-home").owlCarousel({
+					items:1,
+					autoplay:true,
+					loop:true,
+					nav : true, 
+					dots: true,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:1,
+				});	  
+			});	
+				
+		</script>
+	</div>
+	
+	<div class="categories-slider-container lazyload-container">
+		<div class="owl-carousel cat-slider">
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/id-9-cat-1.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<a href="#" title="Sofa & chairs">Sofa & chairs</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/id-9-cat-2.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<a href="#" title="Furniture & Decor">Furniture & Decor</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/id-9-cat-3.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<a href="#" title="Lamp & Lighting">Lamp & Lighting</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/id-9-cat-4.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<a href="#" title="Sound & Life">Sound & Life</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/id-9-cat-5.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<a href="#" title="Appliances">Appliances</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/categories/id-9-cat-1.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<a href="#" title="Sofa & chairs">Sofa & chairs</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+				jQuery(".cat-slider").owlCarousel({
+					responsive:{
+						0:{
+							items:1
+						},
+						480:{
+							items:2
+						},
+						768:{
+							items:3
+						},
+						992:{
+							items:4
+						},
+						1200:{
+							items:5
+						}
+					},
+					
+					autoplay:false,
+					nav : true, 
+					dots: false,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:30,
+				});	  
+			});	
+								
+		</script>
+	</div>
+	
+	<div class="product-wrapper">
+		<div class="container">
+			<div class="title-block-home">
+				<h2>Featured Products</h2>
+			</div>
+			<p class="short-description-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />incididunt ut labore et dolore magna aliqua.</p>
+			<div class="product-slider-1">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="75,76,77,78,79,80" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel'
+				], function ($) {
+					jQuery(".product-slider-1 .product-items").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:3
+							},
+							992:{
+								items:3
+							},
+							1200:{
+								items:4
+							}
+						},
+						
+						autoplay:false,
+						nav : true, 
+						dots: false,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+					});	  
+				});	
+							
+			</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="deal-container-group">
+		<div class="container">
+			<div class="deal-content">
+				{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-deal-group.phtml" title_module="Deals Of The Week" select_category="75,76,77,78,79,80" display_countdown="1" product_source="special_products" product_limitation="6"}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="banner-container lazyload-container clearfix">
+			<div class="banner-row">
+				<div class="banner-left banner-image">
+					<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-9-banner-1.jpg"}}" alt="Category Image" /></a>
+				</div>
+				
+				<div class="banner-right banner-image">
+					<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-9-banner-2.jpg"}}" alt="Category Image" /></a>
+				</div>
+			</div>
+			
+			<div class="banner-row">
+				<div class="banner-left banner-image">
+					<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-9-banner-3.jpg"}}" alt="Category Image" /></a>
+				</div>
+				
+				<div class="banner-right banner-image">
+					<a title="Category Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-9-banner-4.jpg"}}" alt="Category Image" /></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="bottom-products clearfix">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list2.phtml" title_module="New Arrivals" select_category="75,76,77,78,79,80" display_countdown="0" product_source="lastest_products" product_limitation="3"}}</div>
+				<div class="col-lg-4 col-md-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list2.phtml" title_module="Bestsellers" select_category="75,76,77,78,79,80" display_countdown="0" product_source="best_sellers" product_limitation="3"}}</div>
+				<div class="col-lg-4 col-md-6">{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list2.phtml" title_module="Featured" select_category="75,76,77,78,79,80" display_countdown="0" product_source="featured_products" product_limitation="3"}}</div>
+			</div>
+		</div>
+		
+		<div class="slider-brand-content lazyload-container">
+			<div class="owl-carousel slider-brand">
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-7.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-8.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-9.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-10.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-11.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-12.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-7.jpg"}}" alt="Slider Image" /></a></div>
+				<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-8.jpg"}}" alt="Slider Image" /></a></div>
+			</div>
+			
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel'
+				], function ($) {
+					jQuery(".slider-brand").owlCarousel({
+						responsive:{
+							0:{
+								items:2
+							},
+							480:{
+								items:3
+							},
+							768:{
+								items:5
+							},
+							992:{
+								items:5
+							},
+							1200:{
+								items:6
+							}
+						},
+						
+						autoplay:false,
+						nav : true, 
+						dots: false,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+					});	  
+				});	
+			</script>
+		</div>
+	</div>
+	
+	<div class="client-container">
+		<div class="container">
+			<div class="client-content">
+				<div class="title-block-home">
+					<h2>What Our Clients Say?</h2>
+				</div>
+				
+				<div class="owl-carousel clientsay-slider">
+					<div class="item">
+						<p class="client-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+							incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br>
+							laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						
+						<p class="client-name">Johny Walker</p>
+						<p class="client-job">CEO Envato - Themeforest</p>
+					</div>
+					
+					<div class="item">
+						<p class="client-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+							incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br>
+							laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						
+						<p class="client-name">Johny Walker</p>
+						<p class="client-job">CEO Envato - Themeforest</p>
+					</div>
+					
+					<div class="item">
+						<p class="client-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+							incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br>
+							laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						
+						<p class="client-name">Johny Walker</p>
+						<p class="client-job">CEO Envato - Themeforest</p>
+					</div>
+					
+					<div class="item">
+						<p class="client-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+							incididunt ut laboreet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco<br>
+							laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						
+						<p class="client-name">Johny Walker</p>
+						<p class="client-job">CEO Envato - Themeforest</p>
+					</div>
+				</div>
+				
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".clientsay-slider").owlCarousel({
+							items:1,
+							autoplay:true,
+							loop:true,
+							nav : false, 
+							dots: true,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:30,
+						});	  
+					});	
+						
+				</script>
+			</div>
+		</div>
+	</div>
+
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 10</title>
+			<identifier>home-demo-10</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-10">
+	<div class="slider-full">
+		<div class="owl-carousel slider-home">
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-10/item-1.jpg"}}" alt="Slider Image" /></a></div>
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-10/item-2.jpg"}}" alt="Slider Image" /></a></div>
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-10/item-3.jpg"}}" alt="Slider Image" /></a></div>
+		</div>
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+				jQuery(".slider-full .slider-home").owlCarousel({
+					items:1,
+					autoplay:true,
+					loop:true,
+					nav : true, 
+					dots: true,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:1,
+				});	  
+			});	
+				
+		</script>
+	</div>
+	
+	<div class="tab-product-container">
+		{{block class="Sm\ListingTabs\Block\ListingTabs" template="Sm_ListingTabs::default.phtml"}}
+	</div>
+	
+	<div class="brand-full lazyload-container clearfix">
+		<ul>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-1.jpg"}}" alt="Brand Image" /></a></li>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-2.jpg"}}" alt="Brand Image" /></a></li>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-3.jpg"}}" alt="Brand Image" /></a></li>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-4.jpg"}}" alt="Brand Image" /></a></li>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-5.jpg"}}" alt="Brand Image" /></a></li>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-6.jpg"}}" alt="Brand Image" /></a></li>
+			<li><a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/id10-brand-7.jpg"}}" alt="Brand Image" /></a></li>
+		</ul>
+	</div>
+	
+	<div class="newsletter-container">
+		<div class="container">
+			<div class="newsletter-content">
+				<div class="title-block-home">
+					<h2>Sign Up Newsletter</h2>
+				</div>
+				
+				<p class="block-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>incididunt ut laboreet dolore magna aliqua.</p>
+				
+				{{block class="Magento\Newsletter\Block\Subscribe" template="subscribe-home.phtml"}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="post-container">
+		<div class="post-content">
+			<div class="title-block-home">
+				<h2>Latest News</h2>
+			</div>
+
+			{{widget type="Magefan\Blog\Block\Widget\Recent" number_of_posts="4" custom_template="Magefan_Blog::widget/latest-post-index10.phtml"}}
+		</div>
+	</div>
+	
+	<div class="itg-full">
+		{{block class="Sm\InstagramGallery\Block\InstagramGallery" template="Sm_InstagramGallery::default.phtml"}}
+	</div>
+	
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 11</title>
+			<identifier>home-demo-11</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-11">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-9 offset-xl-3">
+				<div class="slider-home-content">
+					<div class="slider-home owl-carousel">
+						<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-11/item-1.jpg"}}" alt="Slider Image" /></a></div>
+						<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-11/item-2.jpg"}}" alt="Slider Image" /></a></div>
+						<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-11/item-3.jpg"}}" alt="Slider Image" /></a></div>
+					</div>
+					<script type="text/javascript">
+						require([
+							'jquery',
+							'owlcarousel'
+						], function ($) {
+							jQuery(".slider-home").owlCarousel({
+								items:1,
+								autoplay:true,
+								loop:true,
+								nav : true, 
+								dots: true,
+								autoplaySpeed : 500,
+								navSpeed : 500,
+								dotsSpeed : 500,
+								autoplayHoverPause: true,
+								margin:1,
+							});	 
+						});	
+										
+					</script>
+				</div>
+				
+				<div class="services-block-top">
+					<ul>
+						<li>
+						<div class="box-icon"><img src="{{media url="wysiwyg/icon/id-11-sv-1.png"}}" alt="Shipping" /></div>
+						<div class="service-info">
+						<h2>Free Shipping</h2>
+						<p>on all orders over $49</p>
+						</div>
+						</li>
+						<li>
+						<div class="box-icon"><img src="{{media url="wysiwyg/icon/id-11-sv-2.png"}}" alt="Money Guarantee" /></div>
+						<div class="service-info">
+						<h2>Money Guarantee</h2>
+						<p>30 days money back</p>
+						</div>
+						</li>
+						<li>
+						<div class="box-icon"><img src="{{media url="wysiwyg/icon/id-11-sv-3.png"}}" alt="Online Support" /></div>
+						<div class="service-info">
+						<h2>Online Support</h2>
+						<p>24/24h on day</p>
+						</div>
+						</li>
+						<li>
+						<div class="box-icon"><img src="{{media url="wysiwyg/icon/id-11-sv-4.png"}}" alt="Online Support" /></div>
+						<div class="service-info">
+						<h2>Gift Promotion</h2>
+						<p>money back guarantee</p>
+						</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="group-filter deal-slider-group clearfix">
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-deal4.phtml" title_module="Daily Deals" select_category="88,89,90,91,92,93,94,95,96,97,99,100,101,102,103,104,105,106,107,108,75,76,77,78,79,80,111,112,113,114,115,116,117,118,119,120" display_countdown="0" product_source="countdown_products" date_to="11/30/2019" product_limitation="10"}}
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel'
+				], function ($) {
+					jQuery(".deal-slider-group .product-items").owlCarousel({
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:3
+							},
+							992:{
+								items:4
+							},
+							1200:{
+								items:5
+							}
+						},
+						
+						autoplay:false,
+						nav : false, 
+						dots: true,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:0,
+					});	  
+				});	
+						
+			</script>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="group-filter slider-product-row slider-group-1 color-1 clearfix">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-slider-row.phtml" title_module="New Arrivals" select_category="88,89,90,91,92,93,94,95,96,97,99,100,101,102,103,104,105,106,107,108,75,76,77,78,79,80,111,112,113,114,115,116,117,118,119,120" display_countdown="0" product_source="lastest_products" product_limitation="12"}}
+					<script type="text/javascript">
+						require([
+							'jquery',
+							'owlcarousel'
+						], function ($) {
+							jQuery(".slider-group-1 .product-items").owlCarousel({
+								responsive:{
+									0:{
+										items:1
+									},
+									480:{
+										items:1
+									},
+									768:{
+										items:1
+									},
+									992:{
+										items:1
+									},
+									1200:{
+										items:1
+									}
+								},
+								
+								autoplay:false,
+								nav : true, 
+								dots: true,
+								autoplaySpeed : 500,
+								navSpeed : 500,
+								dotsSpeed : 500,
+								autoplayHoverPause: true,
+								margin:0,
+							});	 
+						});	
+								
+					</script>
+				</div>
+			</div>
+			
+			<div class="col-lg-4">
+				<div class="group-filter slider-product-row slider-group-2 color-2 clearfix">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-slider-row.phtml" title_module="Featured" select_category="88,89,90,91,92,93,94,95,96,97,99,100,101,102,103,104,105,106,107,108,75,76,77,78,79,80,111,112,113,114,115,116,117,118,119,120" display_countdown="0" product_source="featured_products" product_limitation="12"}}
+					<script type="text/javascript">
+						require([
+							'jquery',
+							'owlcarousel'
+						], function ($) {
+							jQuery(".slider-group-2 .product-items").owlCarousel({
+								responsive:{
+									0:{
+										items:1
+									},
+									480:{
+										items:1
+									},
+									768:{
+										items:1
+									},
+									992:{
+										items:1
+									},
+									1200:{
+										items:1
+									}
+								},
+								
+								autoplay:false,
+								nav : true, 
+								dots: true,
+								autoplaySpeed : 500,
+								navSpeed : 500,
+								dotsSpeed : 500,
+								autoplayHoverPause: true,
+								margin:0,
+							});	 
+						});	
+								
+					</script>
+				</div>
+			</div>
+			
+			<div class="col-lg-4">
+				<div class="group-filter slider-product-row slider-group-3 color-3 clearfix">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-slider-row.phtml" title_module="Best Sellers" select_category="88,89,90,91,92,93,94,95,96,97,99,100,101,102,103,104,105,106,107,108,75,76,77,78,79,80,111,112,113,114,115,116,117,118,119,120" display_countdown="0" product_source="best_sellers" product_limitation="12"}}
+					<script type="text/javascript">
+						require([
+							'jquery',
+							'owlcarousel'
+						], function ($) {
+							jQuery(".slider-group-3 .product-items").owlCarousel({
+								responsive:{
+									0:{
+										items:1
+									},
+									480:{
+										items:1
+									},
+									768:{
+										items:1
+									},
+									992:{
+										items:1
+									},
+									1200:{
+										items:1
+									}
+								},
+								
+								autoplay:false,
+								nav : true, 
+								dots: true,
+								autoplaySpeed : 500,
+								navSpeed : 500,
+								dotsSpeed : 500,
+								autoplayHoverPause: true,
+								margin:0,
+							});	 	 
+						});	
+								
+					</script>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner-group lazyload-container clearfix">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="banner-item">
+						<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-11-banner-1.jpg"}}" alt="Banner Image" /></a>
+						<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-11-banner-2.jpg"}}" alt="Banner Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="banner-item">
+						<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-11-banner-3.jpg"}}" alt="Banner Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="banner-item">
+						<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-11-banner-4.jpg"}}" alt="Banner Image" /></a>
+						<a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/id-11-banner-5.jpg"}}" alt="Banner Image" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="filter-subcat color-1">
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid-subcat.phtml" title_module="Women's Fashion" blockone="banner-slider-1" blocktwo="banner-product-1" select_category="88,89,90,91,92,93,94,95,96,97" display_countdown="0" product_source="lastest_products" product_limitation="4"}}
+		</div>
+		
+		<div class="filter-subcat color-2">
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid-subcat.phtml" title_module="Digital & Electronics" blockone="banner-slider-2" blocktwo="banner-product-2" select_category="99,100,101,102,103,104,105,106,107,108" display_countdown="0" product_source="lastest_products" product_limitation="4"}}
+		</div>
+		
+		<div class="filter-subcat color-3">
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid-subcat.phtml" title_module="Furniture & Decor" blockone="banner-slider-3" blocktwo="banner-product-3" select_category="75,76,77,78,79,80" display_countdown="0" product_source="lastest_products" product_limitation="4"}}
+		</div>
+		
+		<div class="filter-subcat color-4">
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid-subcat.phtml" title_module="Toys, Kids & Baby" blockone="banner-slider-4" blocktwo="banner-product-4" select_category="111,112,113,114,115,116,117,118,119,120" display_countdown="0" product_source="lastest_products" product_limitation="4"}}
+		</div>
+		
+		<div class="bottom-products">
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid2.phtml" title_module="Recommended Products" select_category="88,89,90,91,92,93,94,95,96,97,99,100,101,102,103,104,105,106,107,108,75,76,77,78,79,80,111,112,113,114,115,116,117,118,119,120" display_countdown="0" product_source="lastest_products" product_limitation="10"}}
+		</div>
+		
+	</div>
+	
+	<div class="brand-full-container lazyload-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-md-4 col-6">
+					<div class="brand-content">
+						<a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-1.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-6">
+					<div class="brand-content">
+						<a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-2.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-6">
+					<div class="brand-content">
+						<a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-3.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-6">
+					<div class="brand-content">
+						<a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-4.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-6">
+					<div class="brand-content">
+						<a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-5.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-6">
+					<div class="brand-content">
+						<a title="Brand Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/brand-6.jpg"}}" alt="Brand Image" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="latest-post-wrapper">
+			{{widget type="Magefan\Blog\Block\Widget\Recent" title="Latest Blog" number_of_posts="4" custom_template="Magefan_Blog::widget/latest-post-index11.phtml"}}
+		</div>
+	</div>
+	
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sm Themecore - Responsive Magento Theme - Layout 12</title>
+			<identifier>home-demo-12</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style-12">
+	<div class="slider-home-content">
+		<div class="slider-home owl-carousel">
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-12/item-1.jpg"}}" alt="Slider Image" /></a></div>
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-12/item-2.jpg"}}" alt="Slider Image" /></a></div>
+			<div class="item"><a title="Slider Image" href="#"><img src="{{media url="wysiwyg/slider/home-12/item-3.jpg"}}" alt="Slider Image" /></a></div>
+		</div>
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+				jQuery(".slider-home").owlCarousel({
+					items:1,
+					autoplay:true,
+					loop:true,
+					nav : true, 
+					dots: true,
+					autoplaySpeed : 500,
+					navSpeed : 500,
+					dotsSpeed : 500,
+					autoplayHoverPause: true,
+					margin:1,
+				});	 
+			});	
+							
+		</script>
+	</div>
+	
+	<div class="hot-categories clearfix">
+		<div class="title-home">Choose Categories</div>
+		<p class="block-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br/>incididunt ut labore et dolore magna aliqua.</p>
+		
+		<div class="list-categories clearfix">
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/categories/cat-1.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<h2><a href="#">Smartphone</a></h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/categories/cat-2.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<h2><a href="#">Camera & Lens</a></h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/categories/cat-3.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<h2><a href="#">Smart Watch</a></h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/categories/cat-4.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<h2><a href="#">Headphone</a></h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="cat-inner">
+					<div class="image-cat">
+						<a title="Slider Image" href="#"><img src="{{media url="wysiwyg/categories/cat-5.jpg"}}" alt="Category Image" /></a>
+					</div>
+					
+					<div class="info-cat">
+						<h2><a href="#">Audio & Speaker</a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="block-code clearfix">
+		<div class="container">
+			<span>Welcome to Themecore !</span> Wrap new offers / gift every single day on Weekends - New Coupon code: T0mly811
+		</div>
+	</div>
+	
+	<div class="grid-hot-products clearfix">
+		<div class="container">
+			<div class="title-home">Bestsellers</div>
+			<p class="block-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br/>incididunt ut labore et dolore magna aliqua.</p>
+			
+			{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid-hot.phtml" title_module="" select_category="22,12,18" display_countdown="0" product_source="lastest_products" product_limitation="5"}}
+		</div>
+	</div>
+	
+	<div class="banner-group clearfix">
+		<div class="list-banner">
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-1.jpg"}}" alt="Banner Image" /></a>
+			</div>
+			
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-2.jpg"}}" alt="Banner Image" /></a>
+			</div>
+			
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-3.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-wrapper">
+		<div class="container">
+			<div class="title-home">
+				<span>Smartphone & Tablet</span>
+			</div>
+			
+			<div class="product-slider-1">
+				<div class="slider-content">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="12" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+				</div>
+				
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".product-slider-1 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:4
+								},
+								1200:{
+									items:5
+								}
+							},
+							
+							autoplay:false,
+							nav : true, 
+							dots: false,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:20,
+						});	  
+					});	
+								
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="banner-group-two clearfix">
+		<div class="container">
+			<div class="list-banner">
+				<div class="item">
+					<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-4.jpg"}}" alt="Banner Image" /></a>
+				</div>
+				
+				<div class="item">
+					<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-5.jpg"}}" alt="Banner Image" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-wrapper">
+		<div class="container">
+			<div class="title-home">
+				<span>Headphone & Speaker</span>
+			</div>
+			
+			<div class="product-slider-2">
+				<div class="slider-content">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="18" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+				</div>
+				
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".product-slider-2 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:4
+								},
+								1200:{
+									items:5
+								}
+							},
+							
+							autoplay:false,
+							nav : true, 
+							dots: false,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:20,
+						});	  
+					});	
+								
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="banner-one clearfix">
+		<div class="container">
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-6.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="product-wrapper">
+		<div class="container">
+			<div class="title-home">
+				<span>Homeware & Electronics</span>
+			</div>
+			
+			<div class="product-slider-2">
+				<div class="slider-content">
+					{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-grid.phtml" title_module="" select_category="22" display_countdown="0" product_source="lastest_products" product_limitation="6"}}
+				</div>
+				
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".product-slider-2 .product-items").owlCarousel({
+							responsive:{
+								0:{
+									items:1
+								},
+								480:{
+									items:2
+								},
+								768:{
+									items:3
+								},
+								992:{
+									items:4
+								},
+								1200:{
+									items:5
+								}
+							},
+							
+							autoplay:false,
+							nav : true, 
+							dots: false,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:20,
+						});	  
+					});	
+								
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="banner-one clearfix">
+		<div class="container">
+			<div class="item">
+				<a title="Banner Image" href="#"><img src="{{media url="wysiwyg/banner-image/item-7.jpg"}}" alt="Banner Image" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="brand-container">
+		<div class="container">
+			<div class="title-home"><span>Featured Brands</span></div>
+		
+			<div class="slider-content">
+				<div class="slider-brand lazyload-container">
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-1.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-2.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-3.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-4.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-5.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-6.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-1.jpg"}}" alt="Slider Brand" /></a></div>
+					<div class="item"><a title="Brand Item" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/brand-slider/item-2.jpg"}}" alt="Slider Brand" /></a></div>
+				</div>
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'owlcarousel'
+					], function ($) {
+						jQuery(".slider-brand").owlCarousel({
+							responsive:{
+								0:{
+									items:2
+								},
+								480:{
+									items:3
+								},
+								768:{
+									items:5
+								},
+								992:{
+									items:6
+								},
+								1200:{
+									items:6
+								}
+							},
+							
+							autoplay:false,
+							loop:false,
+							nav : true, 
+							dots: false,
+							autoplaySpeed : 500,
+							navSpeed : 500,
+							dotsSpeed : 500,
+							autoplayHoverPause: true,
+							margin:25,
+						});	  
+					});	
+				</script>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="slider-latest-post">
+		<div class="container">
+			<div class="title-home">Latest Blogs</div>
+			<p class="block-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br/>incididunt ut labore et dolore magna aliqua.</p>
+			
+			{{widget type="Magefan\Blog\Block\Widget\Recent" number_of_posts="3" custom_template="Magefan_Blog::widget/latest-post-index12.phtml"}}
+		</div>
+	</div>
+	
+	<div class="services-bottom">
+		<div class="container">
+			<div class="list-services">
+				<div class="row">
+					<div class="col-lg-3 col-3">
+						<div class="item">
+							<div class="sv-image">
+								<img class="mark-lazy" src="{{media url="wysiwyg/icon/ico-white-1.png"}}" alt="Service Image" />
+							</div>
+							
+							<div class="sv-info">
+								<div class="sv-title"><a href="#">Free Shipping</a></div>
+								<p class="sv-des">on all orders over $49</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-3">
+						<div class="item">
+							<div class="sv-image">
+								<img class="mark-lazy" src="{{media url="wysiwyg/icon/ico-white-2.png"}}" alt="Service Image" />
+							</div>
+							
+							<div class="sv-info">
+								<div class="sv-title"><a href="#">Money Guarantee</a></div>
+								<p class="sv-des">30 days money back</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-3">
+						<div class="item">
+							<div class="sv-image">
+								<img class="mark-lazy" src="{{media url="wysiwyg/icon/ico-white-3.png"}}" alt="Service Image" />
+							</div>
+							
+							<div class="sv-info">
+								<div class="sv-title"><a href="#">Online Support</a></div>
+								<p class="sv-des">24/24h on day</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-3">
+						<div class="item">
+							<div class="sv-image">
+								<img class="mark-lazy" src="{{media url="wysiwyg/icon/ico-white-4.png"}}" alt="Service Image" />
+							</div>
+							
+							<div class="sv-info">
+								<div class="sv-title"><a href="#">Gift Promotion</a></div>
+								<p class="sv-des">money back guarantee</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+	</pages>
+</root>

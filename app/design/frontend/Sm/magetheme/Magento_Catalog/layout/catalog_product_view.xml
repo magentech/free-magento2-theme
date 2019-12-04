@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="page.main.title" destination="product.info.main" before="-"/>
+
+        <referenceBlock name="catalog.product.related" remove="true"/>
+        <referenceBlock name="product.info.upsell" remove="true"/>
+
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Cms\Block\Block" name="product-sidebar" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">product-sidebar</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Cms\Block\Block" name="banner-sidebar" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">banner-sidebar</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="content.aside">
+            <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related.theme"
+                   template="Magento_Catalog::product/list/items-slider.phtml"
+                   ifconfig="themecore/product_detail/related_upsell_group/show_related">
+                <arguments>
+                    <argument name="type" xsi:type="string">related</argument>
+                </arguments>
+                <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="related.product.addto"
+                       as="addto">
+                    <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                           name="related.product.addto.compare" as="compare"
+                           template="Magento_Catalog::product/list/addto/compare.phtml"/>
+                </block>
+            </block>
+            <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell.theme"
+                   template="Magento_Catalog::product/list/items-slider.phtml"
+                   ifconfig="themecore/product_detail/related_upsell_group/show_upsell">
+                <arguments>
+                    <argument name="type" xsi:type="string">upsell</argument>
+                </arguments>
+                <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="upsell.product.addto"
+                       as="addto">
+                    <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                           name="upsell.product.addto.compare" as="compare"
+                           template="Magento_Catalog::product/list/addto/compare.phtml"/>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

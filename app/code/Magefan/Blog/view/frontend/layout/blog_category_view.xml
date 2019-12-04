@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="blog_default"/>
+    <update handle="blog_post_list"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magefan\Blog\Block\Category\Info" name="blog.posts.info" template="Magefan_Blog::category/info.phtml" before="blog.posts.list" />
+            <block class="Magefan\Blog\Block\Category\SubCategoryLinks" name="blog.category.subcategory.links" template="Magefan_Blog::category/subcategory-links.phtml"  before="blog.posts.list" />
+            <block class="Magefan\Blog\Block\Category\PostLinks" name="blog.posts.links" template="Magefan_Blog::post/links.phtml"  before="blog.posts.list" />
+            <block class="Magefan\Blog\Block\Category\PostList" name="blog.posts.list" template="Magefan_Blog::post/list.phtml" />
+        </referenceContainer>
+    </body>
+</page>

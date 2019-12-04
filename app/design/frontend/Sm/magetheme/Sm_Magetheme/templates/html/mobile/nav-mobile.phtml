@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+
+<?php
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menu        = $block->getHtml('level-top', 'submenu', $columnsLimit);
+$_config      = $this->helper('Sm\Themecore\Helper\Data');
+$menuType     = $_config->getGeneral('navigation_group/menu_style');
+?>
+
+<div class="nav-mobile-container sidebar-type">
+    <nav id="navigation-mobile" class="navigation-mobile">
+        <?php if ($menuType == 'css') { ?>
+            <ul class="nav-cssmenu">
+                <?php /* @escapeNotVerified */
+                echo $_menu; ?>
+            </ul>
+        <?php } ?>
+    </nav>
+</div>
+
+

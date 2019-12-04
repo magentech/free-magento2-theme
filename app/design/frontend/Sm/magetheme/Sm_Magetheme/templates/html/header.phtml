@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+
+$_config     = $this->helper('Sm\Magetheme\Helper\Data');
+$_configCore = $this->helper('Sm\Themecore\Helper\Data');
+$headerStyle = $_config->getThemeLayout('header_style');
+$mediaSrc    = $_config->getMediaUrl();
+$logoMobile  = $_configCore->getGeneral('mobile_layout/logo_mobile');
+$menuType    = $_configCore->getGeneral('navigation_group/menu_style');
+$breakPoint  = $_configCore->getGeneral('mobile_layout/mobile_break_point');
+?>
+<header class="page-header">
+    <?php
+    include($block->getTemplateFile("Sm_Magetheme::html/header-style/" . $headerStyle . ".phtml"));
+    include($block->getTemplateFile("Sm_Magetheme::html/header-mobile.phtml"));
+    ?>
+</header>
+
+<div class="nav-overlay"><span class="hidden"><?php echo __('Overlay'); ?></span></div>

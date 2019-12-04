@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<root>
+	<config>
+		<web>
+			<default>
+				<cms_home_page>home-demo-01</cms_home_page>
+				<cms_no_route>no-route</cms_no_route>
+			</default>
+		</web>
+		<cms>
+			<wysiwyg>
+				<enabled>hidden</enabled>
+			</wysiwyg>
+		</cms>
+		<cartquickpro>
+			<general>
+				<isenabled>1</isenabled>
+				<select_type>both</select_type>
+				<product_container>.product-items .product-item .item-inner</product_container>
+				<button_container>.actions-secondary,.button-top</button_container>
+				<label_button>Quick view</label_button>
+				<countdown_number>9</countdown_number>
+			</general>
+		</cartquickpro>
+		<categoriesmenu>
+			<general>
+				<isenabled>1</isenabled>
+				<title_module>All Categories</title_module>
+			</general>
+			<source>
+				<select_category>149,150,151,152,163,164,165,166,168,169,170,167,153,154,155,156,157,158,159,160,161</select_category>
+				<max_depth>10</max_depth>
+				<visible_category>8</visible_category>
+			</source>
+		</categoriesmenu>
+		<themecore>
+			<general>
+				<theme_color>42CDAC</theme_color>
+				<layout_style>wide</layout_style>
+				<max_width>1170</max_width>
+				<boxed_background_color/>
+				<boxed_background_image/>
+				<device_responsive>1</device_responsive>
+				<direction_rtl/>
+				<show_border_radius>0</show_border_radius>
+				<home_style>home-9</home_style>
+				<rtl_layout>0</rtl_layout>
+				<mobile_layout>1</mobile_layout>
+				<home_page_mobile>home-demo-mobile</home_page_mobile>
+				<header_background_image>default/logo_mobile.png</header_background_image>
+				<logo_mobile>default/logo_mobile.png</logo_mobile>
+			</general>
+			<font>
+				<body_font>google_font</body_font>
+				<body_google_font>Poppins:400</body_google_font>
+				<font_size>12px</font_size>
+				<element_google_font>Poppins:600</element_google_font>
+				<google_font_targets>.title-footer,&#xD;
+.cart-header-container .minicart-wrapper .action.showcart .text,&#xD;
+.page-header .minicart-wrapper .block-minicart .block-content .subtitle,&#xD;
+.page-header .minicart-wrapper .block-minicart .block-content .subtotal .amount.price-container .price,&#xD;
+.page-header .minicart-wrapper .block-minicart .block-content .subtotal .label,&#xD;
+.list-product-type .product-item .item-inner .product-item-info .product-item-details .price-box .price,&#xD;
+.resp-tabs-list li,&#xD;
+.block-menu .block-title span,&#xD;
+.services-inline ul li .service-info h2,&#xD;
+.promotional-popup .w-newsletter .newsletter-info .newsletter-title h3,&#xD;
+.promotional-popup .w-newsletter .newsletter-info .newsletter-title h4,&#xD;
+.price-box .price,&#xD;
+.deal-products .grid-product-type .product-item .item-inner .product-item-info .product-item-details .deals-countdown .deals-time:before,&#xD;
+.post-ftimg-hld .date-post .day-post,&#xD;
+.services-block ul li .service-info h2,&#xD;
+.sm-megamenu2.navigation li.level0.fullwidth .submenu li.level1 &gt; a, .sm-megamenu2.navigation li.level0.staticwidth .submenu li.level1 &gt; a,&#xD;
+.banner-home-fashion ul li .image-box .info-banner h2,&#xD;
+.hot-categories ul li h2 a,&#xD;
+.latest-post-dots .post-info h3 a,&#xD;
+.home-style-4 .title-block-primary h2,&#xD;
+.home-style-5 .title-block-primary h2,&#xD;
+.header-6-style .page-header .header-6 .header-middle .header-top .header.links li,&#xD;
+.home-style-7 .primary-title h2,&#xD;
+.home-style-7 .owl-controls .owl-nav div,&#xD;
+.home-style-7 .categories-slider-wrapper .item h3 a,&#xD;
+.home-style-8 .collection-categories .item h3,&#xD;
+.home-style-8 .latest-post-wrapper .latest-post-slider .item-post .date-post .day-post,&#xD;
+.home-sidebar .latest-post-wrapper .post-info h3 a,&#xD;
+.mobile-style .page-header .header-top-content .logo-categories .page-title-wrapper h1,&#xD;
+.mobile-style .page-header .language-currency-sticky .switcher .switcher-trigger strong span,&#xD;
+.mobile-style .page-header .navigation-dropdown .navigation-mobile &gt; ul &gt; li &gt; a,&#xD;
+.mobile-style .page-header .header-top-content .categories-header .btn-categories,&#xD;
+.mobile-style .page-header .mycart-dropdown .actions .action.viewcart, &#xD;
+.mobile-style .page-header .mycart-dropdown .actions .action.checkout,&#xD;
+.mobile-style .page-header .mycart-dropdown .subtotal .label,&#xD;
+.mobile-style .page-header .dropdown-header-sticky .content-dropdown-sticky .title-sticky-bottom,&#xD;
+.mobile-style .page-header .mycart-dropdown .subtotal .price-container .price,&#xD;
+.mobile-style .list-services-home ul li a,&#xD;
+.home-style-8 .listing-tabs-wrapper .ltabs-tabs-wrap .ltabs-tabs li</google_font_targets>
+				<element_font_weight>600</element_font_weight>
+				<main_font_weight>400</main_font_weight>
+			</font>
+			<color>
+				<body_link_color>222222</body_link_color>
+				<body_link_hover_color>42CDAC</body_link_hover_color>
+				<body_text_color>666666</body_text_color>
+			</color>
+			<page_wrapper>
+				<body_background_color>FFFFFF</body_background_color>
+				<body_background_image/>
+				<body_background_repeat>repeat</body_background_repeat>
+				<body_background_position>left top</body_background_position>
+			</page_wrapper>
+			<header>
+				<header_style>header-9</header_style>
+				<show_header_notice/>
+				<header_background_color/>
+				<header_background_image/>
+				<headertop_background_color>42CDAC</headertop_background_color>
+				<headertop_link_color>FFFFFF</headertop_link_color>
+				<headertop_link_hover_color>222222</headertop_link_hover_color>
+				<headertop_text_color>FFFFFF</headertop_text_color>
+				<headermiddle_background_color>FFFFFF</headermiddle_background_color>
+				<headermiddle_link_color>333333</headermiddle_link_color>
+				<headermiddle_link_hover_color>0083C1</headermiddle_link_hover_color>
+				<headermiddle_text_color>666666</headermiddle_text_color>
+				<headermenu_background_color>FFFFFF</headermenu_background_color>
+				<headermenu_link_color/>
+				<headermenu_link_hover_color/>
+				<headermenu_text_color/>
+				<menu_ontop>0</menu_ontop>
+				<responsive_menu>sidebar</responsive_menu>
+				<header_background_repeat>repeat</header_background_repeat>
+				<header_background_position>left top</header_background_position>
+				<background_linklv1_color>FFFFFF</background_linklv1_color>
+				<headermenu_linklv1_color>222222</headermenu_linklv1_color>
+				<background_linklv1_hover_color>FFFFFF</background_linklv1_hover_color>
+				<headermenu_linklv1_hover_color>42CDAC</headermenu_linklv1_hover_color>
+				<dropdown_background_color>FFFFFF</dropdown_background_color>
+				<dropdown_border_color>FFFFFF</dropdown_border_color>
+				<dropdown_text_color>FFFFFF</dropdown_text_color>
+				<dropdown_link_color>777777</dropdown_link_color>
+				<dropdown_link_hover_color>42CDAC</dropdown_link_hover_color>
+			</header>
+			<main_content>
+				<main_background_color>FFFFFF</main_background_color>
+				<main_background_image/>
+				<main_background_repeat>repeat</main_background_repeat>
+				<main_background_position>left top</main_background_position>
+			</main_content>
+			<footer>
+				<footer_style>footer-9</footer_style>
+				<footer_background_color>181818</footer_background_color>
+				<footer_background_image/>
+				<show_footertop>1</show_footertop>
+				<footertop_background_color>42CDAC</footertop_background_color>
+				<footertop_link_color>FFFFFF</footertop_link_color>
+				<footertop_link_hover_color>222222</footertop_link_hover_color>
+				<footertop_text_color>FFFFFF</footertop_text_color>
+				<show_footermiddle>1</show_footermiddle>
+				<footermiddle_background_color>FFFFFF</footermiddle_background_color>
+				<footermiddle_link_color>888888</footermiddle_link_color>
+				<footermiddle_link_hover_color>42CDAC</footermiddle_link_hover_color>
+				<footermiddle_text_color>888888</footermiddle_text_color>
+				<show_footerbottom>1</show_footerbottom>
+				<footerbottom_background_color>FFFFFF</footerbottom_background_color>
+				<footerbottom_link_color>888888</footerbottom_link_color>
+				<footerbottom_link_hover_color>42CDAC</footerbottom_link_hover_color>
+				<footerbottom_text_color>888888</footerbottom_text_color>
+				<footer_background_repeat>repeat</footer_background_repeat>
+				<footer_background_position>left top</footer_background_position>
+				<title_footertop_color>FFFFFF</title_footertop_color>
+				<title_footermiddle_color>222222</title_footermiddle_color>
+				<title_footerbottom_color>222222</title_footerbottom_color>
+			</footer>
+			<category_view>
+				<keep_image>0</keep_image>
+				<image_width>400</image_width>
+				<image_height>400</image_height>
+				<move_action/>
+				<column_device_1200/>
+				<column_device_992/>
+				<column_device_768/>
+				<column_device_481/>
+				<column_device_less_481/>
+				<hover_image_effect>opacity</hover_image_effect>
+				<custom_grid>1</custom_grid>
+				<onecolumn_device_1200>4</onecolumn_device_1200>
+				<onecolumn_device_992>4</onecolumn_device_992>
+				<onecolumn_device_768>3</onecolumn_device_768>
+				<onecolumn_device_481>2</onecolumn_device_481>
+				<onecolumn_device_less_481>1</onecolumn_device_less_481>
+				<twocolumn_device_1200>3</twocolumn_device_1200>
+				<twocolumn_device_992>3</twocolumn_device_992>
+				<twocolumn_device_768>3</twocolumn_device_768>
+				<twocolumn_device_481>2</twocolumn_device_481>
+				<twocolumn_device_less_481>1</twocolumn_device_less_481>
+				<threecolumn_device_1200>2</threecolumn_device_1200>
+				<threecolumn_device_992>2</threecolumn_device_992>
+				<threecolumn_device_768>3</threecolumn_device_768>
+				<threecolumn_device_481>2</threecolumn_device_481>
+				<threecolumn_device_less_481>1</threecolumn_device_less_481>
+			</category_view>
+			<product_detail>
+				<detail_style/>
+				<image_box/>
+				<thumbs_style>horizontal</thumbs_style>
+				<image_loop>1</image_loop>
+				<image_keyboard>1</image_keyboard>
+				<image_navigation>0</image_navigation>
+				<image_fullscreen>1</image_fullscreen>
+				<thumbs_width/>
+				<thumbs_height/>
+				<thumbs_navigation>1</thumbs_navigation>
+				<thumbs_margin>10</thumbs_margin>
+				<thumbs_borderwidth/>
+				<breakpoints_width>1200</breakpoints_width>
+				<use_zoom_image>1</use_zoom_image>
+				<zoom_width>400</zoom_width>
+				<show_related>1</show_related>
+				<related_limit>8</related_limit>
+				<show_upsell>1</show_upsell>
+				<upsell_limit>8</upsell_limit>
+				<tab_style>default</tab_style>
+				<show_custom_tab>1</show_custom_tab>
+				<custom_tab_name>Custom Tab</custom_tab_name>
+				<customtab_content>Push your content here...</customtab_content>
+				<enable_social_button>1</enable_social_button>
+			</product_detail>
+			<advanced>
+				<show_gototop>1</show_gototop>
+				<show_addtocart_button>1</show_addtocart_button>
+				<show_wishlist_button>1</show_wishlist_button>
+				<show_compare_button>1</show_compare_button>
+				<show_newsletter_popup>1</show_newsletter_popup>
+				<custom_copyright>1</custom_copyright>
+				<copyright_content>SM Themecore &amp;copy; 2017&#xD;
+Demo Store. All Rights Reserved. Designed by&#xD;
+&lt;a title="MagenTech.Com" target="_blank" href="http://www.MagenTech.Com"&gt;MagenTech.Com&lt;/a&gt;</copyright_content>
+				<show_newlabel>1</show_newlabel>
+				<new_label_text>New</new_label_text>
+				<show_salelabel>1</show_salelabel>
+				<show_salediscount>1</show_salediscount>
+				<sale_label_text/>
+				<custom_css/>
+				<custom_js/>
+				<show_loadingpage>1</show_loadingpage>
+				<enable_ladyloading>1</enable_ladyloading>
+			</advanced>
+			<theme_install>
+				<overwrite_blocks>0</overwrite_blocks>
+				<overwrite_pages>0</overwrite_pages>
+			</theme_install>
+		</themecore>
+		<filterproducts>
+			<general>
+				<enable>1</enable>
+				<title_module>Smartphone &amp; Tablet</title_module>
+				<type_show>simple</type_show>
+				<nb_column1>4</nb_column1>
+				<nb_column2>4</nb_column2>
+				<nb_column3>3</nb_column3>
+				<nb_column4>2</nb_column4>
+			</general>
+			<source>
+				<display_countdown>0</display_countdown>
+				<product_source>other_products</product_source>
+				<date_to/>
+				<select_category>74,78,79,80,81,82,83,84</select_category>
+				<product_order_by>name</product_order_by>
+				<product_order_dir>ASC</product_order_dir>
+				<product_limitation>10</product_limitation>
+			</source>
+		</filterproducts>
+		<instagramgallery>
+			<general>
+				<isactive>1</isactive>
+				<display_title>1</display_title>
+				<title>Follow Instagrams</title>
+				<users_id>4670724109</users_id>
+				<access_token>4670724109.1677ed0.2fb7832c18614468aae02c354c4a9fb4</access_token>
+				<limit_image>6</limit_image>
+				<full_name>1</full_name>
+				<target>_self</target>
+				<type_popup>thumb</type_popup>
+			</general>
+			<other_options>
+				<nb_column1>3</nb_column1>
+				<nb_column2>3</nb_column2>
+				<nb_column3>3</nb_column3>
+				<nb_column4>2</nb_column4>
+				<nb_column5>1</nb_column5>
+				<nb_type_show>simple</nb_type_show>
+				<nb_rows>1</nb_rows>
+			</other_options>
+			<effect_options>
+				<autoplay>1</autoplay>
+				<autoplayHoverPause>1</autoplayHoverPause>
+				<autoplaySpeed>2000</autoplaySpeed>
+				<navSpeed>2000</navSpeed>
+				<intervalTimeout>5000</intervalTimeout>
+				<display_nav>1</display_nav>
+				<display_loop>1</display_loop>
+				<mouseDrag>1</mouseDrag>
+				<touchDrag>1</touchDrag>
+			</effect_options>
+			<advanced>
+				<pretext/>
+				<posttext/>
+				<use_cache>0</use_cache>
+				<cache_time>3600</cache_time>
+			</advanced>
+		</instagramgallery>
+		<listingtabs>
+			<general>
+				<isactive>1</isactive>
+				<title/>
+				<type_show>loadmore</type_show>
+				<type_listing>all</type_listing>
+				<under_price>4.99</under_price>
+				<display_countdown>0</display_countdown>
+			</general>
+			<source>
+				<type_filter>categories</type_filter>
+				<field_tabs>name</field_tabs>
+				<category_tabs/>
+				<category_select/>
+				<order_by>name</order_by>
+				<order_dir>ASC</order_dir>
+				<limitation>8</limitation>
+			</source>
+			<source_options>
+				<type_filter>fieldproducts</type_filter>
+				<field_tabs>lastest_products,num_rating_summary,ordered_qty</field_tabs>
+				<category_select>94</category_select>
+				<order_dir>ASC</order_dir>
+				<limitation>10</limitation>
+			</source_options>
+		</listingtabs>
+		<megamenu2>
+			<general>
+				<enable>1</enable>
+				<menu_type>fullwidth</menu_type>
+				<static_width>500px</static_width>
+				<max_level/>
+			</general>
+			<other_menu>
+				<display_other_menu>1</display_other_menu>
+				<other_menu_title>Contact Us</other_menu_title>
+				<other_menu_link>contact</other_menu_link>
+			</other_menu>
+			<cat_labels>
+				<label1>New</label1>
+				<label2>Hot!</label2>
+				<label3>Sale</label3>
+			</cat_labels>
+		</megamenu2>
+		<searchbox>
+			<general>
+				<isenabled>1</isenabled>
+				<root_catalog>2</root_catalog>
+				<max_level>10</max_level>
+				<show_popular>1</show_popular>
+				<limit_popular>5</limit_popular>
+				<show_more>1</show_more>
+				<more_text>More++</more_text>
+				<show_advanced>1</show_advanced>
+				<pretext>Pretext</pretext>
+				<posttext>Posttext</posttext>
+			</general>
+		</searchbox>
+		<sociallogin>
+			<general>
+				<is_enabled>1</is_enabled>
+				<link_trigger>.header.links</link_trigger>
+				<popup_login>1</popup_login>
+				<popup_effect>mfp-move-from-top</popup_effect>
+			</general>
+			<facebook>
+				<is_enabled>0</is_enabled>
+			</facebook>
+			<google>
+				<is_enabled>0</is_enabled>
+			</google>
+			<twitter>
+				<is_enabled>0</is_enabled>
+			</twitter>
+			<linkedin>
+				<is_enabled>1</is_enabled>
+				<app_id>86w601fa86ygev</app_id>
+				<app_secret>wrOplacEbN13Ssyz</app_secret>
+			</linkedin>
+			<yahoo>
+				<is_enabled>0</is_enabled>
+			</yahoo>
+			<instagram>
+				<is_enabled>0</is_enabled>
+			</instagram>
+		</sociallogin>
+	</config>
+</root>

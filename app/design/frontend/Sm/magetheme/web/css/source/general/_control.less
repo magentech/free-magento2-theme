@@ -1,0 +1,150 @@
+/**
+ * Hover to show navigation
+ */
+.hover-to-show {
+    .owl-theme .owl-nav {
+        opacity: 0;
+        .transition(.1s);
+    }
+
+    &:hover {
+        .owl-theme .owl-nav {
+            opacity: 1;
+        }
+    }
+}
+
+/**
+ * Navigation style 1
+ */
+.nav-style-1 {
+    .owl-theme .owl-nav [class*="owl-"] {
+        width: 60px;
+        height: 60px;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: none;
+        line-height: 60px;
+        padding: 0;
+        .border-radius(50%);
+        .transition(.1s);
+
+        &:before {
+            font-size: 24px;
+        }
+    }
+}
+
+/**
+ * Navigation position center
+ */
+.nav-position-center {
+    &.nav-style-1 {
+        .owl-theme .owl-nav {
+            margin: 0;
+
+            [class*="owl-"] {
+                margin: -30px 0 0;
+                position: absolute;
+                top: 50%;
+
+                &.owl-next {
+                    right: 20px;
+                }
+
+                &.owl-prev {
+                    left: 20px;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Dot style 1
+ */
+.dot-style-1 {
+    .owl-theme .owl-dots .owl-dot span {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/**
+ * Dot position bottom
+ */
+.dot-position-bottom {
+    &.dot-style-1 {
+        .owl-theme .owl-dots {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+        }
+    }
+}
+
+/**
+ * Navigation style 2
+ */
+
+.nav-style-2 {
+    .owl-theme .owl-nav [class*="owl-"] {
+        padding: 0;
+        width: 34px;
+        height: 34px;
+        border: 1px solid #e5e5e5;
+        background-color: #fff;
+        color: #222;
+        text-align: center;
+        line-height: 32px;
+        margin: 5px 4px;
+        .transition(.1s);
+
+        &:before {
+            font-size: 18px;
+        }
+    }
+}
+
+/**
+ * Navigation style 3
+ */
+
+.nav-style-3 {
+    .owl-theme .owl-nav {
+        margin: 0;
+    }
+
+    .owl-theme .owl-nav [class*="owl-"] {
+        width: 34px;
+        height: 60px;
+        line-height: 58px;
+        text-align: center;
+        padding: 0;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        color: #222;
+        .transition(.1s);
+
+        &:before {
+            font-size: 18px;
+        }
+    }
+
+    &.nav-position-center {
+        .owl-theme .owl-nav [class*="owl-"] {
+            position: absolute;
+            top: 50%;
+            margin: -30px 0 0;
+        }
+
+        .owl-theme .owl-nav [class*="owl-"].owl-next {
+            right: 0;
+        }
+
+        .owl-theme .owl-nav [class*="owl-"].owl-prev {
+            left: 0;
+        }
+    }
+}

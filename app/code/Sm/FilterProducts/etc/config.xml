@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <filterproducts>
+            <general>
+                <enable>1</enable>
+				<title_module>New Products</title_module>
+				<type_show>simple</type_show>
+            </general>
+			<source>
+				<display_countdown>0</display_countdown>
+				<product_source>lastest_products</product_source>
+				<date_to></date_to>
+				<select_category></select_category>
+				<product_order_by>name</product_order_by>
+				<product_order_dir>ASC</product_order_dir>
+				<product_limitation>5</product_limitation>
+			</source>
+        </filterproducts>
+    </default>
+</config>

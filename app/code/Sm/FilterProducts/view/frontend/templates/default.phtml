@@ -1,0 +1,276 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Filter Products - Version 1.3.0
+# Copyright (c) 2016 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+use Magento\Framework\App\Action\Action;
+
+$_productCollection = $block->getLoadedProductCollection();
+$_helper            = $this->helper('Magento\Catalog\Helper\Output');
+?>
+<?php if (!$_productCollection->count()): ?>
+    <div class="message info empty">
+        <div><?php /* @escapeNotVerified */
+            echo __('We can\'t find products matching the selection.') ?></div>
+    </div>
+<?php else: ?>
+    <?php
+    $viewMode        = 'grid';
+    $image           = 'category_page_grid';
+    $showDescription = false;
+    $templateType    = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    $showWishlist    = true;
+    $showCompare     = true;
+    $showCart        = true;
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos    = $block->getPositioned();
+    $tag_id = $this->_tagId();
+    ?>
+    <div class="block block-filterproducts">
+        <?php if (!empty($this->_getConfig('title_module'))) { ?>
+            <div class="block-title">
+                <strong><?php echo $this->_getConfig('title_module'); ?></strong>
+            </div>
+        <?php } ?>
+
+        <div class="block-content">
+            <div id="<?php echo $tag_id; ?>" class="products wrapper <?php /* @escapeNotVerified */
+            echo $viewMode; ?> products-<?php /* @escapeNotVerified */
+            echo $viewMode; ?>">
+
+                <?php
+                if ($this->_getConfig('product_source') == 'countdown_products') {
+                    $dateTo = $this->_getConfig('date_to', '');
+                    ?>
+                    <div class="deals-countdown" data-timer="<?php echo date("Y/m/d H:i:s", strtotime($dateTo)); ?>">
+                        <div class="deals-time time-day">
+                            <div class="num-time"></div>
+                            <div class="title-time"></div>
+                        </div>
+                        <div class="deals-time time-hours">
+                            <div class="num-time"></div>
+                            <div class="title-time"></div>
+                        </div>
+                        <div class="deals-time time-mins">
+                            <div class="num-time"></div>
+                            <div class="title-time"></div>
+                        </div>
+                        <div class="deals-time time-secs">
+                            <div class="num-time"></div>
+                            <div class="title-time"></div>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <?php $iterator = 1; ?>
+                <div class="products list items product-items filterproducts">
+                    <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+                    <?php foreach ($_productCollection as $_product):
+                        ?>
+                        <div class="item product product-item">
+                            <div class="product-item-info" data-container="product-grid">
+                                <?php
+                                $productImage = $block->getImage($_product, $image);
+                                if ($pos != null) {
+                                    $position = ' style="left:' . $productImage->getWidth() . 'px;'
+                                        . 'top:' . $productImage->getHeight() . 'px;"';
+                                }
+                                ?>
+
+                                <?php // Product Image
+                                ?>
+                                <div class="image-product">
+                                    <a href="<?php /* @escapeNotVerified */
+                                    echo $_product->getProductUrl() ?>" class="product photo product-item-photo"
+                                       tabindex="-1">
+                                        <?php echo $productImage->toHtml(); ?>
+                                    </a>
+                                </div>
+
+                                <div class="product details product-item-details">
+                                    <?php
+                                    if ((int)$this->_getConfig('display_countdown') && !empty($_product->getSpecialPrice()) && !empty($_product->getSpecialToDate())) {
+                                        $specialToDate = $_product->getSpecialToDate();
+                                        ?>
+                                        <div class="deals-countdown"
+                                             data-timer="<?php echo date("Y/m/d H:i:s", strtotime($specialToDate)); ?>">
+                                            <div class="deals-time time-day">
+                                                <div class="num-time"></div>
+                                                <div class="title-time"></div>
+                                            </div>
+                                            <div class="deals-time time-hours">
+                                                <div class="num-time"></div>
+                                                <div class="title-time"></div>
+                                            </div>
+                                            <div class="deals-time time-mins">
+                                                <div class="num-time"></div>
+                                                <div class="title-time"></div>
+                                            </div>
+                                            <div class="deals-time time-secs">
+                                                <div class="num-time"></div>
+                                                <div class="title-time"></div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+
+                                    <?php
+                                    $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                                    ?>
+                                    <strong class="product name product-item-name">
+                                        <a class="product-item-link"
+                                           href="<?php /* @escapeNotVerified */
+                                           echo $_product->getProductUrl() ?>">
+                                            <?php /* @escapeNotVerified */
+                                            echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                        </a>
+                                    </strong>
+                                    <?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
+                                    <?php
+                                    //var_dump($_product->getPriceInfo()->getPrice('final_price')->getAmount()->getValue(),$_product);die('haiza123123');
+                                    /* @escapeNotVerified */
+                                    echo $block->getProductPrice($_product) ?>
+                                    <?php echo $block->getProductDetailsHtml($_product); ?>
+
+                                    <?php if ($showWishlist || $showCompare || $showCart): ?>
+                                        <div class="product-item-actions">
+                                            <?php if ($showCart): ?>
+                                                <div class="actions-primary">
+                                                    <?php if ($_product->isSaleable()): ?>
+                                                        <?php if ($_product->getTypeInstance()->hasRequiredOptions($_product)): ?>
+                                                            <button class="action tocart primary"
+                                                                    data-mage-init='{"redirectUrl":{"url":"<?php /* @escapeNotVerified */
+                                                                    echo $block->getAddToCartUrl($_product) ?>"}}'
+                                                                    type="button" title="<?php /* @escapeNotVerified */
+                                                            echo __('Add to Cart') ?>">
+                                                                <span><?php /* @escapeNotVerified */
+                                                                    echo __('Add to Cart') ?></span>
+                                                            </button>
+                                                        <?php else: ?>
+                                                            <?php
+                                                            $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
+                                                            $postData       = $postDataHelper->getPostData($block->getAddToCartUrl($_product), ['product' => $_product->getEntityId()])
+                                                            ?>
+                                                            <button class="action tocart primary"
+                                                                    data-post='<?php /* @escapeNotVerified */
+                                                                    echo $postData; ?>'
+                                                                    type="button" title="<?php /* @escapeNotVerified */
+                                                            echo __('Add to Cart') ?>">
+                                                                <span><?php /* @escapeNotVerified */
+                                                                    echo __('Add to Cart') ?></span>
+                                                            </button>
+                                                        <?php endif; ?>
+                                                    <?php else: ?>
+                                                        <?php if ($_product->getIsSalable()): ?>
+                                                            <div class="stock available">
+                                                                <span><?php /* @escapeNotVerified */
+                                                                    echo __('In stock') ?></span></div>
+                                                        <?php else: ?>
+                                                            <div class="stock unavailable">
+                                                                <span><?php /* @escapeNotVerified */
+                                                                    echo __('Out of stock') ?></span></div>
+                                                        <?php endif; ?>
+                                                    <?php endif; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($showWishlist || $showCompare): ?>
+                                                <div class="actions-secondary" data-role="add-to-links">
+                                                    <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>
+                                                        <a href="#"
+                                                           data-post='<?php /* @escapeNotVerified */
+                                                           echo $block->getAddToWishlistParams($_product); ?>'
+                                                           class="action towishlist" data-action="add-to-wishlist"
+                                                           title="<?php /* @escapeNotVerified */
+                                                           echo __('Add to Wish List') ?>">
+                                                            <span><?php /* @escapeNotVerified */
+                                                                echo __('Add to Wish List') ?></span>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                    <?php if ($block->getAddToCompareUrl() && $showCompare): ?>
+                                                        <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
+                                                        <a href="#" class="action tocompare"
+                                                           data-post='<?php /* @escapeNotVerified */
+                                                           echo $compareHelper->getPostDataParams($_product); ?>'
+                                                           title="<?php /* @escapeNotVerified */
+                                                           echo __('Add to Compare') ?>">
+                                                            <span><?php /* @escapeNotVerified */
+                                                                echo __('Add to Compare') ?></span>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            ;(function (el) {
+                var $element = $(el);
+
+                function _countDown(date, id) {
+                    var dateNow = new Date();
+                    var amount = date.getTime() - dateNow.getTime();
+                    delete dateNow;
+                    if (amount < 0) {
+                        id.html("Now!");
+                    } else {
+                        var days = 0;
+                        hours = 0;
+                        mins = 0;
+                        secs = 0;
+                        out = "";
+                        amount = Math.floor(amount / 1000);
+                        days = Math.floor(amount / 86400);
+                        amount = amount % 86400;
+                        hours = Math.floor(amount / 3600);
+                        amount = amount % 3600;
+                        mins = Math.floor(amount / 60);
+                        amount = amount % 60;
+                        secs = Math.floor(amount);
+                        $(".time-day .num-time", id).text(days);
+                        $(".time-day .title-time", id).text(((days <= 1) ? "<?php echo __('Day') ?>" : "<?php echo __('Days') ?>"));
+                        $(".time-hours .num-time", id).text(hours);
+                        $(".time-hours .title-time", id).text(((hours <= 1) ? "<?php echo __('Hour') ?>" : "<?php echo __('Hours') ?>"));
+                        $(".time-mins .num-time", id).text(mins);
+                        $(".time-mins .title-time", id).text(((mins <= 1) ? "<?php echo __('Min') ?>" : "<?php echo __('Mins') ?>"));
+                        $(".time-secs .num-time", id).text(secs);
+                        $(".time-secs .title-time", id).text(((secs <= 1) ? "<?php echo __('Sec') ?>" : "<?php echo __('Secs') ?>"));
+                        setTimeout(function () {
+                            _countDown(date, id)
+                        }, 1000);
+                    }
+                }
+
+                $(".deals-countdown", $element).each(function () {
+                    var timer = $(this).data('timer');
+                    var data = new Date(timer);
+                    _countDown(data, $(this));
+                });
+            })('#<?php echo $tag_id ?>');
+        });
+    </script>
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

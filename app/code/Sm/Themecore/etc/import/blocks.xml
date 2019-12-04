@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<root>
+	<blocks>
+		<cms_item>
+			<title>Themecore - Footer Contact</title>
+			<identifier>footer-contact</identifier>
+			<content>
+				<![CDATA[<div class="block-footer block-footer-contact">
+<h4 class="title-footer">Contact Us</h4>
+<ul>
+<li><span style="color: #fff;"><em class="fa fa-home"></em><b>Address:</b></span> No 40 Baria Sreet 133/2 NewYork City, NY, USD</li>
+<li><span style="color: #fff;"><em class="fa fa-paper-plane"></em><b>Mail Us:</b></span> sm-themecore@magentech.com</li>
+<li><span style="color: #fff;"><em class="fa fa-phone"></em><b>Phone:</b></span> (888) 1234 56789</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Social</title>
+			<identifier>footer-social</identifier>
+			<content>
+				<![CDATA[<div class="socials-block">
+<ul>
+<li><a href="https://twitter.com/magentech"><em class="fa fa-twitter"></em><span class="hidden">twitter</span></a></li>
+<li><a href="http://www.facebook.com/MagenTech"><em class="fa fa-facebook"></em><span class="hidden">facebook</span></a></li>
+<li><a href="https://plus.google.com/u/0/+Smartaddons"><em class="fa fa-google-plus"></em><span class="hidden">google</span></a></li>
+<li><a href="#"><em class="fa fa-skype"></em><span class="hidden">skype</span></a></li>
+<li><a href="#"><em class="fa fa-pinterest-p"></em><span class="hidden">pinterest</span></a></li>
+<li><a href="#"><em class="fa fa-youtube-play"></em><span class="hidden">youtube</span></a></li>
+<li><a href="#"><em class="fa fa-linkedin"></em><span class="hidden">linkedin</span></a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Service</title>
+			<identifier>footer-service</identifier>
+			<content>
+				<![CDATA[<div class="block-footer">
+<h4 class="title-footer">Our Services</h4>
+<ul>
+<li><a title="New York" href="#">New York</a></li>
+<li><a title="London SF" href="#">London SF</a></li>
+<li><a title="Cockfosters BP" href="#">Cockfosters BP</a></li>
+<li><a title="Los Angeles" href="#">Los Angeles</a></li>
+<li><a title="Chicago" href="#">Chicago</a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Extras</title>
+			<identifier>footer-extras</identifier>
+			<content>
+				<![CDATA[<div class="block-footer">
+<h4 class="title-footer">Extras</h4>
+<ul>
+<li><a title="About Store" href="#">About Store</a></li>
+<li><a title="New Collection" href="#">New Collection</a></li>
+<li><a title="Contact Us" href="#">Contact Us</a></li>
+<li><a title="Latest News" href="#">Latest News</a></li>
+<li><a title="Our Sitemap" href="#">Our Sitemap</a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Myaccount</title>
+			<identifier>footer-myaccount</identifier>
+			<content>
+				<![CDATA[<div class="block-footer">
+<h4 class="title-footer">My account</h4>
+<ul>
+<li><a title="About Store" href="#">About Store</a></li>
+<li><a title="New Collection" href="#">New Collection</a></li>
+<li><a title="Contact Us" href="#">Contact Us</a></li>
+<li><a title="Latest News" href="#">Latest News</a></li>
+<li><a title="Our Sitemap" href="#">Our Sitemap</a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer App</title>
+			<identifier>footer-app</identifier>
+			<content>
+				<![CDATA[<div class="app-block">
+<div class="title-footer">Download Our App</div>
+<ul>
+<li><a title="AppStore" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/footer-image/appstore.png"}}" alt="App Store" /></a></li>
+<li><a title="PlayStore" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/footer-image/playstore.png"}}" alt="Play Store" /></a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Payment</title>
+			<identifier>footer-payment</identifier>
+			<content>
+				<![CDATA[<img class="mark-lazy" src="{{media url="wysiwyg/footer-image/payment.png"}}" alt="payment" />]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Image Sidebar</title>
+			<identifier>banner-image-sidebar</identifier>
+			<content>
+				<![CDATA[<div class="banner-image lazyload-container"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-image/banner-sidebar.jpg"}}" alt="Banner Image" /></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - About Us Page</title>
+			<identifier>about-us</identifier>
+			<content>
+				<![CDATA[<div class="about-page">
+<div class="infomation-top">
+<div class="row">
+<div class="col-lg-5 col-md-5 col-sm-5 about-image">
+<div class="image-content lazyload-container"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/about-image.jpg"}}" alt="About us" /></div>
+</div>
+<div class="col-lg-7 col-md-7 about-info">
+<div class="info-content">
+<h2>Information Store</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ed do eiusmod tempor incididunt ut labore etmo tempo Lomrem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ed do eiusmod tempor incididunt ut labore etmo tempo Lomrem ipsum dolor consectetur adipiscing elit, sed do eiusmod tempor incididunt sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ed do eiusmod tempor incididunt ut labore etmo tempo Lomrem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ed do eiusmod tempor incididunt ut labore etmo tempo Lomrem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Google Map</title>
+			<identifier>google-map</identifier>
+			<content>
+				<![CDATA[<div class="google-map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.840108181596!2d144.9537363157586!3d-37.81721397975174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1svi!2s!4v1537839424597" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Client Store</title>
+			<identifier>client-store</identifier>
+			<content>
+				<![CDATA[<div class="our-member-wrapper">
+<div class="container">
+<div class="our-member">
+<h2>Our Members</h2>
+<div class="slider-our-member lazyload-container">
+<div class="item item-member">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member-1.jpg"}}" alt="Member" />
+<div class="social-content">
+								<a class="social-button" title="Facebook" href="#"><em class="fa fa-facebook"></em></a>
+								<a class="social-button" title="Twitter" href="#"><em class="fa fa-twitter"></em></a>
+								<a class="social-button" title="Google" href="#"><em class="fa fa-google-plus"></em></a>
+							</div>
+</div>
+</div>
+<div class="member-info">
+<h3>Johny Walker</h3>
+<p>Ceo / Founder</p>
+</div>
+</div>
+<div class="item item-member">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member-2.jpg"}}" alt="Member" />
+<div class="social-content">
+								<a class="social-button" title="Facebook" href="#"><em class="fa fa-facebook"></em></a>
+								<a class="social-button" title="Twitter" href="#"><em class="fa fa-twitter"></em></a>
+								<a class="social-button" title="Google" href="#"><em class="fa fa-google-plus"></em></a>
+							</div>
+</div>
+</div>
+<div class="member-info">
+<h3>Andrei Kowalsy</h3>
+<p>Delivery Driver</p>
+</div>
+</div>
+<div class="item item-member">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member-3.jpg"}}" alt="Member" />
+<div class="social-content">
+								<a class="social-button" title="Facebook" href="#"><em class="fa fa-facebook"></em></a>
+								<a class="social-button" title="Twitter" href="#"><em class="fa fa-twitter"></em></a>
+								<a class="social-button" title="Google" href="#"><em class="fa fa-google-plus"></em></a>
+							</div>
+</div>
+</div>
+<div class="member-info">
+<h3>Anna Baranov</h3>
+<p>Client Support</p>
+</div>
+</div>
+<div class="item item-member">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member-4.jpg"}}" alt="Member" />
+<div class="social-content">
+								<a class="social-button" title="Facebook" href="#"><em class="fa fa-facebook"></em></a>
+								<a class="social-button" title="Twitter" href="#"><em class="fa fa-twitter"></em></a>
+								<a class="social-button" title="Google" href="#"><em class="fa fa-google-plus"></em></a>
+							</div>
+</div>
+</div>
+<div class="member-info">
+<h3>Susan McCain</h3>
+<p>Marketing Girl</p>
+</div>
+</div>
+<div class="item item-member">
+<div class="member-image">
+<div class="image-content"><img class="mark-lazy" src="{{media url="wysiwyg/about-us/member-1.jpg"}}" alt="Member" />
+<div class="social-content">
+								<a class="social-button" title="Facebook" href="#"><em class="fa fa-facebook"></em></a>
+								<a class="social-button" title="Twitter" href="#"><em class="fa fa-twitter"></em></a>
+								<a class="social-button" title="Google" href="#"><em class="fa fa-google-plus"></em></a>
+							</div>
+</div>
+</div>
+<div class="member-info">
+<h3>Johny Walker</h3>
+<p>Ceo / Founder</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+			require([
+				'jquery',
+				'owlcarousel'
+			], function ($) {
+					var owl_member = $(".slider-our-member");
+					owl_member.owlCarousel({
+						
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:2
+							},
+							768:{
+								items:3
+							},
+							992:{
+								items:4
+							},
+							1200:{
+								items:4
+							}
+						},
+
+						autoplay:false,
+						loop:false,
+						nav : true, 
+						dots: false,
+						autoplaySpeed : 500,
+						navSpeed : 500,
+						dotsSpeed : 500,
+						autoplayHoverPause: true,
+						margin:30,
+
+					});	  
+				});
+</script>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Block Menu</title>
+			<identifier>block-menu</identifier>
+			<content>
+				<![CDATA[<div class="block-menu">
+<div class="block-title"><em class="fa fa-bars"></em> <span>Categories</span></div>
+<div class="block-content">
+<ul>
+<li><a title="Phone &amp; Tablets" href="#">Phone &amp; Tablets</a></li>
+<li><a title="Fashion" href="#">Fashion</a></li>
+<li><a title="Gifts" href="#">Gifts</a></li>
+<li><a title="Health &amp; Beauty" href="#">Health &amp; Beauty</a></li>
+<li><a title="Headphones" href="#">Headphones</a></li>
+<li><a title="Sport" href="#">Sport</a></li>
+<li><a title="Health &amp; Beauty" href="#">Health &amp; Beauty</a></li>
+<li><a title="Toys &amp; Hobbies" href="#">Toys &amp; Hobbies</a></li>
+<li class="hidden-item"><a title="Automotive &amp; Motorcycle" href="#">Automotive & Motorcycle</a></li>
+<li class="hidden-item"><a title="Flashlights &amp; Lamps" href="#">Flashlights &amp; Lamps</a></li>
+<li class="all-categories">
+	<a class="show_more" title="More Categories" href="javascript:void(0)">More Categories<em class="fa fa-plus-square-o" style="float: right; margin-top: 2px;"></em></a>
+	<a style="display: none;" class="close_more" title="Close Menu" href="javascript:void(0)">Close Menu<em class="fa fa-minus-square-o" style="float: right; margin-top: 2px;"></em></a>
+</li>
+</ul>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Detail Product Sidebar</title>
+			<identifier>detail-product-sidebar</identifier>
+			<content>
+				<![CDATA[{{block class="Sm\FilterProducts\Block\FilterProducts" template="Sm_FilterProducts::default-list.phtml" title_module="Latest Products" select_category="" display_countdown="0" product_source="lastest_products" product_limitation="4"}}]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Newsletter Description</title>
+			<identifier>footer-newsletter-description</identifier>
+			<content>
+				<![CDATA[<div class="title-footer">NEED HELP? CALL OUR AWARD-WINNING</div>
+<p>SUPPORT TEAM 24/7 AT (844) 555-8386</p>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Header Contact</title>
+			<identifier>header-contact</identifier>
+			<content>
+				<![CDATA[<p><em class="fa fa-phone"></em> Call Us: (888) 1234 56789</p>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Contact 2</title>
+			<identifier>footer-contact-2</identifier>
+			<content>
+				<![CDATA[<div class="block-footer block-footer-contact">
+<h4 class="title-footer">Contact Us</h4>
+<ul>
+<li><em class="fa fa-home"></em>No 40 Baria Sreet 133/2 NewYork City, NY, United States</li>
+<li><em class="fa fa-paper-plane"></em>sm-themecore@magentech.com</li>
+<li><em class="fa fa-phone"></em>(888) 1234 56789</li>
+<li><em class="fa fa-clock-o"></em>Mon - Sun / 9:00AM - 7:30PM</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Newsletter Description 2</title>
+			<identifier>footer-newsletter-description2</identifier>
+			<content>
+				<![CDATA[<p>Sign up for</p>
+<div class="title-footer">Newsletter</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Logo</title>
+			<identifier>footer-logo</identifier>
+			<content>
+				<![CDATA[<img src="{{media url="wysiwyg/footer-image/logo-footer.png"}}" alt="Footer Logo" />]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Services Footer</title>
+			<identifier>footer-services-footer</identifier>
+			<content>
+				<![CDATA[<div class="services-block">
+<ul>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-1.png"}}" alt="Shipping" /></div>
+<div class="service-info">
+<h2>Free Shipping &amp; Return</h2>
+<p>Free shipping on orders over $49</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-2.png"}}" alt="Money Guarantee" /></div>
+<div class="service-info">
+<h2>Money Guarantee</h2>
+<p>30 days money back guarantee</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/icon-3.png"}}" alt="Online Support" /></div>
+<div class="service-info">
+<h2>Online Support</h2>
+<p>We support online 24 hours a day</p>
+</div>
+</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore Mobile - Categories Header</title>
+			<identifier>mobile-categories-header</identifier>
+			<content>
+				<![CDATA[<ul class="navigation-top">
+					<li><a title="Phone & Tablets" href="#">Phone & Tablets</a></li>
+					<li><a title="Fashion" href="#">Fashion</a></li>
+					<li><a title="Gifts" href="#">Gifts</a></li>
+					<li>
+						<a title="Health & Beauty" href="#">Health & Beauty</a>
+						<ul>
+							<li><a title="Men's" href="#">Men's</a></li>
+							<li><a title="Women's" href="#">Women's</a></li>
+							<li><a title="Kid’s" href="#">Kid’s</a></li>
+							<li><a title="Bags" href="#">Bags</a></li>
+							<li><a title="Shoes" href="#">Shoes</a></li>
+							<li><a title="Dresses" href="#">Dresses</a></li>
+							<li><a title="Accessories" href="#">Accessories</a></li>
+						</ul>
+					</li>
+					<li><a title="Headphones" href="#">Headphones</a></li>
+					<li><a title="Sport" href="#">Sport</a></li>
+					<li><a title="Health & Beauty" href="#">Health & Beauty</a></li>
+					<li><a title="Toys & Hobbies" href="#">Toys & Hobbies</a></li>
+					<li class="hidden-item"><a title="Automotive & Motorcycle" href="#">Automotive & Motorcycle</a></li>
+					<li class="hidden-item"><a title="Flashlights & Lamps" href="#">Flashlights & Lamps</a></li>
+				</ul>
+				<div class="btn-show">
+					<span>All Categories</span>
+				</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Social List</title>
+			<identifier>social-list</identifier>
+			<content>
+				<![CDATA[<div class="social-list">
+							<h4>Follow us by:</h4>
+							<ul>
+								<li><a href="#" title="Facebook">Facebook</a></li>
+								<li><a href="#" title="Twitter">Twitter</a></li>
+								<li><a href="#" title="Google Plus">Google Plus</a></li>
+								<li><a href="#" title="Skype">Skype</a></li>
+								<li><a href="#" title="Pinterest">Pinterest</a></li>
+								<li><a href="#" title="Youtube">Youtube</a></li>
+								<li><a href="#" title="Instagram">Instagram</a></li>
+							</ul>
+						</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Service Footer</title>
+			<identifier>services-footer</identifier>
+			<content>
+				<![CDATA[<div class="services-inline-footer">
+<ul>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/sv-ft-1.png"}}" alt="Shipping" /></div>
+<div class="service-info">
+<h2 class="title-footer">Free Shipping &amp; Return</h2>
+<p>Free shipping on orders over $49</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/sv-ft-2.png"}}" alt="Money Guarantee" /></div>
+<div class="service-info">
+<h2 class="title-footer">Money Guarantee</h2>
+<p>30 days money back guarantee</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/sv-ft-3.png"}}" alt="Online Support" /></div>
+<div class="service-info">
+<h2 class="title-footer">Online Support</h2>
+<p>We support online 24 hours a day</p>
+</div>
+</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Contact 3</title>
+			<identifier>footer-contact-3</identifier>
+			<content>
+				<![CDATA[<div class="block-footer block-footer-contact">
+<h4 class="title-footer">Contact Us</h4>
+<ul>
+<li><em class="fa fa-home"></em>No 40 Baria Sreet 133/2 NewYork City, NY, United States</li>
+<li><em class="fa fa-paper-plane"></em>sm-themecore@magentech.com</li>
+<li><em class="fa fa-phone"></em>(888) 1234 56789</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Newsletter Description 2</title>
+			<identifier>footer-newsletter-description-2</identifier>
+			<content>
+				<![CDATA[<div class="title-footer" style="color: #42cdac;">Need Help? Call Our Award-Warning</div>
+<p style="color: #444444;">Support Team 24/7 at (844) 555-8386</p>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Top FT10</title>
+			<identifier>footer-top-ft10</identifier>
+			<content>
+				<![CDATA[<div class="footer-top-content"><img src="{{media url="wysiwyg/footer-image/logo-footer-10.png"}}" alt="Logo" />
+<p class="store-des">Themecore business concept is to offer fashion and quality at the best price. Market has since it was founded in 1987<br />grown into one of the world's leading fashion companies.</p>
+<div class="socials-block">
+<ul>
+<li><a href="https://twitter.com/magentech"><em class="fa fa-twitter"></em><span class="hidden">twitter</span></a></li>
+<li><a href="http://www.facebook.com/MagenTech"><em class="fa fa-facebook"></em><span class="hidden">facebook</span></a></li>
+<li><a href="https://plus.google.com/u/0/+Smartaddons"><em class="fa fa-google-plus"></em><span class="hidden">google</span></a></li>
+<li><a href="#"><em class="fa fa-skype"></em><span class="hidden">skype</span></a></li>
+<li><a href="#"><em class="fa fa-pinterest-p"></em><span class="hidden">pinterest</span></a></li>
+<li><a href="#"><em class="fa fa-youtube-play"></em><span class="hidden">youtube</span></a></li>
+<li><a href="#"><em class="fa fa-linkedin"></em><span class="hidden">linkedin</span></a></li>
+</ul>
+</div>
+<div class="nav-footer">
+<ul>
+<li><a title="Home" href="#">Home</a></li>
+<li><a title="Features" href="#">Features</a></li>
+<li><a title="Collection" href="#">Collection</a></li>
+<li><a title="Shop" href="#">Shop</a></li>
+<li><a title="About Us" href="#">About Us</a></li>
+<li><a title="Contact Us" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Services Footer 10</title>
+			<identifier>services-footer-10</identifier>
+			<content>
+				<![CDATA[<div class="services-footer clearfix">
+<ul>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/svs-ft-1.png"}}" alt="Shipping" /></div>
+<div class="service-info">
+<h2><a href="#">Free Shipping</a></h2>
+<p>Free shipping on all UK oders</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/svs-ft-2.png"}}" alt="Money Guarantee" /></div>
+<div class="service-info">
+<h2><a href="#">Money Guarantee</a></h2>
+<p>30 days money back guarantee</p>
+</div>
+</li>
+<li>
+<div class="box-icon"><img src="{{media url="wysiwyg/icon/svs-ft-3.png"}}" alt="Online Support" /></div>
+<div class="service-info">
+<h2><a href="#">Support 24/7</a></h2>
+<p>We support online 24 hours a day</p>
+</div>
+</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Social Header</title>
+			<identifier>social-header</identifier>
+			<content>
+				<![CDATA[<div class="header-social">
+										<div class="socials-block">
+											<ul>
+											<li><a href="https://twitter.com/magentech"><em class="fa fa-twitter"></em><span class="hidden">twitter</span></a></li>
+											<li><a href="http://www.facebook.com/MagenTech"><em class="fa fa-facebook"></em><span class="hidden">facebook</span></a></li>
+											<li><a href="https://plus.google.com/u/0/+Smartaddons"><em class="fa fa-google-plus"></em><span class="hidden">google</span></a></li>
+											<li><a href="#"><em class="fa fa-skype"></em><span class="hidden">skype</span></a></li>
+											<li><a href="#"><em class="fa fa-pinterest-p"></em><span class="hidden">pinterest</span></a></li>
+											<li><a href="#"><em class="fa fa-youtube-play"></em><span class="hidden">youtube</span></a></li>
+											<li><a href="#"><em class="fa fa-linkedin"></em><span class="hidden">linkedin</span></a></li>
+											</ul>
+										</div>
+									</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Contact 4</title>
+			<identifier>footer-contact-4</identifier>
+			<content>
+				<![CDATA[<div class="block-footer block-footer-contact">
+<h4 class="title-footer">Contact Us</h4>
+<ul>
+<li><span><em class="fa fa-home"></em>Address:</span> No 40 Baria Sreet 133/2 NewYork City, NY, USD</li>
+<li><span><em class="fa fa-paper-plane"></em>Mail Us:</span> sm-themecore@magentech.com</li>
+<li><span><em class="fa fa-phone"></em>Phone:</span> (888) 1234 56789</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Link Categories</title>
+			<identifier>footer-link-categories</identifier>
+			<content>
+				<![CDATA[<div class="categories-footer">
+<ul>
+<li><a title="Samsung Mobile" href="#">Samsung Mobile</a> | <a title="Canon Camera" href="#">Canon Camera</a> | <a title="Sony Camera" href="#">Sony Camera</a> | <a title="Jacket Men" href="#">Jacket Men</a> | <a title="Point shoot camera" href="#">Point shoot camera</a> | <a title="Camera Lens" href="#">Camera Lens</a> | <a title="Camera Tripod" href="#">Camera Tripod</a> | <a title="Camera Bag" href="#">Camera Bag</a></li>
+<li><a title="Apple Laptop" href="#">Apple Laptop</a> | <a title="Acer Laptop" href="#">Acer Laptop</a> | <a title="Samsung Laptop" href="#">Samsung Laptop</a> | <a title="Lenovo Tablet" href="#">Lenovo Tablet</a> | <a title="Sony Laptop" href="#">Sony Laptop</a> | <a title="Accessories" href="#">Accessories</a> | <a title="Asus Laptop" href="#">Asus Laptop</a> | <a title="Toshiba Laptop" href="#">Toshiba Laptop</a> | <a title="LG Laptop" href="#">LG Laptop</a> | <a title="HP Laptop" href="#">HP Laptop</a> | <a title="Notebook" href="#">Notebook</a></li>
+<li><a title="Sony TV" href="#">Sony TV</a> | <a title="Samsung TV" href="#">Samsung TV</a> | <a title="LG TV" href="#">LG TV</a> | <a title="Panasonic TV" href="#">Panasonic TV</a> | <a title="Onida TV" href="#">Onida TV</a> | <a title="Toshiba TV" href="#">Toshiba TV</a> | <a title="Philips TV" href="#">Philips TV</a> | <a title="Micromax TV" href="#">Micromax TV</a> | <a title="LED TV" href="#">LED TV</a> | <a title="LCD TV" href="#">LCD TV</a> | <a title="Plasma TV" href="#">Plasma TV</a> | <a title="3D TV" href="#">3D TV</a> | <a title="Smart TV" href="#">Smart TV</a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Slider 1</title>
+			<identifier>banner-slider-1</identifier>
+			<content>
+				<![CDATA[<div class="slider-banner-product slider-banner-1 lazyload-container">
+<div class="slider-banner owl-carousel">
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-1/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-1/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-1/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-banner-1 .slider-banner").owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:false,
+			nav : false, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:10,
+		});	  
+	});	
+					
+
+</script>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Product 1</title>
+			<identifier>banner-product-1</identifier>
+			<content>
+				<![CDATA[<div class="banner-product-content lazyload-container"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-1/banner-product.jpg"}}" alt="Banner Image" /></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Slider 2</title>
+			<identifier>banner-slider-2</identifier>
+			<content>
+				<![CDATA[<div class="slider-banner-product slider-banner-2 lazyload-container">
+<div class="slider-banner owl-carousel">
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-2/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-2/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-2/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-banner-2 .slider-banner").owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:false,
+			nav : false, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:10,
+		});	  
+	});	
+					
+
+</script>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Product 2</title>
+			<identifier>banner-product-2</identifier>
+			<content>
+				<![CDATA[<div class="banner-product-content lazyload-container"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-2/banner-product.jpg"}}" alt="Banner Image" /></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Slider 3</title>
+			<identifier>banner-slider-3</identifier>
+			<content>
+				<![CDATA[<div class="slider-banner-product slider-banner-3 lazyload-container">
+<div class="slider-banner owl-carousel">
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-3/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-3/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-3/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-banner-3 .slider-banner").owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:false,
+			nav : false, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:10,
+		});	  
+	});	
+					
+
+</script>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Product 3</title>
+			<identifier>banner-product-3</identifier>
+			<content>
+				<![CDATA[<div class="banner-product-content lazyload-container"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-3/banner-product.jpg"}}" alt="Banner Image" /></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Slider 4</title>
+			<identifier>banner-slider-4</identifier>
+			<content>
+				<![CDATA[<div class="slider-banner-product slider-banner-4 lazyload-container">
+<div class="slider-banner owl-carousel">
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-4/item-1.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-4/item-2.jpg"}}" alt="Slider Image" /></a></div>
+<div class="item"><a title="Slider Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-4/item-3.jpg"}}" alt="Slider Image" /></a></div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+		jQuery(".slider-banner-4 .slider-banner").owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:false,
+			nav : false, 
+			dots: true,
+			autoplaySpeed : 500,
+			navSpeed : 500,
+			dotsSpeed : 500,
+			autoplayHoverPause: true,
+			margin:10,
+		});	  
+	});	
+					
+
+</script>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Banner Product 4</title>
+			<identifier>banner-product-4</identifier>
+			<content>
+				<![CDATA[<div class="banner-product-content lazyload-container"><a title="Banner Image" href="#"><img class="mark-lazy" src="{{media url="wysiwyg/banner-slider/banner-4/banner-product.jpg"}}" alt="Banner Image" /></a></div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Call Free Header</title>
+			<identifier>call-free</identifier>
+			<content>
+				<![CDATA[<div class="customer-acction">
+									<p class="title-top">Call Us Free:</p>
+									<a href="#">888 9436 6000</a>
+								</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Vertical Menu</title>
+			<identifier>vertical-menu</identifier>
+			<content>
+				<![CDATA[<div class="block-menu">
+								<div class="block-title"><em class="fa fa-bars"></em> <span>Categories</span></div>
+								<div class="block-content">
+								<ul>
+								<li><a title="Men’s Clothing" href="#">Men’s Clothing</a></li>
+								<li><a title="Women’s Clothing" href="#">Women’s Clothing</a></li>
+								<li><a title="Phones & Accessories" href="#">Phones & Accessories</a></li>
+								<li><a title="Computer & Office" href="#">Computer & Office</a></li>
+								<li><a title="Consumer Electronics" href="#">Consumer Electronics</a></li>
+								<li><a title="Jewelry & Watches" href="#">Jewelry & Watches</a></li>
+								<li><a title="Home & Garden, Furniture" href="#">Home & Garden, Furniture</a></li>
+								<li><a title="Bags & Shoes" href="#">Bags & Shoes</a></li>
+								<li><a title="Toys, Kids & Baby" href="#">Toys, Kids & Baby</a></li>
+								<li><a title="Sports & Outdoors" href="#">Sports & Outdoors</a></li>
+								<li><a title="Health & Beauty, Hair" href="#">Health & Beauty, Hair</a></li>
+								<li><a title="Automobiles & Motorcycles" href="#">Automobiles & Motorcycles</a></li>
+
+								<li class="hidden-item"><a title="Automotive &amp; Motorcycle" href="#">Automotive &amp; Motorcycle</a></li>
+								<li class="hidden-item"><a title="Flashlights &amp; Lamps" href="#">Flashlights &amp; Lamps</a></li>
+								<li class="all-categories"><a class="show_more" title="More Categories" href="javascript:void(0)">More Categories<em class="fa fa-plus-square-o" style="float: right; margin-top: 2px;"></em></a> <a class="close_more" style="display: none;" title="Close Menu" href="javascript:void(0)">Close Menu<em class="fa fa-minus-square-o" style="float: right; margin-top: 2px;"></em></a></li>
+								</ul>
+								</div>
+							</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Footer Link Center</title>
+			<identifier>footer-link-center</identifier>
+			<content>
+				<![CDATA[<ul class="nav-links-footer">
+						<li><a href="#" title="About Us">About Us</a></li>
+						<li><a href="#" title="Location">Location</a></li>
+						<li><a href="#" title="Blogs">Blogs</a></li>
+						<li><a href="#" title="Extras">Extras</a></li>
+						<li><a href="#" title="Information">Information</a></li>
+						<li><a href="#" title="FAQs">FAQs</a></li>
+						<li><a href="#" title="title">Contact Us</a></li>
+					</ul>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Contact Description</title>
+			<identifier>contact-description</identifier>
+			<content>
+				<![CDATA[<div class="primary-title">
+				<h2>Leave us a Message</h2>
+				</div>
+				<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat sed do eiusmod tempor incididunt ut labore dolore.</p>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Contact Info</title>
+			<identifier>contact-info</identifier>
+			<content>
+				<![CDATA[<div class="address-container">
+			<div class="primary-title">
+			<h2>Contact Us</h2>
+			</div>
+			<ul>
+			<li><span><em class="fa fa-home"></em>Address:</span> No 40 Baria Sreet 133/2 NewYork City, NY, USD</li>
+			<li><span><em class="fa fa-paper-plane"></em>Mail Us:</span> sm-themecore@magentech.com</li>
+			<li><span><em class="fa fa-phone"></em>Phone:</span> (888) 1234 56789</li>
+			<li class="time-contact"><span><em class="fa fa-clock-o"></em>Opening:</span> Monday to Friday: 9am &ndash; 9pm<br />Saturday to Sunday: 9am &ndash; 11pm</li>
+			</ul>
+			</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Themecore - Hotline Header 12</title>
+			<identifier>hotline-hd12</identifier>
+			<content>
+				<![CDATA[<div class="hotline-header">
+                            Call Us Free:  <span>+849 4344 6000</span>
+                        </div>]]>
+			</content>
+			<is_active>1</is_active>
+			<store_id>0</store_id>
+		</cms_item>
+	</blocks>
+</root>

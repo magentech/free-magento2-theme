@@ -1,0 +1,80 @@
+<?php
+$_config = $this->helper('Sm\Themecore\Helper\Data');
+?>
+
+<div class="header-container header-style-1">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="customer-action">
+                        <?php echo $this->getChildHtml("welcome-customer"); ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="language-currency">
+                        <?php echo $this->getChildHtml("store_language"); ?>
+                        <?php echo $this->getChildHtml("currency"); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle">
+        <div class="container">
+            <div class="middle-content">
+                <div class="logo-container">
+                    <?php echo $this->getChildHtml("logo"); ?>
+                </div>
+
+                <div class="right-header">
+                    <div class="right-content">
+                        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('support-header')->toHtml(); ?>
+
+                        <?php
+                        $login_customer = $block->getLayout()->createBlock('Magento\Customer\Block\Account\Customer');
+                        ?>
+
+                        <div class="block-right block-account">
+                            <?php if ($login_customer->customerLoggedIn()) { ?>
+                                <div class="top-title"><?php echo __('Hi Customer') ?></div>
+                            <?php } else { ?>
+                                <div class="top-title"><?php echo __('My Account') ?></div>
+                            <?php } ?>
+
+                            <div class="block-content" data-move="customer-mobile">
+                                <?php echo $this->getChildHtml("header.links"); ?>
+                            </div>
+                        </div>
+
+                        <div class="minicart-header" data-move="minicart-mobile">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom ontop-element">
+        <div class="container">
+            <div class="desktop-menu">
+                <div class="horizontal-block">
+                    <?php
+                    if ($_config->getGeneral('navigation_group/menu_style') == 'megamenu') {
+                        echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml();
+                    } else {
+                        echo $this->getChildHtml("horizontal-css");
+                    }
+                    ?>
+                </div>
+
+                <div class="search-header">
+                    <?php echo $this->getChildHtml("search-header"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

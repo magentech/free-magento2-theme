@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post list toolbar template
+ *
+ * @var $block \Magefan\Blog\Block\Post\PostList\Toolbar
+ */
+?>
+<?php if ($block->getCollection()->getSize()) { ?>
+	<?php $woj = $block->getWidgetOptionsJson() ?>
+    <div class="toolbar toolbar-blog-posts" <?php if ($woj) echo 'data-mage-init="'.$woj.'"' ?>>
+        <?php echo $block->getPagerHtml() ?>
+    </div>
+<?php } ?>

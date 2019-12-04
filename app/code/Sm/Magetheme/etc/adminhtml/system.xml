@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magentech" translate="label" sortOrder="1">
+            <label>Magentech.com</label>
+        </tab>
+        <section id="magetheme" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>SM Magetheme</label>
+            <tab>magentech</tab>
+            <resource>Sm_Magetheme::config</resource>
+
+            <group id="theme_layout" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Theme Layout</label>
+
+                <field id="header_style" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Header Style</label>
+                    <source_model>Sm\Magetheme\Model\Config\Source\ListHeaderStyles</source_model>
+                </field>
+
+                <field id="footer_style" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Style</label>
+                    <source_model>Sm\Magetheme\Model\Config\Source\ListFooterStyles</source_model>
+                </field>
+
+                <field id="product_style" translate="label" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Product Style</label>
+                    <source_model>Sm\Magetheme\Model\Config\Source\ListProductStyles</source_model>
+                </field>
+
+                <field id="direction_rtl" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Right To Left Layout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="theme_install" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Theme Installation</label>
+
+                <field id="import_blocks_heading" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Import Static Blocks</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="import_blocks" translate="button_label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Static Blocks</button_label>
+                    <attribute type="action_url">magetheme_admin/system_config_cms/import</attribute>
+                    <attribute type="import_type">blocks</attribute>
+                    <frontend_model>Sm\Magetheme\Block\System\Config\Form\Button\Import\Cms</frontend_model>
+                    <comment>
+                        <![CDATA[Click this button to create all static blocks provided with this theme.]]></comment>
+                </field>
+
+                <field id="overwrite_blocks" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Overwrite Existing Blocks</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", imported blocks will overwrite existing blocks with the same identifiers
+                        (if any blocks with the same identifiers already exist). To change value of this field, save the
+                        configuration (without saving, the option will remain unchanged after you refresh the page).
+                    </comment>
+                </field>
+
+                <field id="import_pages_heading" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Import Pages</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="import_pages" translate="button_label" sortOrder="25" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Pages</button_label>
+                    <attribute type="action_url">magetheme_admin/system_config_cms/import</attribute>
+                    <attribute type="import_type">pages</attribute>
+                    <frontend_model>Sm\Magetheme\Block\System\Config\Form\Button\Import\Cms</frontend_model>
+                    <comment><![CDATA[Click this button to create CMS pages provided with this theme.]]></comment>
+                </field>
+
+                <field id="overwrite_pages" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Overwrite Existing Pages</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", imported pages will overwrite existing pages with the same identifiers (if
+                        any pages with the same identifiers already exist). To change value of this field, save the
+                        configuration (without saving, the option will remain unchanged after you refresh the page).
+                    </comment>
+                </field>
+
+                <field id="import_demo_heading" translate="label comment" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Import Demo</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="import_demo1" translate="button_label" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 1</button_label>
+                    <attribute type="action_url">magetheme_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo1</attribute>
+                    <frontend_model>Sm\Magetheme\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+            </group>
+
+            <group id="product_information" translate="label" type="text" sortOrder="700" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Product Information</label>
+                <field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Vesion: 1.0.0</p>
+											<p>Userguide: <a target="_blank" title="Usergide" href="http://www.magentech.com/documentation/sm-magetheme/">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">http://www.magentech.com/forum</a></p>
+								]]></label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

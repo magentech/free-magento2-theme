@@ -1,0 +1,85 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<?php
+$_config     = $this->helper('Sm\Magetheme\Helper\Data');
+$headerStyle = $_config->getThemeLayout('header_style');
+?>
+
+<div class="vertical-menu-block">
+    <div class="block-title-menu"><?php echo __('All Categories'); ?></div>
+
+    <div class="vertical-menu-content">
+        <nav class="navigation" role="navigation">
+            <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+                <?php /* @escapeNotVerified */
+                echo $_menu; ?>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        var limit;
+        limit = 12;
+        var i = 0;
+        var items = $('.navigation > ul > li').length;
+
+        if (items > limit) {
+            $('.navigation').append('<div class="more-w"><span class="more-view">More Categories</span></div>');
+
+            $('.navigation > ul > li').each(function () {
+                i++;
+                if (i > limit) {
+                    $(this).css('display', 'none');
+                }
+            });
+
+            $('.navigation .more-w > .more-view').click(function () {
+                if ($(this).hasClass('open')) {
+                    i = 0;
+                    $('.navigation > ul > li').each(function () {
+                        i++;
+                        if (i > limit) {
+                            $(this).slideUp(200);
+                        }
+                    });
+                    $(this).removeClass('open');
+                    $('.more-w').removeClass('active-i');
+                    $(this).text('More Categories');
+                } else {
+                    i = 0;
+                    $('.navigation > ul > li').each(function () {
+                        i++;
+                        if (i > limit) {
+                            $(this).slideDown(200);
+                        }
+                    });
+                    $(this).addClass('open');
+                    $('.more-w').addClass('active-i');
+                    $(this).text('Close Menu');
+                }
+            });
+
+        }
+    });
+</script>

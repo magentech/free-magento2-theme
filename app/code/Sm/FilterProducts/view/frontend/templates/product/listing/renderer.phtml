@@ -1,0 +1,30 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Filter Products - Version 1.4.0
+# Copyright (c) 2016 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+?>
+<?php /** @var $block \Magento\Swatches\Block\Product\Renderer\Configurable */
+$tag_id = $this->getData('tagid');
+ ?>
+<div class=" swatch-opt-<?php /* @escapeNotVerified */ echo $block->getProduct()->getId() ?> "></div>
+<script>
+    require(["jquery", "jquery/ui", "Magento_Swatches/js/swatch-renderer"], function ($) {
+		var _swopt = $('.swatch-opt-<?php /* @escapeNotVerified */ echo $block->getProduct()->getId() ?>' ,$('#<?php echo $tag_id ?>'));
+		if (!$('.swatch-attribute').length) {
+			_swopt.SwatchRenderer({
+				selectorProduct: '#<?php echo $tag_id ?> .product-item-details',
+				onlySwatches: true,
+				enableControlLabel: false,
+				numberToShow: <?php /* @escapeNotVerified */ echo $block->getNumberSwatchesPerProduct(); ?>,
+				jsonConfig: <?php /* @escapeNotVerified */ echo $block->getJsonConfig(); ?>,
+				jsonSwatchConfig: <?php /* @escapeNotVerified */ echo $block->getJsonSwatchConfig(); ?>,
+				mediaCallback: '<?php /* @escapeNotVerified */ echo $block->getMediaCallback() ?>'
+			});
+		}
+    });
+</script>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<magetheme>
+			<theme_layout>
+				<header_style>header-1</header_style>
+				<footer_style>footer-1</footer_style>
+				<direction_rtl>0</direction_rtl>
+			</theme_layout>
+
+			<theme_install>
+				<overwrite_blocks>0</overwrite_blocks>
+				<overwrite_pages>0</overwrite_pages>
+			</theme_install>
+		</magetheme>
+	</default>
+</config>

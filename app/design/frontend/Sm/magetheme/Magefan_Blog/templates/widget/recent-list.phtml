@@ -1,0 +1,110 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog recent posts widget
+ *
+ * @var $block \Magefan\Blog\Block\Widget\Recent
+ */
+?>
+
+<?php
+$_postCollection   = $block->getPostCollection();
+$_config           = $this->helper('Sm\Themecore\Helper\Data');
+$enableLadyLoading = $_config->getAdvanced('lazyload_group/enable_ladyloading');
+$mediaSrc          = $_config->getMediaUrl();
+if ($enableLadyLoading) {
+    $imgClass = 'lazyload';
+} else {
+    $imgClass = '';
+}
+?>
+<div class="block block-slider-post">
+    <div class="block-title">
+        <strong><?php echo $block->escapeHtml($block->getTitle()) ?></strong>
+    </div>
+
+    <div class="block-content">
+        <?php if ($_postCollection->count()) { ?>
+            <div class="owl-carousel owl-theme">
+                <?php foreach ($_postCollection as $_post) { ?>
+                    <?php
+                    $_postUrl  = $_post->getPostUrl();
+                    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+                    ?>
+                    <div class="item">
+                        <div class="image-post">
+                            <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
+                                <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+                                    <img class="<?php echo $imgClass; ?>"
+                                        <?php if ($enableLadyLoading) { ?>
+                                            src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>"
+                                            data-src="<?php echo $featuredImage ?>"
+                                            width="1" height="1"
+                                        <?php } else { ?>
+                                            src="<?php echo $featuredImage ?>"
+                                        <?php } ?>
+                                         alt="<?php echo $_postName ?>"/>
+                                </a>
+                            <?php } else { ?>
+                                <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+                                    <img src="<?php /* @escapeNotVerified */
+                                    echo $block->getViewFileUrl('images/post/no_image.jpg') ?>"
+                                         alt="<?php echo $_postName ?>"/>
+                                </a>
+                            <?php } ?>
+                        </div>
+
+                        <div class="info-post">
+                            <div class="post-date">
+                                <?php
+                                $date_post = $_post->getPublishDate('Y-m-d');
+                                $day       = date('d', strtotime($date_post));
+                                $month     = date('F', strtotime($date_post));
+                                $year      = date('Y', strtotime($date_post));
+                                ?>
+                                <span class="day"><?php echo $day; ?></span>
+                                <span class="month-year"><?php echo $month . ' ' . $year; ?></span>
+                            </div>
+
+                            <div class="post-title">
+                                <a class="post-item-link"
+                                   href="<?php echo $_postUrl ?>">
+                                    <?php echo $_postName; ?>
+                                </a>
+                            </div>
+
+                            <div class="post-short-description">
+                                <?php
+                                $content    = $block->getShorContent($_post);
+                                $short_text = strip_tags($content);
+                                echo substr($short_text, 0, 80) . '...';
+                                ?>
+                            </div>
+
+                            <div class="post-read-more">
+                                <a href="<?php echo $_postUrl ?>"
+                                   title="<?php echo $_postName ?>"><?php echo __('View more') ?></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <div class="loading-content">
+                <span class="hidden"><?php echo __('Loading...') ?></span>
+            </div>
+        <?php } else { ?>
+            <div class="message info empty">
+                <div><?php /* @escapeNotVerified */
+                    echo __('We can\'t find post matching the selection.') ?></div>
+            </div>
+        <?php } ?>
+    </div>
+</div>

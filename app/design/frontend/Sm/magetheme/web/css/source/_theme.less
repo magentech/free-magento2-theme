@@ -1,0 +1,165 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+// Layout
+
+@layout__max-width: 100%;
+@layout-indent__width: 0;
+
+@font-family-name__base: '';
+@font-family__base: '';
+@form-element-input__font-size: false;
+@line-height__base: 1.666666667;
+
+//  Primary button
+@button__border-radius: 0;
+@button-primary__border: none;
+@button-primary__hover__border: none;
+
+// Input text
+@form-element-input__color: #666;
+@form-element-input__height: 32px;
+@form-element-input-placeholder__color: #999;
+@form-element-input__border-radius: 0;
+@form-element-input__border: 1px solid #ddd;
+
+// Form
+@select__padding: 6px 20px 6px 6px;
+
+@form-fieldset__margin: 0 0 20px;
+@form-element-input__focus__border: 1px solid #66afe9;
+
+@link__hover__text-decoration: none;
+@link__active__text-decoration: none;
+@focus__box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+@link__active__color: '';
+@link__visited__color: '';
+
+// Theme mixin
+
+.opacity(@opacity) {
+    opacity: @opacity;
+}
+
+.border-radius(@radius) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+.transform-rotate(@rotate) {
+    -webkit-transform: rotate(@rotate);
+    -ms-transform: rotate(@rotate); // IE9 only
+    -o-transform: rotate(@rotate);
+    transform: rotate(@rotate);
+}
+
+.transform(@transform) {
+    -webkit-transform: @transform;
+    -ms-transform: @transform; // IE9 only
+    -o-transform: @transform;
+    transform: @transform;
+}
+
+.transition(@transform) {
+    transition: @transform;
+    -moz-transition: @transform;
+    -webkit-transition: @transform;
+    -o-transition: @transform;
+}
+
+.transition-duration(@transition_duration) {
+    transition-duration: @transition_duration;
+    -webkit-transition-duration: @transition_duration;
+    -moz-transition-duration: @transition_duration;
+    -o-transition-duration: @transition_duration;
+}
+
+.box-shadow(@boxshadow) {
+    box-shadow: @boxshadow;
+    -moz-box-shadow: @boxshadow;
+    -webkit-box-shadow: @boxshadow;
+    -o-box-shadow: @boxshadow;
+}
+
+.box-shadow-none() {
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -o-box-shadow: none !important;
+}
+
+.placeholder(@placeholder) {
+    &::-webkit-input-placeholder {
+        color: @placeholder;
+        opacity: 1;
+    }
+    &:-moz-placeholder {
+        color: @placeholder;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        color: @placeholder;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: @placeholder;
+        opacity: 1;
+    }
+}
+
+.clearfix() {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+// Theme custom
+
+/**
+ * Button
+ */
+
+@button-primary__hover: #333;
+@button-primary__default: #444;
+@button-primary__background: @button-primary__default;
+@button-primary__hover__background: @button-primary__hover;
+@button-primary__color: @color-white;
+@button-primary__padding: 7px 20px;
+@button-primary__font-weight: @font-weight__regular;
+
+/**
+ * Remove color name product
+ */
+
+@product-name-link__color: '';
+@product-name-link__color__active: '';
+@product-name-link__color__hover: '';
+@product-name-link__color__visited: '';
+
+/**
+ * Icomoon mixin
+ */
+
+.icomoon (@code, @size) {
+    content: '\@{code}';
+    display: inline-block;
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    font-size: @size;
+}

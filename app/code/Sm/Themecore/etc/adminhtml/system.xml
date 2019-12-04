@@ -1,0 +1,786 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magentech" translate="label" sortOrder="1">
+            <label>Magentech.com</label>
+        </tab>
+        <section id="themecore" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Theme Core Configuration</label>
+            <tab>magentech</tab>
+            <resource>Sm_Themecore::config</resource>
+
+            <!-- Group General -->
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Options</label>
+
+                <!--<field id="theme_color" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Theme Color</label>
+                    <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>-->
+
+                <group id="primary_color" translate="label" type="text" sortOrder="3" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Primary Color</label>
+
+                    <field id="theme_color" translate="label" type="text" sortOrder="5" showInDefault="1"
+                           showInWebsite="1"
+                           showInStore="1">
+                        <label>Theme Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+
+                    <field id="text_on_theme_color" translate="label" type="text" sortOrder="10" showInDefault="1"
+                           showInWebsite="1"
+                           showInStore="1">
+                        <label>Text On Theme Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+
+                    <field id="link_on_theme_color" translate="label" type="text" sortOrder="10" showInDefault="1"
+                           showInWebsite="1"
+                           showInStore="1">
+                        <label>Link On Theme Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+
+                    <field id="linkhover_on_theme_color" translate="label" type="text" sortOrder="15" showInDefault="1"
+                           showInWebsite="1"
+                           showInStore="1">
+                        <label>Link Hover On Theme Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                </group>
+
+                <group id="bodyfont_group" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Body Font</label>
+
+                    <field id="body_font" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Main Font</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\ListBodyFont</source_model>
+                    </field>
+
+                    <field id="body_googlefont_link" translate="label" type="text" sortOrder="20" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Google Font Link</label>
+                        <depends>
+                            <field id="body_font">google_font</field>
+                        </depends>
+                    </field>
+
+                    <field id="body_googlefont_family" translate="label" type="text" sortOrder="25" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Google Font Family</label>
+                        <depends>
+                            <field id="body_font">google_font</field>
+                        </depends>
+                    </field>
+
+                    <field id="body_googlefont_weight" translate="label" type="text" sortOrder="30" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Google Font Weight</label>
+                        <depends>
+                            <field id="body_font">google_font</field>
+                        </depends>
+                    </field>
+
+                    <field id="font_size" translate="label" type="select" sortOrder="35" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Font Size</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\ListFontSize</source_model>
+                    </field>
+
+                    <field id="body_link_color" translate="label" type="text" sortOrder="40" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Link Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+
+                    <field id="body_link_hover_color" translate="label" type="text" sortOrder="45" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Hover Link Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+
+                    <field id="body_text_color" translate="label" type="text" sortOrder="50" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Text Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                </group>
+
+                <group id="background_group" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background</label>
+
+                    <field id="body_background_color" translate="label" type="text" sortOrder="60" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Background Color</label>
+                        <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+
+                    <field id="use_background_image" translate="label" type="select" sortOrder="65" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Use Background Image</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="body_background_image" translate="label" type="image" sortOrder="70" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Background Image</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                        <upload_dir config="system/filesystem/media" scope_info="1">pattern</upload_dir>
+                        <base_url type="media" scope_info="1">pattern</base_url>
+                        <depends>
+                            <field id="use_background_image">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="background_repeat" translate="label" type="select" sortOrder="75" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Background Repeat</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\ListBgRepeat</source_model>
+                        <depends>
+                            <field id="use_background_image">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="background_position" translate="label" type="select" sortOrder="80" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Background Position</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\ListBgPosition</source_model>
+                        <depends>
+                            <field id="use_background_image">1</field>
+                        </depends>
+                    </field>
+                </group>
+
+                <group id="element_googlefont_group" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Element Google Font</label>
+
+                    <field id="use_element_googlefont" translate="label" type="select" sortOrder="90" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Element Google Font</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="element_googlefont_link" translate="label" type="text" sortOrder="95" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Google Font Link</label>
+                        <depends>
+                            <field id="use_element_googlefont">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="element_googlefont_family" translate="label" type="text" sortOrder="100"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Google Font Family</label>
+                        <depends>
+                            <field id="use_element_googlefont">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="element_googlefont_weight" translate="label" type="text" sortOrder="105"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Google Font Weight</label>
+                        <depends>
+                            <field id="use_element_googlefont">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="google_font_targets" translate="label" type="textarea" sortOrder="110" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Google Font Elements</label>
+                        <depends>
+                            <field id="use_element_googlefont">1</field>
+                        </depends>
+                    </field>
+
+                </group>
+
+                <group id="navigation_group" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Navigation</label>
+
+                    <field id="menu_style" translate="label" type="select" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Menu Style</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\ListMenuStyles</source_model>
+                    </field>
+
+                    <field id="menu_ontop" translate="label" type="select" sortOrder="20" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Sticky Menu</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+
+                <group id="mobile_layout" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Mobile Layout</label>
+
+                    <field id="mobile_break_point" translate="label" type="text" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Header Mobile Break Point</label>
+                    </field>
+
+                    <field id="logo_mobile" translate="label" type="image" sortOrder="70" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Logo</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                        <upload_dir config="system/filesystem/media" scope_info="1">logomobile</upload_dir>
+                        <base_url type="media" scope_info="1">logomobile</base_url>
+                    </field>
+
+                    <field id="logomobile_width" translate="label" type="text" sortOrder="80" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Logo Mobile Width</label>
+                        <comment>Example: 100</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number</validate>
+                    </field>
+
+                    <field id="logomobile_height" translate="label" type="text" sortOrder="90" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Logo Mobile Height</label>
+                        <comment>Example: 35</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number</validate>
+                    </field>
+                </group>
+            </group>
+
+            <group id="theme_layout" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Theme Layout</label>
+
+                <field id="max_width" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Max Width</label>
+
+                    <comment>Unit(px, %). Example: 1170px, 90%</comment>
+                </field>
+
+                <field id="use_boxed_layout" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Boxed Layout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="boxed_background_color" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Content Color</label>
+                    <frontend_model>Sm\Themecore\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="use_boxed_layout">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="product_listing" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Product Listing</label>
+
+                <group id="category_one_column" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout 1 Column</label>
+
+                    <field id="one_column_1921" translate="label" type="select" sortOrder="5" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1921px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_1681_1920" translate="label" type="select" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1681px or equal to 1920px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_1441_1680" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1441px or equal to 1680px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_1200_1440" translate="label" type="select" sortOrder="20" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1200px or equal to 1440px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_992_1199" translate="label" type="select" sortOrder="25" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 992px or equal to 1199px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_768_991" translate="label" type="select" sortOrder="30" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 768px or equal to 991px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_481_767" translate="label" type="select" sortOrder="35" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 481px or equal to 767px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="one_column_0_480" translate="label" type="select" sortOrder="40" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is equal or less than 480px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                </group>
+
+                <group id="category_two_column" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout 2 Columns</label>
+
+                    <field id="two_column_1921" translate="label" type="select" sortOrder="5" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1921px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_1681_1920" translate="label" type="select" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1681px or equal to 1920px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_1441_1680" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1441px or equal to 1680px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_1200_1440" translate="label" type="select" sortOrder="20" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1200px or equal to 1440px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_992_1199" translate="label" type="select" sortOrder="25" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 992px or equal to 1199px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_768_991" translate="label" type="select" sortOrder="30" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 768px or equal to 991px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_481_767" translate="label" type="select" sortOrder="35" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 481px or equal to 767px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="two_column_0_480" translate="label" type="select" sortOrder="40" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is equal or less than 480px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                </group>
+
+                <group id="category_three_column" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout 3 Columns</label>
+
+                    <field id="three_column_1921" translate="label" type="select" sortOrder="5" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1921px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_1681_1920" translate="label" type="select" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1681px or equal to 1920px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_1441_1680" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1441px or equal to 1680px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_1200_1440" translate="label" type="select" sortOrder="20" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 1200px or equal to 1440px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_992_1199" translate="label" type="select" sortOrder="25" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 992px or equal to 1199px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_768_991" translate="label" type="select" sortOrder="30" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 768px or equal to 991px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_481_767" translate="label" type="select" sortOrder="35" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is greater than 481px or equal to 767px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                    <field id="three_column_0_480" translate="label" type="select" sortOrder="40" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Device's screen is equal or less than 480px</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\Columns</source_model>
+                    </field>
+
+                </group>
+
+            </group>
+
+            <group id="product_detail" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Product Detail</label>
+
+                <group id="image_box_group" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Image Box</label>
+
+                    <field id="thumbs_style" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Thumbs Styles</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\ListThumbs</source_model>
+                    </field>
+
+                    <field id="image_loop" translate="label" type="select" sortOrder="17" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Loop</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="image_keyboard" translate="label" type="select" sortOrder="19" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Keyboard Trigger</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="image_navigation" translate="label" type="select" sortOrder="21" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Navigation</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="image_fullscreen" translate="label" type="select" sortOrder="23" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Popup Fullscreen</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="thumbs_width" translate="label" type="text" sortOrder="25" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Thumbs Width</label>
+                        <depends>
+                            <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                        </depends>
+                        <comment>Unit(px), range 50-150 . Example: 100</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number
+                            validate-digits-range digits-range-50-150
+                        </validate>
+                    </field>
+
+                    <field id="thumbs_height" translate="label" type="text" sortOrder="27" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Thumbs Height</label>
+                        <depends>
+                            <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                        </depends>
+                        <comment>Unit(px), range 50-150 . Example: 100</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number
+                            validate-digits-range digits-range-50-150
+                        </validate>
+                    </field>
+
+                    <field id="thumbs_navigation" translate="label" type="select" sortOrder="29" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Thumbs Navigation</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                        </depends>
+                    </field>
+
+                    <field id="thumbs_margin" translate="label" type="text" sortOrder="31" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Thumbs Margin</label>
+                        <depends>
+                            <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                        </depends>
+                        <comment>Unit(px), range 1-30 . Example: 10</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number
+                            validate-digits-range digits-range-1-30
+                        </validate>
+                    </field>
+
+                    <field id="thumbs_borderwidth" translate="label" type="text" sortOrder="33" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Thumbs Border Active Width</label>
+                        <depends>
+                            <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                        </depends>
+                        <comment>Unit(px), range 1-5 . Example: 1</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number
+                            validate-digits-range digits-range-1-5
+                        </validate>
+                    </field>
+
+                    <field id="breakpoints_width" translate="label" type="text" sortOrder="35" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Breakpoints</label>
+                        <comment>Unit(px), range 768-1366 . Example: 1200</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number
+                            validate-digits-range digits-range-768-1366
+                        </validate>
+                    </field>
+
+                    <field id="use_zoom_image" translate="label" type="select" sortOrder="50" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Product Image Zoom</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="zoom_width" translate="label" type="text" sortOrder="55" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Zoom Width Container</label>
+                        <depends>
+                            <field id="use_zoom_image">1</field>
+                        </depends>
+                        <comment>Unit(px), range 200-600 . Example: 400</comment>
+                        <validate>validate-greater-than-zero integer required-entry validate-number
+                            validate-digits-range digits-range-200-600
+                        </validate>
+                    </field>
+
+                </group>
+
+                <group id="related_upsell_group" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Related - Upsell Product</label>
+
+                    <field id="show_related" translate="label" type="select" sortOrder="65" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Related Product</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="show_upsell" translate="label" type="select" sortOrder="75" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Upsell Product</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+
+                <group id="tabs_group" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Tabs</label>
+
+                    <field id="tab_style" translate="label" type="select" sortOrder="90" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Tab Style</label>
+                        <source_model>Sm\Themecore\Model\Config\Source\TabStyles</source_model>
+                    </field>
+
+                    <field id="show_custom_tab" translate="label" type="select" sortOrder="100" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Custom Tab</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="custom_tab_name" translate="label" type="text" sortOrder="105" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Custom Tab Name</label>
+                        <depends>
+                            <field id="show_custom_tab">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="customtab_content" translate="label" type="textarea" sortOrder="110" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Custom Tab Content</label>
+                        <depends>
+                            <field id="show_custom_tab">1</field>
+                        </depends>
+                    </field>
+                </group>
+
+            </group>
+
+            <group id="advanced" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Advanced</label>
+
+                <group id="backtotop_group" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Back To Top</label>
+
+                    <field id="show_backtotop" translate="label" type="select" sortOrder="5" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Back to Top</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+
+                <group id="product_group" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Product</label>
+
+                    <field id="show_addtocart_button" translate="label" type="select" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Add to Cart</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="show_wishlist_button" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Add to Wishlist</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="show_compare_button" translate="label" type="select" sortOrder="20" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Add to Compare</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="show_newlabel" translate="label" type="select" sortOrder="22" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show New Label</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="show_salelabel" translate="label" type="select" sortOrder="23" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Sale Label</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="show_discount" translate="label" type="select" sortOrder="30" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Discount Percent</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="show_salelabel">1</field>
+                        </depends>
+                        <comment>If Show Discount Percent: Yes, sale label only displays discount, not display label
+                            text.
+                        </comment>
+                    </field>
+                </group>
+
+                <group id="newsletter_group" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Newsletter Popup</label>
+
+                    <field id="show_newsletter_popup" translate="label" type="select" sortOrder="24" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Show Newsletter Popup</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+
+                <group id="copyright_group" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Copyright</label>
+
+                    <field id="custom_copyright" translate="label" type="select" sortOrder="35" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Custom Copyright</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="copyright_content" translate="label" type="textarea" sortOrder="40" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Copyright</label>
+                        <depends>
+                            <field id="custom_copyright">1</field>
+                        </depends>
+                    </field>
+                </group>
+
+                <group id="developer_group" translate="label" type="text" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Developer</label>
+
+                    <field id="enable_custom_css" translate="label" type="select" sortOrder="5" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Custom CSS</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="custom_css" translate="label" type="textarea" sortOrder="10" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Custom Css</label>
+
+                        <depends>
+                            <field id="enable_custom_css">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="enable_custom_js" translate="label" type="select" sortOrder="15" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Custom CSS</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+
+                    <field id="custom_js" translate="label" type="textarea" sortOrder="55" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Custom Javascript</label>
+
+                        <depends>
+                            <field id="enable_custom_js">1</field>
+                        </depends>
+                    </field>
+                </group>
+
+                <group id="lazyload_group" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Lazy loading</label>
+
+                    <field id="enable_ladyloading" translate="label" type="select" sortOrder="40" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                        <label>Enable Lazy loading</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+
+            <!-- Group Product Information -->
+            <group id="product_information" translate="label" type="text" sortOrder="700" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Product Information</label>
+                <field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Vesion: 1.0.0</p>
+											<p>Userguide: <a target="_blank" title="Usergide" href="http://www.magentech.com/documentation/sm-themecore-v1.0.0/">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">http://www.magentech.com/forum</a></p>
+								]]></label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magefan_Blog::css/comments.css" />
+    </head>
+    <body>
+        <attribute name="class" value="blog-page" />
+        <referenceContainer name="sidebar.additional">
+            <block class="Magefan\Blog\Block\Sidebar" name="blog.sidebar" template="sidebar.phtml">
+                <block class="Magefan\Blog\Block\Sidebar\Search" name="blog.sidebar.search" template="sidebar/search.phtml" />
+                <block class="Magefan\Blog\Block\Sidebar\Categories" name="blog.sidebar.category" template="sidebar/categories.phtml">
+                    <action method="setCacheLifetime">
+                        <argument name="time" xsi:type="string">86400</argument>
+                    </action>
+                </block>
+                <block class="Magefan\Blog\Block\Sidebar\Recent" name="blog.sidebar.recent" template="sidebar/recent.phtml" />
+                <block class="Magefan\Blog\Block\Sidebar\Featured" name="blog.sidebar.featured" template="sidebar/featured.phtml">
+                    <action method="setCacheLifetime">
+                        <argument name="time" xsi:type="string">86400</argument>
+                    </action>
+                </block>
+                <block class="Magefan\Blog\Block\Sidebar\Archive" name="blog.sidebar.archive" template="sidebar/archive.phtml">
+                    <action method="setCacheLifetime">
+                        <argument name="time" xsi:type="string">86400</argument>
+                    </action>
+                </block>
+                <block class="Magefan\Blog\Block\Sidebar\TagClaud" name="blog.sidebar.tagclaud" template="sidebar/tag_claud.phtml">
+                    <action method="setCacheLifetime">
+                        <argument name="time" xsi:type="string">86400</argument>
+                    </action>
+                </block>
+                <block class="Magefan\Blog\Block\Sidebar\Custom" name="blog.sidebar.custom" template="sidebar/custom.phtml" />
+                <block class="Magefan\Blog\Block\Sidebar\CustomTwo" name="blog.sidebar.custom2" template="sidebar/custom.phtml" />
+                <block class="Magefan\Blog\Block\Sidebar\Rss" name="blog.sidebar.rss" template="sidebar/rss.phtml">
+                    <action method="setCacheLifetime">
+                        <argument name="time" xsi:type="string">86400</argument>
+                    </action>
+                </block>
+            </block>
+            <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+            <referenceBlock name="wishlist_sidebar" remove="true"/>
+        </referenceContainer>
+    </body>
+</page>

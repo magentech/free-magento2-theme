@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<div class="horizontal-menu-block">
+    <div class="horizontal-menu-content">
+        <nav class="navigation" role="navigation">
+            <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+                <li class="level0 home-item">
+                    <a class="level-top ui-corner-all"
+                       href="<?php echo $this->getUrl() ?>"><span><?php echo __('Home') ?></span></a>
+                </li>
+                <?php /* @escapeNotVerified */
+                echo $_menu; ?>
+            </ul>
+        </nav>
+    </div>
+</div>

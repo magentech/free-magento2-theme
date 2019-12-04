@@ -1,0 +1,311 @@
+.rtl-layout {
+    /**
+     * Form element
+     */
+
+    select {
+        background-position: left center;
+        padding-right: 6px;
+        padding-left: 25px;
+    }
+
+    input[type="checkbox"] {
+        margin: 2px 0 0 5.75px;
+    }
+
+    input[type="radio"] {
+        margin: 2px 0 0 5.75px;
+    }
+
+    /**
+     * Grid products
+     */
+
+    .products.wrapper.products-grid .product-items .product-item {
+        float: right;
+    }
+
+    /**
+     * Owl slider
+     */
+
+    .owl-carousel .owl-item {
+        direction: rtl;
+    }
+
+    .fieldset > .legend {
+        float: right;
+    }
+
+    .modal-custom .action-close,
+    .modal-popup .action-close,
+    .modal-slide .action-close {
+        left: 0;
+        right: auto;
+    }
+
+    table th,
+    table > tbody > tr > th,
+    table > tfoot > tr > th,
+    table > tbody > tr > td,
+    table > tfoot > tr > td {
+        text-align: right;
+    }
+
+    /**
+     * Minicart header
+     */
+
+    .minicart-wrapper {
+        .product .actions {
+            float: left;
+        }
+
+        .block-minicart {
+            .product-item-photo {
+                float: right;
+            }
+
+            .minicart-items .product-item-details {
+                margin-right: 80px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    /**
+     * Shopping cart
+     */
+
+    .cart.table-wrapper .item-options dt, .opc-block-summary .items-in-cart .product .item-options dt, .block-giftregistry-shared-items .product .item-options dt, .multicheckout .item-options dt {
+        float: right;
+        clear: right;
+        margin: 0 0 5.75px 11.5px;
+    }
+
+    .cart.table-wrapper .item-options dd, .opc-block-summary .items-in-cart .product .item-options dd, .block-giftregistry-shared-items .product .item-options dd, .multicheckout .item-options dd {
+        float: right;
+    }
+
+    /**
+     * Product type list
+     */
+
+    .product-type-list .product-item-details {
+        padding: 0 10px 0 0;
+    }
+
+    .hidden-rating .product-type-list .product-item-details {
+        padding: 7px 10px 0 0;
+    }
+
+    /**
+     * Product types detail
+     */
+
+    .bundle-actions {
+        float: right;
+    }
+
+    /**
+     * Checkout
+     */
+
+    &.checkout-index-index .logo {
+        float: right;
+    }
+
+    .authentication-wrapper {
+        float: left;
+    }
+
+    .field .control._with-tooltip input {
+        margin-left: 11.5px;
+        margin-right: 0;
+    }
+
+    .field-tooltip {
+        left: 0;
+        right: auto;
+    }
+
+    .block-authentication .block[class] .field .control,
+    .block-authentication .block[class] .field .label {
+        float: none;
+    }
+
+    .block-authentication .block[class] .field .label {
+        text-align: right;
+        display: block;
+    }
+
+    .opc-sidebar {
+        .minicart-items .product > .product-image-container {
+            float: right;
+        }
+
+        .opc-block-summary .minicart-items .product-item-details {
+            margin-right: 110px;
+            margin-left: 0;
+        }
+
+        .opc-block-summary .product-item .product-item-name-block {
+            text-align: right;
+            padding-left: 5.75px;
+            padding-right: 0;
+        }
+
+        .opc-block-summary .items-in-cart > .title {
+            padding: 11.5px 0 11.5px 46px;
+
+            &:after {
+                left: -9px;
+                top: 14px;
+                right: auto;
+            }
+        }
+    }
+
+    .checkout-payment-method .payment-method-content {
+        padding: 0 22px 23px 0;
+    }
+
+    .opc-block-shipping-information .shipping-information-title .action-edit {
+        left: 0;
+        right: auto;
+    }
+
+    /**
+     * Megamenu
+     */
+
+    .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_col_1,
+    .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_col_2,
+    .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_col_3,
+    .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_col_4,
+    .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_col_5,
+    .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_col_6 {
+        float: right;
+    }
+
+    /**
+     * Swatch option
+     */
+
+    .swatch-option {
+        float: right;
+        margin: 0 0 5.75px 7px;
+
+        &.color {
+            margin-bottom: 15px;
+        }
+    }
+
+    /**
+     * Shopping cart
+     */
+
+    .cart-summary .block > .title:after, .paypal-review-discount .block > .title:after {
+        left: -5px;
+        right: auto;
+    }
+
+    .cart-container {
+        .fieldset.coupon {
+            .actions-toolbar {
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    /**
+     * Compare sidebar
+     */
+
+    .sidebar .block-compare .product-items-names .product-item {
+        padding-left: 24px;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .rtl-layout {
+        .fieldset > .field:not(.choice) > .label {
+            float: right;
+            text-align: left;
+            padding: 6px 0 0 15px;
+        }
+
+        .fieldset > .field:not(.choice) > .control {
+            float: right;
+        }
+
+        .abs-revert-field-type-desktop .fieldset > .field:not(.choice) > .label,
+        .abs-revert-field-type-desktop .fieldset .fields > .field:not(.choice) > .label,
+        .product-add-form .fieldset > .field:not(.choice) > .label,
+        .product-add-form .fieldset .fields > .field:not(.choice) > .label {
+            text-align: right;
+        }
+
+        .abs-margin-for-forms-desktop,
+        .fieldset .legend,
+        .column:not(.sidebar-main) form .actions-toolbar,
+        .column:not(.sidebar-additional) form .actions-toolbar,
+        .login-container .fieldset::after {
+            margin-right: 25.8%;
+            margin-left: 0;
+        }
+
+        .product-add-form .fieldset > .field:not(.choice) > .control,
+        .product-add-form .fieldset .fields > .field:not(.choice) > .control {
+            float: none !important;
+        }
+
+        .actions-toolbar .primary {
+            float: right;
+
+            button {
+                margin: 0 0 0 5.75px;
+            }
+        }
+
+        .actions-toolbar .secondary {
+            float: left;
+        }
+
+        .fieldset > .field.choice:before,
+        .fieldset > .field.no-label:before {
+            float: right;
+            padding: 6px 0 0 15px;
+        }
+
+        .product.media {
+            float: right;
+        }
+
+        .product-info-main {
+            float: left;
+        }
+
+        /**
+         * Checkout
+         */
+
+        .authentication-wrapper {
+            text-align: left;
+        }
+
+        .checkout-payment-method .actions-toolbar .primary {
+            float: left;
+
+            button {
+                margin: 0 5.75px 0 0;
+            }
+        }
+
+        .checkout-shipping-method .actions-toolbar > .primary {
+            float: left;
+        }
+    }
+
+}

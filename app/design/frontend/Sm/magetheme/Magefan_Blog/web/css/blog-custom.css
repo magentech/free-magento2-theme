@@ -1,0 +1,159 @@
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+.post-list-wrapper .post-list {
+    padding: 0;
+}
+
+.post-holder {
+    background: none;
+    padding: 0;
+    margin-bottom: 40px;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.post-content.post-custom .post-description .post-ftimg-hld {
+    width: 270px;
+    margin: 0;
+}
+
+.post-content.post-custom .post-description .post-info-blog {
+    margin-left: 300px;
+}
+
+.post-content.post-custom .post-description .post-title-holder {
+    display: table;
+    width: 100%;
+}
+
+.post-content.post-custom .post-description .post-title {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 100%;
+}
+
+.post-content.post-custom .post-description .post-title a {
+    font-size: 114.285%;
+    font-weight: 600;
+    color: #222;
+}
+
+.post-list .post-holder .post-header .addthis_toolbox {
+    padding-top: 2px;
+}
+
+.post-content.post-custom .post-description .post-info-blog .dash {
+    display: none;
+}
+
+.post-content.post-custom .post-description .post-info-blog .post-categories {
+    display: none;
+}
+
+.post-content.post-custom .post-description .post-info-blog .post-text-hld {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.post-content.post-custom .post-description .post-info-blog .post-read-more {
+    display: table;
+    float: none;
+    padding: 9px 30px;
+    color: #222;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.post-holder .post-header .post-info .item {
+    margin-right: 5px;
+}
+
+.post-holder .post-header .post-info .label {
+    font-weight: 400;
+}
+
+.widget.block.blog-search .block-content {
+    background: #f7f7f7;
+    border: 1px solid #ddd !important;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.widget.block.block-rss .block-title {
+    background: none;
+    padding: 0;
+}
+
+.widget.block.block-rss .block-title strong {
+    text-transform: none;
+}
+
+.widget.block-rss .rss-icon {
+    padding-right: 7px;
+    margin-top: 2px;
+}
+
+.widget.block-recent-posts .block-content .item {
+    padding: 5px 0;
+}
+
+.c-replyform {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.c-replyform.no-active textarea {
+    height: 70px !important;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.c-replyform textarea {
+    height: 100px !important;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.c-replyform button {
+    padding: 6px 20px !important;
+    margin-top: 0 !important;
+}
+
+.rtl-layout .post-list .post-header .post-title {
+    float: right;
+}
+
+.rtl-layout .post-list .post-holder .post-header .addthis_toolbox {
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .rtl-layout .post-content .post-description .post-ftimg-hld {
+        float: right;
+    }
+
+    .rtl-layout .post-content.post-custom .post-description .post-info-blog {
+        margin-right: 300px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .post-content.post-custom .post-description .post-ftimg-hld {
+        width: 100%;
+        float: none;
+    }
+
+    .post-content.post-custom .post-description .post-info-blog {
+        margin-left: 0;
+        margin-right: 0;
+        float: none;
+        padding-top: 15px;
+    }
+}

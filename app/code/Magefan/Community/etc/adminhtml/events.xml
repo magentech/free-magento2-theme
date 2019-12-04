@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch">
+        <observer name="magefan_community_controller_action_predispatch" instance="Magefan\Community\Observer\PredispathAdminActionControllerObserver" />
+    </event>
+    <event name="controller_action_predispatch_adminhtml_system_config_save">
+        <observer name="magefan_community_controller_action_predispatch_adminhtml_system_config_save" instance="Magefan\Community\Observer\ConfigObserver"/>
+    </event>
+</config>

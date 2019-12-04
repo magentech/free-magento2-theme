@@ -1,0 +1,42 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$catalogData   = $objectManager->create('Magento\Catalog\Helper\Data');
+$crumbs        = false;
+if ($breadcrumbsBlock = $objectManager->create('Sm\Magetheme\Block\Html\Breadcrumbs')) {
+    $breadcrumbsBlock->addCrumb(
+        'home',
+        [
+            'label' => __('Home'),
+            'title' => __('Go to Home Page'),
+            'link' => $breadcrumbsBlock->getBaseUrl()
+        ]
+    );
+    $path = $catalogData->getBreadcrumbPath();
+    foreach ((array)$path as $name => $breadcrumb) {
+        $breadcrumbsBlock->addCrumb($name, $breadcrumb);
+    }
+    $crumbs = $breadcrumbsBlock->getCrumbs();
+}
+?>
+<?php if ($crumbs && is_array($crumbs)) : ?>
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="items">
+                <?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+                    <li class="item <?= /* @escapeNotVerified */
+                    $crumbName ?>">
+                        <?php if ($crumbInfo['link']) : ?>
+                            <a href="<?= /* @escapeNotVerified */
+                            $crumbInfo['link'] ?>"
+                               title="<?= $block->escapeHtml($crumbInfo['title']) ?>"><?= $block->escapeHtml($crumbInfo['label']) ?></a>
+                        <?php elseif ($crumbInfo['last']) : ?>
+                            <strong><?= $block->escapeHtml($crumbInfo['label']) ?></strong>
+                        <?php else: ?>
+                            <strong><?= $block->escapeHtml($crumbInfo['label']) ?></strong>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+<?php endif; ?>
