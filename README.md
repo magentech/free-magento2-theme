@@ -5,7 +5,7 @@
 <strong>SM MageTheme</strong> is a <strong>Free Magento 2 Theme</strong> that is ideal for any online stores, especially for digital store, hi-tech store, watch store, clothing store and accessories store or mega store with multi-categories. This eCommerce <strong>Magento 2 theme</strong> comes with a flexible layout with unlimited color schemes, creative design and ultimate core features to build a robust online store.
 </p>
 
-<p>The beautiful store theme integrated many new features such as powerful admin panel, one-click import demo data, other pages and static blocks. Let's explore the features in the full blog of <strong>SM MageTheme</strong> - A <strong>Best New Magento 2 Theme</strong> for Digital Store/Clothing Store and feel more! </p>
+<p>The beautiful store theme integrated many new features such as <strong>powerful admin panel</strong>, <strong>one-click import demo data</strong>, other pages and static blocks. Let's explore the features in the full blog of <strong>SM MageTheme</strong> - A <strong>Best New Magento 2 Theme</strong> for Digital Store/Clothing Store and feel more! </p>
 
 
 <img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/01_intro.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
