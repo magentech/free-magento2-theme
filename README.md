@@ -29,7 +29,7 @@
 <h2>Main Features</h2>
 
 <ul>
-    <li>Support Magento 2.1.x, 2.2.x, 2.3.3</li>
+    <li>Support Magento 2.1.x, 2.2.x, 2.3.x</li>
     <li><strong>Support Right to Left layout</strong></li>
     <li>Support 3 layouts for pages: 1, 2 or 3 columns</li>
     <li><strong>One-click import demo data</strong></li>
