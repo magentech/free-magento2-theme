@@ -48,7 +48,7 @@
 </ul>
 
 <h2>CHANGE LOGS</h2>
-<strong>Version 1.0.0</strong>
+<strong>Version 1.1.0</strong>
 <ul>
 <li>Update to magento 2.3.5</li>
 <li>Update module Magefan Blog</li>
