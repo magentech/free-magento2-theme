@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -23,7 +23,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected function _construct()
     {
         parent::_construct();
-        $this->_init('Magefan\Blog\Model\Tag', 'Magefan\Blog\Model\ResourceModel\Tag');
+        $this->_init(\Magefan\Blog\Model\Tag::class, \Magefan\Blog\Model\ResourceModel\Tag::class);
     }
 
     /**

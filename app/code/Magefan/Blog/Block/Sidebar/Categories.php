@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -9,11 +9,13 @@
 namespace Magefan\Blog\Block\Sidebar;
 
 use Magento\Store\Model\ScopeInterface;
+use \Magento\Framework\View\Element\Template;
+use \Magento\Framework\DataObject\IdentityInterface;
 
 /**
  * Blog sidebar categories block
  */
-class Categories extends \Magento\Framework\View\Element\Template implements \Magento\Framework\DataObject\IdentityInterface
+class Categories extends Template implements IdentityInterface
 {
     use Widget;
 

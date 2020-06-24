@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -23,7 +23,8 @@ class Index extends \Magefan\Blog\App\Action\Action
             return $this->_forwardNoroute();
         }
 
-        $this->_view->loadLayout();
-        $this->_view->renderLayout();
+        $resultPage = $this->_objectManager->get(\Magefan\Blog\Helper\Page::class)
+            ->prepareResultPage($this, new \Magento\Framework\DataObject());
+        return $resultPage;
     }
 }

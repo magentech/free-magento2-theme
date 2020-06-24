@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -22,6 +22,7 @@ class Url
     /**
      * Objects Types
      */
+    const CONTROLLER_INDEX = 'blog_index';
     const CONTROLLER_POST = 'post';
     const CONTROLLER_CATEGORY = 'category';
     const CONTROLLER_ARCHIVE = 'archive';
@@ -29,7 +30,6 @@ class Url
     const CONTROLLER_SEARCH = 'search';
     const CONTROLLER_RSS = 'rss';
     const CONTROLLER_TAG = 'tag';
-
 
     /**
      * @var \Magento\Framework\Registry
@@ -58,6 +58,11 @@ class Url
      * @var int | null
      */
     protected $storeId;
+
+    /**
+     * @var mixed
+     */
+    protected $originalStore;
 
     /**
      * Initialize dependencies.
@@ -165,32 +170,31 @@ class Url
     public function getCanonicalUrl(\Magento\Framework\Model\AbstractModel $object)
     {
         $storeIds = $object->getStoreIds();
-        $useDefaultStore = false;
+        $useOtherStore = false;
         $currentStore = $this->_storeManager->getStore($object->getStoreId());
 
         if (is_array($storeIds)) {
-            if (0 == array_values($storeIds)[0]) {
-                $useDefaultStore = true;
-            } elseif (count($storeIds) > 1) {
+            if (in_array(0, $storeIds)) {
+                $useOtherStore = true;
+                $newStore = $currentStore->getGroup()->getDefaultStore();
+            } else {
                 foreach ($storeIds as $storeId) {
-                    if ($storeId != $currentStore->getId()) {
+                    //if ($storeId != $currentStore->getId()) {
                         $store = $this->_storeManager->getStore($storeId);
-                        if ($store->getGroupId() == $currentStore->getGroupId()) {
-                            $useDefaultStore = true;
+                        //if ($store->getGroupId() == $currentStore->getGroupId()) {
+                            $useOtherStore = true;
+                            $newStore = $store;
                             break;
-                        }
-                    }
+                        //}
+                    //}
                 }
             }
         }
 
         $storeChanged = false;
-
-        if ($useDefaultStore) {
-            $newStore = $currentStore->getGroup()->getDefaultStore();
-            $origStore = $this->_url->getScope();
-            if ($newStore->getId() != $origStore->getId()) {
-                $this->_url->setScope($newStore);
+        if ($useOtherStore) {
+            if ($newStore->getId() != $this->_url->getScope()->getId()) {
+                $this->startStoreEmulation($newStore);
                 $storeChanged = true;
             }
         }
@@ -198,7 +202,7 @@ class Url
         $url = $this->getUrl($object, $object->getControllerName());
 
         if ($storeChanged) {
-            $this->_url->setScope($origStore);
+            $this->stopStoreEmulation();
         }
 
         return $url;
@@ -224,7 +228,9 @@ class Url
         $identifier = $this->getExpandedItentifier($identifier);
         switch ($this->getPermalinkType()) {
             case self::PERMALINK_TYPE_DEFAULT:
-                $path = $this->getRoute() . '/' . $this->getRoute($controllerName) . '/' . $identifier . ( $identifier ? '/' : '');
+                $path = $this->getRoute() .
+                    '/' . $this->getRoute($controllerName) .
+                    '/' . $identifier . ( $identifier ? '/' : '');
                 break;
             case self::PERMALINK_TYPE_SHORT:
                 if ($controllerName == self::CONTROLLER_SEARCH
@@ -232,7 +238,9 @@ class Url
                     || $controllerName == self::CONTROLLER_TAG
                     || $controllerName == self::CONTROLLER_RSS
                 ) {
-                    $path = $this->getRoute() . '/' . $this->getRoute($controllerName) . '/' . $identifier . ( $identifier ? '/' : '');
+                    $path = $this->getRoute() .
+                        '/' . $this->getRoute($controllerName) .
+                        '/' . $identifier . ( $identifier ? '/' : '');
                 } else {
                     $path = $this->getRoute() . '/' . $identifier . ( $identifier ? '/' : '');
                 }
@@ -359,6 +367,55 @@ class Url
     {
         return $this->_storeManager->getStore()
             ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . $file;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getStoreId()
+    {
+        return $this->storeId;
+    }
+
+    /**
+     * @param $storeId
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->storeId = $storeId;
+        return $this;
+    }
+
+    /**
+     * Start blog URL store emulation
+     * @param $store
+     * @throws \Exception
+     */
+    public function startStoreEmulation($store)
+    {
+        if (null !== $this->originalStore) {
+            throw new \Exception('Cannot start Blog URL store emulation, emulation already started.');
+        }
+
+        $this->originalStore = $this->_url->getScope();
+        $this->setStoreId($store->getId());
+        $this->_url->setScope($store);
+    }
+
+    /**
+     * Stop blog URL store emulation
+     */
+    public function stopStoreEmulation()
+    {
+        if ($this->originalStore) {
+            $this->setStoreId($this->originalStore->getId());
+            $this->_url->setScope($this->originalStore);
+        } else {
+            $this->setStoreId(null);
+            $this->_url->setScope(null);
+        }
+        $this->originalStore = null;
     }
 
     /**

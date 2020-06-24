@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -84,6 +84,7 @@ class PostDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             /* Prepare Featured Image */
             $map = [
                 'featured_img' => 'getFeaturedImage',
+                'featured_list_img' => 'getFeaturedListImage',
                 'og_img' => 'getOgImage'
             ];
             foreach ($map as $key => $method) {
@@ -123,9 +124,9 @@ class PostDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
                 $itemData = $item->getData();
                 $itemData['id'] = $item->getId();
                 /* Fix for big request data array */
-                foreach (['description', 'short_description', 'meta_description'] as $field) {
-                    if (isset($itemData[$field])) {
-                        unset($itemData[$field]);
+                foreach ($itemData as $key => $value) {
+                    if (!in_array($key, ['entity_id', 'position', 'display_on_product', 'display_on_post', 'auto_related', 'related_by_rule', 'name', 'store_id', 'id'])) {
+                        unset($itemData[$key]);
                     }
                 }
                 /* End */

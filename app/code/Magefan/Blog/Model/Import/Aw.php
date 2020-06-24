@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -19,36 +19,12 @@ class Aw extends AbstractImport
 
     public function execute()
     {
-        $host = $this->getData('dbhost') ?: $this->getData('host');
-        if (false !== strpos($host, '.sock')) {
-            $con = $this->_connect = mysqli_connect(
-                'localhost',
-                $this->getData('uname'),
-                $this->getData('pwd'),
-                $this->getData('dbname'),
-                null,
-                $host
-            );
-        } else {
-            $con = $this->_connect = mysqli_connect(
-                $this->getData('dbhost'),
-                $this->getData('uname'),
-                $this->getData('pwd'),
-                $this->getData('dbname')
-            );
-        }
-
-        if (mysqli_connect_errno()) {
-            throw new \Exception("Failed connect to magento database", 1);
-        }
-
-        mysqli_set_charset($con, "utf8");
-
-        $_pref = mysqli_real_escape_string($con, $this->getData('prefix'));
+        $adapter = $this->getDbAdapter();
+        $_pref = $this->getPrefix();
 
         $sql = 'SELECT * FROM '.$_pref.'aw_blog_cat LIMIT 1';
         try {
-            $this->_mysqliQuery($sql);
+            $adapter->query($sql)->execute();
         } catch (\Exception $e) {
             throw new \Exception(__('AheadWorks Blog Extension not detected.'), 1);
         }
@@ -68,15 +44,15 @@ class Aw extends AbstractImport
                     t.meta_description as meta_description
                 FROM '.$_pref.'aw_blog_cat t';
 
-        $result = $this->_mysqliQuery($sql);
-        while ($data = mysqli_fetch_assoc($result)) {
+        $result = $adapter->query($sql)->execute();
+        foreach ($result as $data) {
             /* Prepare category data */
 
             /* Find store ids */
             $data['store_ids'] = [];
             $s_sql = 'SELECT store_id FROM '.$_pref.'aw_blog_cat_store WHERE cat_id = "'.$data['old_id'].'"';
-            $s_result = $this->_mysqliQuery($s_sql);
-            while ($s_data = mysqli_fetch_assoc($s_result)) {
+            $s_result =  $adapter->query($s_sql)->execute();
+            foreach ($s_result as $s_data) {
                 $data['store_ids'][] = $s_data['store_id'];
             }
 
@@ -121,19 +97,20 @@ class Aw extends AbstractImport
                     t.tag as title
                 FROM '.$_pref.'aw_blog_tags t';
 
-        $result = $this->_mysqliQuery($sql);
-        while ($data = mysqli_fetch_assoc($result)) {
+        $result = $adapter->query($sql)->execute();
+        foreach ($result as $data) {
             /* Prepare tag data */
+            /*
             foreach (['title'] as $key) {
                 $data[$key] = mb_convert_encoding($data[$key], 'HTML-ENTITIES', 'UTF-8');
             }
+            */
 
             if (!$data['title']) {
                 continue;
             }
 
             $data['title'] = trim($data['title']);
-
 
             try {
                 /* Initial saving */
@@ -154,17 +131,17 @@ class Aw extends AbstractImport
             }
         }
 
-
         /* Import posts */
         $sql = 'SELECT * FROM '.$_pref.'aw_blog';
-        $result = $this->_mysqliQuery($sql);
+        $result = $adapter->query($sql)->execute();
 
-        while ($data = mysqli_fetch_assoc($result)) {
+        foreach ($result as $data) {
             /* Find post categories*/
             $postCategories = [];
-            $c_sql = 'SELECT cat_id as category_id FROM '.$_pref.'aw_blog_post_cat WHERE post_id = "'.$data['post_id'].'"';
-            $c_result = $this->_mysqliQuery($c_sql);
-            while ($c_data = mysqli_fetch_assoc($c_result)) {
+            $c_sql = 'SELECT cat_id as category_id FROM '.
+                      $_pref.'aw_blog_post_cat WHERE post_id = "'.$data['post_id'].'"';
+            $c_result = $adapter->query($c_sql)->execute();
+            foreach ($c_result as $c_data) {
                 $oldId = $c_data['category_id'];
                 if (isset($oldCategories[$oldId])) {
                     $id = $oldCategories[$oldId]->getId();
@@ -175,8 +152,8 @@ class Aw extends AbstractImport
             /* Find store ids */
             $data['store_ids'] = [];
             $s_sql = 'SELECT store_id FROM '.$_pref.'aw_blog_store WHERE post_id = "'.$data['post_id'].'"';
-            $s_result = $this->_mysqliQuery($s_sql);
-            while ($s_data = mysqli_fetch_assoc($s_result)) {
+            $s_result = $adapter->query($s_sql)->execute();
+            foreach ($s_result as $s_data) {
                 $data['store_ids'][] = $s_data['store_id'];
             }
 
@@ -215,28 +192,29 @@ class Aw extends AbstractImport
                 /* Post saving */
                 $post->setData($data)->save();
 
-
                 /* find post comment s*/
                 $sql = 'SELECT * FROM '.$_pref.'aw_blog_comment WHERE `post_id` = ' . $post->getOldId();
-                $resultComments = $this->_mysqliQuery($sql);
-
-                while ($comments = mysqli_fetch_assoc($resultComments)) {
+                $resultComments = $adapter->query($sql)->execute();
+                foreach ($resultComments as $comments) {
                     $commentParentId = 0;
 
                     $commentData = [
                         'parent_id' => $commentParentId,
                         'post_id' => $post->getPostId(),
-                        'status' => ($comments['status'] == 2) ? \Magefan\Blog\Model\Config\Source\CommentStatus::APPROVED : \Magefan\Blog\Model\Config\Source\CommentStatus::NOT_APPROVED,
+                        'status' => ($comments['status'] == 2) ?
+                            \Magefan\Blog\Model\Config\Source\CommentStatus::APPROVED :
+                            \Magefan\Blog\Model\Config\Source\CommentStatus::NOT_APPROVED,
                         'author_type' => \Magefan\Blog\Model\Config\Source\AuthorType::GUEST,
                         'author_nickname' => $comments['user'],
                         'author_email' => $comments['email'],
                         'text' => $comments['comment'],
                         'creation_time' => $comments['created_time'],
                     ];
-
+                    /*
                     foreach (['text'] as $key) {
                         $commentData[$key] = mb_convert_encoding($commentData[$key], 'HTML-ENTITIES', 'UTF-8');
                     }
+                    */
 
                     if (!$commentData['text']) {
                         continue;
@@ -249,12 +227,13 @@ class Aw extends AbstractImport
                         $comment->setData($commentData)->save();
                         $this->_importedCommentsCount++;
                     } catch (\Exception $e) {
+                        if (!isset($commentData['title'])) {
+                            $commentData['title'] = 'Undefined';
+                        }
                         $this->_skippedComments[] = $commentData['title'];
                         unset($comment);
                     }
                 }
-
-
 
                 $this->_importedPostsCount++;
             } catch (\Magento\Framework\Exception\LocalizedException $e) {
@@ -265,7 +244,6 @@ class Aw extends AbstractImport
             unset($post);
         }
         /* end */
-
-        mysqli_close($con);
+        $adapter->getDriver()->getConnection()->disconnect();
     }
 }

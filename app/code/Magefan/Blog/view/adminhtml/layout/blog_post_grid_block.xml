@@ -2,7 +2,7 @@
 <!--
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -84,6 +84,18 @@
                             <argument name="sortable" xsi:type="string">0</argument>
                             <argument name="column_css_class" xsi:type="string">col-categories</argument>
                             <argument name="header_css_class" xsi:type="string">col-categories</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magefan\Blog\Block\Adminhtml\Grid\Column\Author" as="author_id">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Author</argument>
+                            <argument name="index" xsi:type="string">author_id</argument>
+                            <argument name="type" xsi:type="string">author</argument>
+                            <argument name="store_all" xsi:type="string">1</argument>
+                            <argument name="store_view" xsi:type="string">1</argument>
+                            <argument name="sortable" xsi:type="string">1</argument>
+                            <argument name="column_css_class" xsi:type="string">col-author</argument>
+                            <argument name="header_css_class" xsi:type="string">col-author</argument>
                         </arguments>
                     </block>
                     <block class="Magento\Backend\Block\Widget\Grid\Column\Multistore" as="store_ids">

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -36,7 +36,6 @@ class View extends \Magefan\Blog\App\Action\Action
         $registry = $this->_objectManager->get(\Magento\Framework\Registry::class);
         $registry->register('current_blog_archive_year', (int)$date[0]);
         $registry->register('current_blog_archive_month', (int)$date[1]);
-
 
         $this->_view->loadLayout();
         $this->_view->renderLayout();

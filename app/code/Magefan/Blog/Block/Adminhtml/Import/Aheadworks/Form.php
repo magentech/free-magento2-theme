@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -57,7 +57,6 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         }
         $isElementDisabled = false;
 
-
         $form->setHtmlIdPrefix('import_');
 
         $fieldset = $form->addFieldset('base_fieldset', ['legend' => '']);
@@ -78,7 +77,9 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             [
                 'label' => __('NOTICE'),
                 'name' => 'prefix',
-                'after_element_html' => 'When the import is completed, please copy featured image files to Magento <strong style="color:#105610;">pub/media/magefan_blog</strong> directory.',
+                'after_element_html' => 'When the import is completed, please copy featured image files to Magento 
+                                         <strong style="color:#105610;">pub/media/magefan_blog</strong> 
+                                         directory.',
             ]
         );
 
@@ -191,7 +192,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             $data['dbhost'] = 'localhost';
         }
 
-        $data['type'] = 'aw';
+        $data['type'] = $this->getRequest()->getActionName();
 
         $form->setValues($data);
 

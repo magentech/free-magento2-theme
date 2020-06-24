@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -46,7 +46,7 @@ class Archive extends \Magefan\Blog\Block\Post\PostList\AbstractList
      */
     public function getMonths()
     {
-        if (is_null($this->_months)) {
+        if (null === $this->_months) {
             $this->_months = [];
             $this->_preparePostCollection();
             foreach ($this->_postCollection as $post) {
@@ -54,7 +54,6 @@ class Archive extends \Magefan\Blog\Block\Post\PostList\AbstractList
                 $this->_months[date('Y-m', $time)] = $time;
             }
         }
-
 
         return $this->_months;
     }
@@ -101,5 +100,19 @@ class Archive extends \Magefan\Blog\Block\Post\PostList\AbstractList
     public function getIdentities()
     {
         return [];
+    }
+
+    /**
+     * @param $time
+     * @return string
+     */
+    public function getTranslatedDate($time)
+    {
+        $format = $this->_scopeConfig->getValue(
+            'mfblog/sidebar/archive/format_date',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
+
+        return \Magefan\Blog\Helper\Data::getTranslatedDate($format, $time);
     }
 }

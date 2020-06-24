@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -10,11 +10,13 @@ namespace Magefan\Blog\Block\Post\PostList;
 
 use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\Api\SortOrder;
+use \Magento\Framework\View\Element\Template;
+use \Magento\Framework\DataObject\IdentityInterface;
 
 /**
  * Abstract blog post list block
  */
-abstract class AbstractList extends \Magento\Framework\View\Element\Template implements \Magento\Framework\DataObject\IdentityInterface
+abstract class AbstractList extends Template implements IdentityInterface
 {
     /**
      * @var \Magento\Cms\Model\Template\FilterProvider
@@ -162,6 +164,7 @@ abstract class AbstractList extends \Magento\Framework\View\Element\Template imp
     public function getIdentities()
     {
         $identities = [];
+        $identities[] = \Magefan\Blog\Model\Post::CACHE_TAG . '_' . 0;
         foreach ($this->getPostCollection() as $item) {
             $identities = array_merge($identities, $item->getIdentities());
         }

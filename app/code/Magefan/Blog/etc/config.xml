@@ -2,7 +2,7 @@
 <!--
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -11,8 +11,14 @@
     <default>
         <mfblog>
             <general>
-                <enabled>1</enabled>
+                <enabled>0</enabled>
+                <mfmodule>Blog</mfmodule>
+                <mftype>1</mftype>
             </general>
+            <design>
+                <format_date>F d, Y</format_date>
+                <publication_date>1</publication_date>
+            </design>
             <index_page>
                 <title>Blog</title>
                 <display_mode>0></display_mode>
@@ -27,11 +33,13 @@
                     <number_of_products>5</number_of_products>
                 </related_products>
                 <comments>
-                    <type>facebook</type>
+                    <type>magefan</type>
                     <number_of_comments>5</number_of_comments>
                     <number_of_replies>5</number_of_replies>
                     <guest_comments>1</guest_comments>
+                    <fb_app_id_header>1</fb_app_id_header>
                     <display_privacy_policy_checkbox>0</display_privacy_policy_checkbox>
+                    <format_date>M d, Y H:i</format_date>
                 </comments>
                 <nextprev>
                     <enabled>1</enabled>
@@ -74,14 +82,24 @@
                     <posts_ids></posts_ids>
                     <sort_order>35</sort_order>
                 </featured_posts>
+                <popular_posts>
+                    <enabled>0</enabled>
+                    <posts_per_page>5</posts_per_page>
+                    <sort_order>36</sort_order>
+                </popular_posts>
                 <archive>
                     <enabled>1</enabled>
                     <sort_order>40</sort_order>
+                    <format_date>F Y</format_date>
                 </archive>
                 <tag_claud>
                     <enabled>1</enabled>
                     <!-- <max_tags_number>10</max_tags_number> -->
+                    <animated>0</animated>
+                    <text_highlight_color>006bb4</text_highlight_color>
+                    <cloud_height>250</cloud_height>
                     <sort_order>45</sort_order>
+                    <tag_count>50</tag_count>
                 </tag_claud>
                 <rss_feed>
                     <title>Blog Rss</title>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -42,7 +42,7 @@ abstract class AbstractPost extends \Magento\Framework\View\Element\Template
     /**
      * @var string
      */
-    protected $_defaultPostInfoBlock = 'Magefan\Blog\Block\Post\Info';
+    protected $_defaultPostInfoBlock = \Magefan\Blog\Block\Post\Info::class;
 
     /**
      * @var \Magefan\Blog\Model\Url

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -22,10 +22,14 @@ use Magento\Framework\DataObject\IdentityInterface;
  * @method $this setTitle(string $value)
  * @method string getMetaKeywords()
  * @method $this setMetaKeywords(string $value)
- * @method string getMetaDescription()
  * @method $this setMetaDescription(string $value)
  * @method string getIdentifier()
  * @method $this setIdentifier(string $value)
+ * @method $this setUrlKey(string $value)
+ * @method string getUrlKey()
+ * @method $this setMetaTitle(string $value)
+ * @method string getPath()
+ * @method $this setPath($value)
  */
 class Category extends \Magento\Framework\Model\AbstractModel implements IdentityInterface
 {
@@ -70,7 +74,7 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
     /**
      * @var array
      */
-    static private $loadedCategoriesRepository = [];
+    private static $loadedCategoriesRepository = [];
 
     /**
      * @var string
@@ -108,7 +112,7 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
      */
     protected function _construct()
     {
-        $this->_init('Magefan\Blog\Model\ResourceModel\Category');
+        $this->_init(\Magefan\Blog\Model\ResourceModel\Category::class);
         $this->controllerName = URL::CONTROLLER_CATEGORY;
     }
 
@@ -155,7 +159,9 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
     {
         if (!isset(self::$loadedCategoriesRepository[$categoryId])) {
             $category = clone $this;
+            $category->unsetData();
             $category->load($categoryId);
+            $categoryId = $category->getId();
         }
 
         return self::$loadedCategoriesRepository[$categoryId];
@@ -344,7 +350,13 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
      */
     public function getCategoryUrl()
     {
-        return $this->_url->getUrl($this, $this->controllerName);
+        if (!$this->hasData('category_url')) {
+            $url = $this->_url->getUrl($this, $this->controllerName);
+            $this->setData('category_url', $url);
+        }
+
+        return $this->getData('category_url');
+
     }
 
     /**
@@ -395,7 +407,8 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
      */
     public function isVisibleOnStore($storeId)
     {
-        return $this->getIsActive() && array_intersect([0, $storeId], $this->getStoreIds());
+        return $this->getIsActive()
+            && (null === $storeId || array_intersect([0, $storeId], $this->getStoreIds()));
     }
 
     /**
@@ -422,12 +435,14 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
      * Prepare all additional data
      * @param  string $format
      * @return self
+     * @deprecated replaced with getDynamicData
      */
     public function initDinamicData()
     {
         $keys = [
             'meta_description',
             'meta_title',
+            'category_url',
         ];
 
         foreach ($keys as $key) {
@@ -443,6 +458,32 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
     }
 
     /**
+     * Prepare all additional data
+     * @return array
+     */
+    public function getDynamicData()
+    {
+        $data = $this->getData();
+
+        $keys = [
+            'meta_description',
+            'meta_title',
+            'category_url',
+        ];
+
+        foreach ($keys as $key) {
+            $method = 'get' . str_replace(
+                '_',
+                '',
+                ucwords($key, '_')
+            );
+            $data[$key] = $this->$method();
+        }
+
+        return $data;
+    }
+
+    /**
      * Duplicate category and return new object
      * @return self
      */
@@ -451,6 +492,7 @@ class Category extends \Magento\Framework\Model\AbstractModel implements Identit
         $object = clone $this;
         $object
             ->unsetData('category_id')
+            ->unsetData('identifier')
             ->setTitle($object->getTitle() . ' (' . __('Duplicated') . ')')
             ->setData('is_active', 0);
 

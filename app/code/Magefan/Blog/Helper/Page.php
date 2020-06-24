@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -80,6 +80,13 @@ class Page extends \Magento\Framework\App\Helper\AbstractHelper
         /** @var \Magento\Framework\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
 
+        // dispatch event
+        $this->_eventManager->dispatch('magefan_blog_page_render_before', [
+            'action' => $action,
+            'page' => $page,
+            'result_page' => $resultPage,
+        ]);
+
         if ($inRange
             && $page->getCustomLayout()
             && $page->getCustomLayout() != 'empty'
@@ -94,7 +101,7 @@ class Page extends \Magento\Framework\App\Helper\AbstractHelper
 
         $fullActionName = $action->getRequest()->getFullActionName();
         $resultPage->addHandle($fullActionName);
-        $resultPage->addPageLayoutHandles(['id' => $page->getIdentifier()]);
+        $resultPage->addPageLayoutHandles(['id' => str_replace('/', '_',$page->getIdentifier())]);
 
         $this->_eventManager->dispatch(
             $fullActionName . '_render',

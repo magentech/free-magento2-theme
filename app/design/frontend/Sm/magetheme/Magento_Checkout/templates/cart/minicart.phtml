@@ -7,6 +7,10 @@
 // @codingStandardsIgnoreFile
 
 /** @var $block \Magento\Checkout\Block\Cart\Sidebar */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$priceHelper   = $objectManager->create('Magento\Framework\Pricing\Helper\Data');
+$value         = 0;
+$priceEmpty    = $priceHelper->currency($value, true, false);
 ?>
 
 <div data-block="minicart" class="minicart-wrapper">
@@ -17,7 +21,19 @@
             __('My Cart') ?></span>
         <span class="counter qty empty"
               data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+
+			<!-- ko if: getCartParam('summary_count') -->
             <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+            <!-- /ko -->
+
+            <!-- ko ifnot: getCartParam('summary_count') -->
+				<span class="counter-number">0</span>
+            <!-- /ko -->
+
+            <span class="label-number-cart">
+                <?php echo __('item(s)') ?>
+            </span>
+
             <span class="counter-label">
             <!-- ko if: getCartParam('summary_count') -->
                 <!-- ko text: getCartParam('summary_count') --><!-- /ko -->
@@ -26,11 +42,25 @@
             </span>
         </span>
 
+        <!-- ko if: getCartParam('summary_count') -->
         <span class="price-minicart">
 			<!-- ko foreach: getRegion('subtotalContainer') -->
             <!-- ko template: getTemplate() --><!-- /ko -->
             <!-- /ko -->
 		</span>
+        <!-- /ko -->
+
+        <!-- ko ifnot: getCartParam('summary_count') -->
+        <span class="price-minicart">
+            <div class="subtotal">
+                <div class="amount price-container">
+                    <span class="price-wrapper">
+                        <span class="price"><?php echo $priceEmpty; ?></span>
+                    </span>
+                </div>
+            </div>
+		</span>
+        <!-- /ko -->
     </a>
     <?php if ($block->getIsNeedToDisplaySideBar()): ?>
         <div class="block block-minicart"
@@ -73,7 +103,6 @@
         }
     }
 
-    
     </script>
 </div>
 

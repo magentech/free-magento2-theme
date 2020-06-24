@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -17,7 +17,6 @@ use Magefan\Blog\Model\Url;
  * @method \Magefan\Blog\Model\ResourceModel\Tag getResource()
  * @method string getTitle()
  * @method $this setTitle(string $value)
- * @method string getIdentifier()
  * @method $this setIdentifier(string $value)
  */
 class Tag extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
@@ -54,6 +53,11 @@ class Tag extends \Magento\Framework\Model\AbstractModel implements \Magento\Fra
     protected $_url;
 
     /**
+     * @var string
+     */
+    protected $controllerName;
+
+    /**
      * Initialize dependencies.
      *
      * @param \Magento\Framework\Model\Context $context
@@ -82,7 +86,8 @@ class Tag extends \Magento\Framework\Model\AbstractModel implements \Magento\Fra
      */
     protected function _construct()
     {
-        $this->_init('Magefan\Blog\Model\ResourceModel\Tag');
+        $this->_init(\Magefan\Blog\Model\ResourceModel\Tag::class);
+        $this->controllerName = URL::CONTROLLER_TAG;
     }
 
     /**
@@ -103,7 +108,6 @@ class Tag extends \Magento\Framework\Model\AbstractModel implements \Magento\Fra
     {
         return $plural ? 'Tags' : 'Tag';
     }
-
 
     /**
      * Check if tag identifier exist for specific store
@@ -132,7 +136,13 @@ class Tag extends \Magento\Framework\Model\AbstractModel implements \Magento\Fra
      */
     public function getTagUrl()
     {
-        return $this->_url->getUrl($this, URL::CONTROLLER_TAG);
+        $url = $this->getData('tag_url');
+        if (!$url) {
+            $url = $this->_url->getUrl($this, URL::CONTROLLER_TAG);
+            $this->setData('tag_url', $url);
+        }
+
+        return $url;
     }
 
     /**
@@ -186,5 +196,40 @@ class Tag extends \Magento\Framework\Model\AbstractModel implements \Magento\Fra
     public function getIdentifier()
     {
         return (string)$this->getData('identifier');
+    }
+
+    /**
+     * Retrieve controller name
+     * @return string
+     */
+    public function getControllerName()
+    {
+        return $this->controllerName;
+    }
+
+    /**
+     * Return all additional data
+     * @return array
+     */
+    public function getDynamicData()
+    {
+        $data = $this->getData();
+
+        $keys = [
+            'meta_description',
+            'meta_title',
+            'tag_url',
+        ];
+
+        foreach ($keys as $key) {
+            $method = 'get' . str_replace(
+                '_',
+                '',
+                ucwords($key, '_')
+            );
+            $data[$key] = $this->$method();
+        }
+
+        return $data;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -25,7 +25,9 @@ class Index extends \Magefan\Blog\Block\Post\PostList
     protected function _prepareLayout()
     {
         $this->_addBreadcrumbs();
-        $this->pageConfig->getTitle()->set($this->_getConfigValue('title'));
+        $this->pageConfig->getTitle()->set(
+            $this->_getConfigValue('meta_title') ?: $this->_getConfigValue('title')
+        );
         $this->pageConfig->setKeywords($this->_getConfigValue('meta_keywords'));
         $this->pageConfig->setDescription($this->_getConfigValue('meta_description'));
 
@@ -34,6 +36,13 @@ class Index extends \Magefan\Blog\Block\Post\PostList
                 $this->_url->getBaseUrl(),
                 'canonical',
                 ['attributes' => ['rel' => 'canonical']]
+            );
+        }
+
+        $pageMainTitle = $this->getLayout()->getBlock('page.main.title');
+        if ($pageMainTitle) {
+            $pageMainTitle->setPageTitle(
+                $this->escapeHtml($this->_getConfigValue('title'))
             );
         }
 
@@ -116,7 +125,6 @@ class Index extends \Magefan\Blog\Block\Post\PostList
             ScopeInterface::SCOPE_STORE
         );
     }
-
 
     /**
      * Prepare breadcrumbs

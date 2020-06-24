@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -42,7 +42,16 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
         $basePath,
         $allowedExtensions
     ) {
-        parent::__construct($coreFileStorageDatabase, $filesystem, $uploaderFactory, $storeManager, $logger, $baseTmpPath, $basePath, $allowedExtensions);
+        parent::__construct(
+            $coreFileStorageDatabase,
+            $filesystem,
+            $uploaderFactory,
+            $storeManager,
+            $logger,
+            $baseTmpPath,
+            $basePath,
+            $allowedExtensions
+        );
         $this->filesystem = $filesystem;
     }
 
@@ -50,12 +59,12 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
      * Checking file for moving and move it
      *
      * @param string $imageName
-     *
+     * @param bool $returnRelativePath
      * @return string
      *
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function moveFileFromTmp($imageName)
+    public function moveFileFromTmp($imageName, $returnRelativePath = false)
     {
         $originalImageName = $imageName;
 
@@ -94,6 +103,6 @@ class ImageUploader extends \Magento\Catalog\Model\ImageUploader
             );
         }
 
-        return $imageName;
+        return $returnRelativePath ? $baseImagePath : $imageName;
     }
 }

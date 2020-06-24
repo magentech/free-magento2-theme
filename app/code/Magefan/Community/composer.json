@@ -1,11 +1,7 @@
 {
     "name": "magefan/module-community",
     "description": "",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
-    "version": "2.0.4",
+    "version": "2.0.12",
     "type": "magento2-module",
     "autoload": {
         "files": [

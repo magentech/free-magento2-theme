@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -20,7 +20,7 @@ class Menu extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * @var \Magefan\Blog\Model\Url
      */
-    protected $_url;
+    protected $url;
 
     /**
      * @param \Magento\Framework\Registry $registry,
@@ -58,7 +58,6 @@ class Menu extends \Magento\Framework\App\Helper\AbstractHelper
         parent::__construct($context);
     }
 
-
     /**
      * Retrieve blog menu nodes
      * @param  mixed $menu
@@ -82,7 +81,10 @@ class Menu extends \Magento\Framework\App\Helper\AbstractHelper
         $addedNodes = [];
 
         $data = [
-            'name'      => $this->scopeConfig->getValue(Config::XML_PATH_TOP_MENU_ITEM_TEXT, ScopeInterface::SCOPE_STORE),
+            'name'      => $this->scopeConfig->getValue(
+                Config::XML_PATH_TOP_MENU_ITEM_TEXT,
+                ScopeInterface::SCOPE_STORE
+            ),
             'id'        => 'magefan-blog',
             'url'       => $this->url->getBaseUrl(),
             'is_active' => ($this->_request->getModuleName() == 'blog')

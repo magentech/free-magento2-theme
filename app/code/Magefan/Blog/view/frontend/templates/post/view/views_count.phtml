@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+/**
+ * @var \Magefan\Blog\Block\ViewsCount $block
+ */
+?>
+<script>
+    require(['jquery', 'domReady!'], function($){
+        setTimeout(function(){
+            $.ajax({
+                url:"<?= $block->escapeUrl($block->getCounterUrl());?>",
+                type:'POST',
+                dataType: 'json',
+                success: function(response) { }
+            })
+        }, 5000);
+    });
+
+</script>
+
+

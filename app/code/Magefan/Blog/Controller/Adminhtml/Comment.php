@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -29,7 +29,7 @@ class Comment extends Actions
      * Model class name
      * @var string
      */
-    protected $_modelClass      = 'Magefan\Blog\Model\Comment';
+    protected $_modelClass      = \Magefan\Blog\Model\Comment::class;
 
     /**
      * Active menu key

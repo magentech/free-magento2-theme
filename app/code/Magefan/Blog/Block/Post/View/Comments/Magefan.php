@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -29,7 +29,7 @@ class Magefan extends \Magefan\Blog\Block\Post\View\Comments implements \Magento
     /**
      * @var string
      */
-    protected $defaultCommentBlock = 'Magefan\Blog\Block\Post\View\Comments\Magefan\Comment';
+    protected $defaultCommentBlock = \Magefan\Blog\Block\Post\View\Comments\Magefan\Comment::class;
 
     /**
      * @var \Magento\Customer\Model\Session

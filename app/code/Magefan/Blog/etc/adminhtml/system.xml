@@ -2,16 +2,14 @@
 <!--
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="magefan" translate="label" sortOrder="110">
-            <label>MageFan Extensions</label>
-        </tab>
+
         <section id="mfblog" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Blog</label>
@@ -27,12 +25,19 @@
                     <label>Enable Extension</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="key" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product Key</label>
+                    <frontend_model>Magefan\Community\Block\Adminhtml\System\Config\Form\ProductKeyField</frontend_model>
+                </field>
             </group>
             <group id="index_page" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Blog Index Page</label>
 
                 <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title</label>
+                </field>
+                <field id="meta_title" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Title</label>
                 </field>
                 <field id="display_mode" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Display Mode</label>
@@ -58,7 +63,7 @@
             </group>
 
             <group id="post_view" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Post View</label>
+                <label>Post Page (Post View)</label>
 
                 <group id="related_posts" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Related Posts</label>
@@ -123,6 +128,14 @@
                         ]]></comment>
                     </field>
 
+                    <field id="fb_app_id_header" translate="label comment" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Insert Facebook Application ID (fb:app_id) In HEAD Tag</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="type">facebook</field>
+                        </depends>
+                    </field>
+
                     <field id="disqus_forum_shortname" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Your Disqus Forum Shortname</label>
                         <validate>required-entry</validate>
@@ -152,15 +165,26 @@
                         <comment></comment>
                     </field>
                     <field id="display_privacy_policy_checkbox" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
-                        <label>Display Privacy Policy Agreement</label>
+                        <label>Display Privacy Policy Agreement (GDPR)</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <depends>
+                            <field id="type">magefan</field>
+                        </depends>
                     </field>
                 </group>
 
                 <group id="nextprev" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Preview and Next Post</label>
+                    <label>Previous and Next Post</label>
                     <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Display Prev. &amp; Next Post Links</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+
+                <group id="views_count" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Views Count</label>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Calculate &amp; Display Views Counts</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     </field>
                 </group>
@@ -186,13 +210,13 @@
                     </depends>
                     <comment>The distance in pixels from the bottom of the scrollable content at which to trigger the loading of the next set of posts.</comment>
                 </field>
+                <field id="end_characters" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Short Content End Сharacters</label>
+                    <comment>E.g.: "..."</comment>
+                </field>
             </group>
 
-
-
-
-
-            <group id="author" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="author" translate="label" type="text" sortOrder="66" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Author</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Display Author Information</label>
@@ -208,12 +232,14 @@
                 </field>
                 <field id="robots" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Default Robots</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
                     <source_model>Magento\Config\Model\Config\Source\Design\Robots</source_model>
                     <comment>This will be included before head closing tag in page HTML.</comment>
                 </field>
-
             </group>
-            <group id="tag" translate="label" type="text" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="tag" translate="label" type="text" sortOrder="67" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Tag</label>
                 <field id="robots" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Default Robots</label>
@@ -221,7 +247,7 @@
                     <comment>This will be included before head closing tag in page HTML.</comment>
                 </field>
             </group>
-            <group id="search" translate="label" type="text" sortOrder="52" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="search" translate="label" type="text" sortOrder="68" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Search</label>
                 <field id="robots" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Default Robots</label>
@@ -271,7 +297,7 @@
                         <label>Sort Order</label>
                     </field>
                 </group>
-                 <group id="featured_posts" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                <group id="featured_posts" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Featured Post Widget</label>
                     <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Enabled</label>
@@ -280,6 +306,19 @@
                     <field id="posts_ids" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Post IDs</label>
                         <comment>Please indicate post IDs (separated by comma) you want to display.</comment>
+                    </field>
+                    <field id="sort_order" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="popular_posts" translate="label" type="text" sortOrder="36" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popular Posts Widget</label>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="posts_per_page" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Posts Number</label>
                     </field>
                     <field id="sort_order" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Sort Order</label>
@@ -296,7 +335,7 @@
                     </field>
                 </group>
                 <group id="tag_claud" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Tag Claud Widget</label>
+                    <label>Tag Cloud Widget</label>
                     <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Enabled</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -304,8 +343,28 @@
                     <!-- <field id="max_tags_number" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Max. Tags Number</label>
                     </field> -->
-                    <field id="sort_order" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="animated" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable 3D Animation</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="text_highlight_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Color</label>
+                        <frontend_model>Magefan\Blog\Block\Adminhtml\System\Config\Form\ColorPicker</frontend_model>
+                        <depends>
+                            <field id="animated">1</field>
+                        </depends>
+                    </field>
+                    <field id="cloud_height" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Cloud Height</label>
+                        <depends>
+                            <field id="animated">1</field>
+                        </depends>
+                    </field>
+                    <field id="sort_order" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Sort Order</label>
+                    </field>
+                    <field id="tag_count" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Number of Tags</label>
                     </field>
                 </group>
                 <group id="custom" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -353,7 +412,7 @@
             </group>
 
 
-            <group id="product_page" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="product_page" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Product Page</label>
                 <field id="related_posts_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Display Related Posts</label>
@@ -372,6 +431,7 @@
                 <label>Permalink Settings</label>
                 <field id="route" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Blog Route</label>
+                    <validate>required-entry</validate>
                     <comment>E.g.: "blog" will make the blog accessible from mystore.com/blog</comment>
                 </field>
                 <field id="redirect_to_no_slash" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -386,6 +446,7 @@
 
                 <field id="post_route" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Post Route</label>
+                    <validate>required-entry</validate>
                     <depends>
                         <field id="type">default</field>
                     </depends>
@@ -401,6 +462,7 @@
                 </field>
                 <field id="category_route" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Category Route</label>
+                    <validate>required-entry</validate>
                     <depends>
                         <field id="type">default</field>
                     </depends>
@@ -408,7 +470,7 @@
                 </field>
                 <field id="category_sufix" translate="label comment" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Category URL Suffix</label>
-                    <comment>E.g.: ".html" will make the blog category accessible from mystore.com/{blog_route}/post/post-identifier.html</comment>
+                    <comment>E.g.: ".html" will make the blog category accessible from mystore.com/{blog_route}/category/category-identifier.html</comment>
                 </field>
                 <field id="category_use_categories" translate="label" type="select" sortOrder="46" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Use Parent Category Path for Category URLs</label>
@@ -416,6 +478,7 @@
                 </field>
                 <field id="archive_route" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Archive Route</label>
+                    <validate>required-entry</validate>
                     <depends>
                         <field id="type">default</field>
                     </depends>
@@ -423,6 +486,7 @@
                 </field>
                 <field id="tag_route" translate="label comment" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Tag Route</label>
+                    <validate>required-entry</validate>
                     <comment>E.g.: "tag" will make the blog posts by tag accessible from mystore.com/{blog_route}/tag/tag-name</comment>
                 </field>
                 <field id="tag_sufix" translate="label comment" type="text" sortOrder="56" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -431,6 +495,7 @@
                 </field>
                 <field id="author_route" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Author Route</label>
+                    <validate>required-entry</validate>
                     <comment>E.g.: "author" will make the blog author posts accessible from mystore.com/{blog_route}/author/author-name</comment>
                 </field>
                 <field id="author_sufix" translate="label comment" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -439,6 +504,7 @@
                 </field>
                 <field id="search_route" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Search Route</label>
+                    <validate>required-entry</validate>
                     <comment>E.g.: "search" will make the blog search accessible from mystore.com/{blog_route}/search/query</comment>
                 </field>
             </group>

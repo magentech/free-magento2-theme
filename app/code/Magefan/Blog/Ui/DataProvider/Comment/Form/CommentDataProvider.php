@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -36,6 +36,12 @@ class CommentDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
     protected $url;
 
     /**
+     * @var \Magento\Framework\Escaper
+     */
+    protected $escaper;
+
+    /**
+     * CommentDataProvider constructor.
      * @param string $name
      * @param string $primaryFieldName
      * @param string $requestFieldName
@@ -44,6 +50,7 @@ class CommentDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
      * @param \Magento\Framework\UrlInterface $url
      * @param array $meta
      * @param array $data
+     * @param \Magento\Framework\Escaper|null $escaper
      */
     public function __construct(
         $name,
@@ -53,13 +60,18 @@ class CommentDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         DataPersistorInterface $dataPersistor,
         \Magento\Framework\UrlInterface $url,
         array $meta = [],
-        array $data = []
+        array $data = [],
+        \Magento\Framework\Escaper $escaper = null
     ) {
         $this->collection = $commentCollectionFactory->create();
         $this->dataPersistor = $dataPersistor;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->meta = $this->prepareMeta($this->meta);
         $this->url = $url;
+
+        $this->escaper = $escaper ?: \Magento\Framework\App\ObjectManager::getInstance()->create(
+            \Magento\Framework\Escaper::class
+        );
     }
 
     /**
@@ -101,21 +113,33 @@ class CommentDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
                     $this->loadedData[$comment->getId()]['author_url'] = [
                         'url' => 'mailto:' . $author->getEmail(),
                         'title' => $author->getNickname(),
-                        'text' => $author->getNickname() . ' - ' . $author->getEmail() . ' (' . __('Guest')  . ')',
+                        'text' => $author->getNickname() .
+                            ' - ' . $author->getEmail() .
+                            ' (' . __('Guest')  . ')',
                     ];
                     break;
                 case \Magefan\Blog\Model\Config\Source\AuthorType::CUSTOMER:
                     $this->loadedData[$comment->getId()]['author_url'] = [
-                        'url' => $this->url->getUrl('customer/index/edit', ['id' => $comment->getCustomerId()]),
+                        'url' => $this->url->getUrl(
+                            'customer/index/edit',
+                            ['id' => $comment->getCustomerId()]
+                        ),
                         'title' => $author->getNickname(),
-                        'text' => '#' . $comment->getCustomerId() . '. ' . $author->getNickname() . ' (' . __('Customer')  . ')',
+                        'text' => '#' . $comment->getCustomerId() .
+                            '. ' . $author->getNickname() .
+                            ' (' . __('Customer')  . ')',
                     ];
                     break;
                 case \Magefan\Blog\Model\Config\Source\AuthorType::ADMIN:
                     $this->loadedData[$comment->getId()]['author_url'] = [
-                        'url' => $this->url->getUrl('admin/user/edit', ['id' => $comment->getAdminId()]),
+                        'url' => $this->url->getUrl(
+                            'admin/user/edit',
+                            ['id' => $comment->getAdminId()]
+                        ),
                         'title' => $author->getNickname(),
-                        'text' => '#' . $comment->getAdminId() . '. ' . $author->getNickname() . ' (' . __('Admin')  . ')',
+                        'text' => '#' . $comment->getAdminId() .
+                            '. ' . $author->getNickname() .
+                            ' (' . __('Admin')  . ')',
                     ];
                     break;
             }
@@ -123,11 +147,13 @@ class CommentDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             if ($comment->getParentId()
                 && ($parentComment = $comment->getParentComment())
             ) {
-                $text = (mb_strlen($parentComment->getText()) > 200) ? (mb_substr($parentComment->getText(), 0, 200) . '...') : $parentComment->getText();
-                $text = htmlspecialchars($text);
+                $text = (mb_strlen($parentComment->getText()) > 200) ?
+                    (mb_substr($parentComment->getText(), 0, 200) . '...') :
+                    $parentComment->getText();
+                $text = $this->escaper->escapeHtml($text);
                 $this->loadedData[$comment->getId()]['parent_url'] = [
                     'url' => $this->url->getUrl('blog/comment/edit', ['id' => $parentComment->getId()]),
-                    'title' => htmlspecialchars($parentComment->getText()),
+                    'title' => $this->escaper->escapeHtml($parentComment->getText()),
                     'text' => '#' . $parentComment->getId() . '. ' . $text,
                 ];
             } else {

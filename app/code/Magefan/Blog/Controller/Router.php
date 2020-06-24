@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -9,6 +9,7 @@
 namespace Magefan\Blog\Controller;
 
 use Magefan\Blog\Model\Url;
+use Magefan\Blog\Api\UrlResolverInterface;
 
 /**
  * Blog Controller Router
@@ -51,7 +52,7 @@ class Router implements \Magento\Framework\App\RouterInterface
     /**
      * Author factory
      *
-     * @var \Magefan\Blog\Model\AuthorFactory
+     * @var   \Magefan\Blog\Api\AuthorInterfaceFactory
      */
     protected $_authorFactory;
 
@@ -89,16 +90,21 @@ class Router implements \Magento\Framework\App\RouterInterface
     protected $ids;
 
     /**
+     * @var UrlResolverInterface
+     */
+    protected $urlResolver;
+
+    /**
      * @param \Magento\Framework\App\ActionFactory $actionFactory
      * @param \Magento\Framework\Event\ManagerInterface $eventManager
-     * @param \Magento\Framework\UrlInterface $url
+     * @param \Magefan\Blog\Model\Url $url
      * @param \Magefan\Blog\Model\PostFactory $postFactory
      * @param \Magefan\Blog\Model\CategoryFactory $categoryFactory
-     * @param \Magefan\Blog\Model\AuthorFactory $authorFactory
+     * @param \Magefan\Blog\Api\AuthorInterfaceFactory $authorFactory
      * @param \Magefan\Blog\Model\TagFactory $tagFactory
-     * @param \Magefan\Blog\Model\Url $url
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Magento\Framework\App\ResponseInterface $response
+     * @param UrlResolverInterface $urlResolver
      */
     public function __construct(
         \Magento\Framework\App\ActionFactory $actionFactory,
@@ -106,12 +112,13 @@ class Router implements \Magento\Framework\App\RouterInterface
         Url $url,
         \Magefan\Blog\Model\PostFactory $postFactory,
         \Magefan\Blog\Model\CategoryFactory $categoryFactory,
-        \Magefan\Blog\Model\AuthorFactory $authorFactory,
+        \Magefan\Blog\Api\AuthorInterfaceFactory $authorFactory,
         \Magefan\Blog\Model\TagFactory $tagFactory,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Framework\App\ResponseInterface $response
+        \Magento\Framework\App\ResponseInterface $response,
+        UrlResolverInterface $urlResolver = null
     ) {
-    
+
         $this->actionFactory = $actionFactory;
         $this->_eventManager = $eventManager;
         $this->_url = $url;
@@ -121,6 +128,9 @@ class Router implements \Magento\Framework\App\RouterInterface
         $this->_tagFactory = $tagFactory;
         $this->_storeManager = $storeManager;
         $this->_response = $response;
+        $this->urlResolver = $urlResolver ?: \Magento\Framework\App\ObjectManager::getInstance()->get(
+            \Magefan\Blog\Api\UrlResolverInterface::class
+        );
     }
 
     /**
@@ -131,7 +141,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      */
     public function match(\Magento\Framework\App\RequestInterface $request)
     {
-
+        /*
         $_identifier = trim($request->getPathInfo(), '/');
         $_identifier = urldecode($_identifier);
 
@@ -150,10 +160,12 @@ class Router implements \Magento\Framework\App\RouterInterface
                 ->setControllerName('index')
                 ->setActionName('index');
         } elseif ($pathInfo[1] == $this->_url->getRoute(Url::CONTROLLER_RSS)) {
-            $request
-                ->setRouteName('blog')
-                ->setControllerName(Url::CONTROLLER_RSS)
-                ->setActionName(isset($pathInfo[2]) ? $pathInfo[2] : 'feed');
+            if (!isset($pathInfo[2]) || in_array($pathInfo[2], ['index', 'feed'])) {
+                $request
+                    ->setRouteName('blog')
+                    ->setControllerName(Url::CONTROLLER_RSS)
+                    ->setActionName('feed');
+            }
         } elseif ($pathInfo[1] == $this->_url->getRoute(Url::CONTROLLER_SEARCH)
             && !empty($pathInfo[2])
         ) {
@@ -243,8 +255,6 @@ class Router implements \Magento\Framework\App\RouterInterface
                         $first = false;
                     }
                 }
-
-
                 if ($pathExist) {
                     if ($postId) {
                         $request
@@ -273,6 +283,52 @@ class Router implements \Magento\Framework\App\RouterInterface
                 }
             }
         }
+        */
+
+        $_identifier = trim($request->getPathInfo(), '/');
+        $blogPage = $this->urlResolver->resolve($_identifier);
+        if (!$blogPage || empty($blogPage['type']) || empty($blogPage['id'])) {
+            return null;
+        }
+
+        switch($blogPage['type']) {
+            case Url::CONTROLLER_INDEX:
+                $blogPage['type'] = 'index';
+                $actionName = 'index';
+                $idKey = null;
+                break;
+
+            case Url::CONTROLLER_RSS:
+                $actionName = 'feed';
+                $idKey = null;
+                break;
+            case Url::CONTROLLER_SEARCH:
+                $actionName = 'index';
+                $idKey = 'q';
+                break;
+            case Url::CONTROLLER_ARCHIVE:
+                $actionName = 'view';
+                $idKey = 'date';
+                break;
+            default:
+                $actionName = 'view';
+                $idKey = 'id';
+        }
+
+        $request
+            ->setRouteName('blog')
+            ->setControllerName($blogPage['type'])
+            ->setActionName($actionName);
+
+        if ($idKey) {
+            $request->setParam($idKey, $blogPage['id']);
+        }
+
+        if (!empty($blogPage['params']) && is_array($blogPage['params'])) {
+            foreach ($blogPage['params'] as $k => $v) {
+                $request->setParam($k, $v);
+            }
+        }
 
         $condition = new \Magento\Framework\DataObject(
             [
@@ -281,6 +337,7 @@ class Router implements \Magento\Framework\App\RouterInterface
                 'continue' => true
             ]
         );
+
         $this->_eventManager->dispatch(
             'magefan_blog_controller_router_match_before',
             ['router' => $this, 'condition' => $condition]
@@ -290,7 +347,7 @@ class Router implements \Magento\Framework\App\RouterInterface
             $this->_response->setRedirect($condition->getRedirectUrl());
             $request->setDispatched(true);
             return $this->actionFactory->create(
-                'Magento\Framework\App\Action\Redirect',
+                \Magento\Framework\App\Action\Redirect::class,
                 ['request' => $request]
             );
         }
@@ -306,7 +363,7 @@ class Router implements \Magento\Framework\App\RouterInterface
         $request->setAlias(\Magento\Framework\Url::REWRITE_REQUEST_PATH_ALIAS, $_identifier);
 
         return $this->actionFactory->create(
-            'Magento\Framework\App\Action\Forward',
+            \Magento\Framework\App\Action\Forward::class,
             ['request' => $request]
         );
     }
@@ -315,6 +372,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      * Retrieve post id by identifier
      * @param  string $identifier
      * @return int
+     * @deprecated Use URL resolver interface instead
      */
     protected function _getPostId($identifier, $checkSufix = true)
     {
@@ -330,6 +388,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      * Retrieve category id by identifier
      * @param  string $identifier
      * @return int
+     * @deprecated Use URL resolver interface instead
      */
     protected function _getCategoryId($identifier, $checkSufix = true)
     {
@@ -346,6 +405,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      * @param string $identifier
      * @param bool $checkSufix
      * @return int
+     * @deprecated Use URL resolver interface instead
      */
     protected function _getAuthorId($identifier, $checkSufix = true)
     {
@@ -362,6 +422,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      * @param string $identifier
      * @param bool $checkSufix
      * @return int
+     * @deprecated Use URL resolver interface instead
      */
     protected function _getTagId($identifier, $checkSufix = true)
     {
@@ -379,6 +440,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      * @param string $identifier
      * @param bool $checkSufix
      * @return mixed
+     * @deprecated Use URL resolver interface instead
      */
     protected function getObjectId($factory, $controllerName, $identifier, $checkSufix)
     {
@@ -406,6 +468,7 @@ class Router implements \Magento\Framework\App\RouterInterface
      * Detect arcive identifier
      * @param  string  $identifier
      * @return boolean
+     * @deprecated Use URL resolver interface instead
      */
     protected function _isArchiveIdentifier($identifier)
     {

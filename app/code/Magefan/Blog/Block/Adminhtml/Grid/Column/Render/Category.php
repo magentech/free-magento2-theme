@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -21,7 +21,7 @@ class Category extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstra
     /**
      * @var array
      */
-    static protected $categories = [];
+    protected static $categories = [];
 
     /**
      * @param \Magento\Backend\Block\Context $context

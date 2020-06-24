@@ -2,18 +2,23 @@
 <!--
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magefan_Blog/css/jquery.tagsinput.css" />
+        <css src="Magefan_Blog/css/autocomplete.css" />
+    </head>
     <update handle="styles"/>
     <update handle="editor"/>
     <update handle="blog_update_info"/>
     <body>
         <referenceContainer name="content">
             <uiComponent name="blog_post_form"/>
+            <block class="Magefan\Blog\Block\Adminhtml\Post\Tag\Autocomplete" name="post.tag.autocomplete" template="Magefan_Blog::post/tag/autocomplete.phtml" />
         </referenceContainer>
     </body>
 </page>

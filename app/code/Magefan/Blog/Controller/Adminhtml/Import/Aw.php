@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -26,7 +26,7 @@ class Aw extends \Magento\Backend\App\Action
         $this->_addBreadcrumb($title, $title);
 
         $config = new \Magento\Framework\DataObject(
-            (array)$this->_getSession()->getData('import_aheadworks_form_data', true) ?: []
+            (array)$this->_getSession()->getData('import_aw_form_data', true) ?: []
         );
 
         $this->_objectManager->get(\Magento\Framework\Registry::class)->register('import_config', $config);

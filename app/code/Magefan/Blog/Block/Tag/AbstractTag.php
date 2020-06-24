@@ -1,17 +1,20 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
 
 namespace Magefan\Blog\Block\Tag;
 
+use \Magento\Framework\View\Element\Template;
+use \Magento\Framework\DataObject\IdentityInterface;
+
 /**
  * Blog tag abstract block
  */
-abstract class AbstractTag extends \Magento\Framework\View\Element\Template implements \Magento\Framework\DataObject\IdentityInterface
+abstract class AbstractTag extends Template implements IdentityInterface
 {
     /**
      * @var \Magento\Cms\Model\Template\FilterProvider
@@ -72,7 +75,7 @@ abstract class AbstractTag extends \Magento\Framework\View\Element\Template impl
         $key = 'filtered_content';
         if (!$tag->hasData($key)) {
             $cotent = $this->_filterProvider->getPageFilter()->filter(
-                $tag->getContent()
+                (string) $tag->getContent() ?: ''
             );
             $tag->setData($key, $cotent);
         }

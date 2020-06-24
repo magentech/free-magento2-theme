@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -71,5 +71,20 @@ class Feed extends \Magefan\Blog\Block\Post\PostList\AbstractList
         $content = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $content);
 
         return $content;
+    }
+    
+
+    /**
+     * Prepare posts collection
+     *
+     * @return void
+     */
+    protected function _preparePostCollection()
+    {
+        parent::_preparePostCollection();
+        $categoryId = (int)$this->getRequest()->getParam('category_id');
+        if ($categoryId) {
+            $this->_postCollection->addCategoryFilter($categoryId);
+        }
     }
 }

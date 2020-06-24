@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © 2016-Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -71,10 +71,10 @@ abstract class AbstractCategory extends \Magento\Framework\View\Element\Template
         $category = $this->getCategory();
         $key = 'filtered_content';
         if (!$category->hasData($key)) {
-            $cotent = $this->_filterProvider->getPageFilter()->filter(
-                $category->getContent()
+            $content = $this->_filterProvider->getPageFilter()->filter(
+                (string) $category->getContent() ?: ''
             );
-            $category->setData($key, $cotent);
+            $category->setData($key, $content);
         }
         return $category->getData($key);
     }

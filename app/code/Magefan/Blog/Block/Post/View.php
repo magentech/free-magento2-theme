@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -72,8 +72,7 @@ class View extends AbstractPost implements \Magento\Framework\DataObject\Identit
      */
     protected function _addBreadcrumbs($title = null, $key = null)
     {
-        if ($this->_scopeConfig->getValue('web/default/show_cms_breadcrumbs', ScopeInterface::SCOPE_STORE)
-            && ($breadcrumbsBlock = $this->getLayout()->getBlock('breadcrumbs'))
+        if ($breadcrumbsBlock = $this->getLayout()->getBlock('breadcrumbs')
         ) {
             $breadcrumbsBlock->addCrumb(
                 'home',

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -56,7 +56,7 @@ class Save extends \Magefan\Blog\Controller\Adminhtml\Post
 
         /* Prepare images */
         $data = $model->getData();
-        foreach (['featured_img', 'og_img'] as $key) {
+        foreach (['featured_img', 'featured_list_img', 'og_img'] as $key) {
             if (isset($data[$key]) && is_array($data[$key])) {
                 if (!empty($data[$key]['delete'])) {
                     $model->setData($key, null);
@@ -112,6 +112,35 @@ class Save extends \Magefan\Blog\Controller\Adminhtml\Post
 
             $model->setGalleryImages($gallery);
         }
+
+        /* Prepare Tags */
+        $tagInput = trim($request->getPost('tag_input'));
+        if ($tagInput) {
+            $tagInput = explode(',', $tagInput);
+
+            $tagsCollection = $this->_objectManager->create(\Magefan\Blog\Model\ResourceModel\Tag\Collection::class);
+            $allTags = [];
+            foreach ($tagsCollection as $item) {
+                $allTags[strtolower($item->getTitle())] = $item->getId();
+            }
+
+            $tags = [];
+            foreach ($tagInput as $tagTitle) {
+                if (empty($allTags[strtolower($tagTitle)])) {
+                    $tagModel = $this->_objectManager->create(\Magefan\Blog\Model\Tag::class);
+                    $tagModel->setData('title', $tagTitle);
+                    $tagModel->setData('is_active', 1);
+                    $tagModel->save();
+
+                    $tags[] = $tagModel->getId();
+                } else {
+                    $tags[] = $allTags[strtolower($tagTitle)];
+                }
+            }
+            $model->setData('tags', $tags);
+        } else {
+            $model->setData('tags', []);
+        }
     }
 
     /**
@@ -129,6 +158,10 @@ class Save extends \Magefan\Blog\Controller\Adminhtml\Post
             if (!empty($data[$dateField])) {
                 $filterRules[$dateField] = $dateFilter;
                 $data[$dateField] = preg_replace('/(.*)(\+\d\d\d\d\d\d)(\d\d)/U', '$1$3', $data[$dateField]);
+
+                if (!preg_match('/\d{1}:\d{2}/', $data[$dateField])) {
+                    $data[$dateField] .= " 00:00";
+                }
             }
         }
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -14,38 +14,45 @@
  */
 ?>
 <?php
-    $_post = $this->getPost();
+    $_post = $block->getPost();
     $_postUrl = $_post->getPostUrl();
-    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+    $_postName = $block->escapeHtml($_post->getTitle(), null);
 ?>
 <div class="post-view">
-    <div class="post-holder post-holder-<?php echo $_post->getId() ?>">
+    <div class="post-holder post-holder-<?= (int)$_post->getId() ?>">
         <div class="post-header clearfix">
-            <div class="addthis_toolbox addthis_default_style" addthis:url="<?php echo $_postUrl ?>">
+            <div class="addthis_toolbox addthis_default_style" addthis:url="<?= $block->escapeUrl($_postUrl) ?>">
                 <a class="addthis_button_facebook"></a>
                 <a class="addthis_button_twitter"></a>
                 <a class="addthis_button_email"></a>
                 <a class="addthis_button_compact"></a>
             </div>
-            <?php echo $this->getInfoHtml() ?>
+            <?= $block->getInfoHtml() ?>
         </div>
 
         <div class="post-content">
             <div class="post-description clearfix">
                 <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
-                <div class="post-ftimg-hld">
-                    <img src="<?php echo $featuredImage ?>" alt="<?php echo $_postName ?>" />
-                </div>
+                    <?php
+                        $featuredImgAlt = $_post->getData('featured_img_alt');
+                        if (!$featuredImgAlt) {
+                            $featuredImgAlt = $_postName;
+                        }
+                    ?>
+                    <div class="post-ftimg-hld">
+                        <img src="<?= $block->escapeUrl($featuredImage) ?>"
+                             alt="<?= $block->escapeHtml($featuredImgAlt) ?>" />
+                    </div>
                 <?php } ?>
                 <div class="post-text-hld">
-                    <?php echo $block->getContent() ?>
-                    <div class="clear"></div>
+                    <?= /*@noEscape*/ $block->getContent() ?>
+                    <div class="clear clearfix"></div>
                 </div>
             </div>
         </div>
 
         <div class="post-bottom">
-            <?php echo $this->getChildHtml('blog.post.bottom') ?>
+            <?= $block->getChildHtml('blog.post.bottom') ?>
         </div>
     </div>
 </div>

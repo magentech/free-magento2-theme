@@ -1,6 +1,6 @@
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -25,7 +25,7 @@ define(
                     + '<div>' + msg + '</div>'
                 +'</div>';
                 return $(h);
-            }
+            };
 
             var processError = function ($form, msg) {
                 $form.find('[type=submit]').removeAttr('disabled');
@@ -34,7 +34,7 @@ define(
                 setTimeout(function () {
                     $h.remove();
                 }, msgLifetime);
-            }
+            };
 
             var processSuccess = function ($form, msg) {
                 $form.find('[type=submit]').removeAttr('disabled');
@@ -44,7 +44,7 @@ define(
                 setTimeout(function () {
                     $h.remove();
                 }, msgLifetime);
-            }
+            };
 
             $hd.find('form').submit(function () {
                 var $form = $(this);

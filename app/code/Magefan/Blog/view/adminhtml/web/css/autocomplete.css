@@ -1,0 +1,69 @@
+/*! jQuery UI - v1.12.1 - 2019-05-02
+* http://jqueryui.com
+* Copyright jQuery Foundation and other contributors; Licensed MIT */
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.ui-autocomplete.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+}
+
+.ui-autocomplete.ui-corner-all, .ui-autocomplete.ui-corner-bottom, .ui-autocomplete.ui-corner-right, .ui-autocomplete.ui-corner-br {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+
+.ui-autocomplete.ui-widget-content {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    color: #333333;
+}
+
+.ui-autocomplete.ui-widget {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+}
+
+.ui-autocomplete.ui-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    outline: 0;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+
+.ui-autocomplete.ui-menu .ui-menu-item {
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+    list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+}
+
+.ui-autocomplete.ui-menu .ui-menu-item a {
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+}
+
+.ui-autocomplete.ui-widget-content a {
+    color: #333333;
+}
+

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -50,7 +50,7 @@ class CommetType implements \Magento\Framework\Option\ArrayInterface
             ['value' => self::MAGEFAN, 'label' => __('Use Magefan Blog Comments')],
             ['value' => self::FACEBOOK, 'label' => __('Use Facebook Comments')],
             ['value' => self::DISQUS, 'label' => __('Use Disqus Comments')],
-            ['value' => self::GOOGLE, 'label' => __('Use Google Comments')],
+            /*['value' => self::GOOGLE, 'label' => __('Use Google Comments')],*/
         ];
     }
 

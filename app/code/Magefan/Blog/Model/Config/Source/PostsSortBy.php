@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -9,8 +9,7 @@
 namespace Magefan\Blog\Model\Config\Source;
 
 /**
- * Class PostsSortBy
- * @package Magefan\Blog\Model\Config\Source
+ * Class PostsSortBy Model
  */
 class PostsSortBy implements \Magento\Framework\Option\ArrayInterface
 {

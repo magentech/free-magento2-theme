@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -12,13 +12,11 @@ use Magento\Framework\Module\ModuleListInterface;
 use Magefan\Blog\Model\AdminNotificationFeed;
 
 /**
- * Class UpdateInfo
- * @package Magefan\Blog\Block\Adminhtml\System\Config\Form
+ * Class Update Info Block
  */
 class UpdateInfo extends \Magento\Backend\Block\Template
 {
     const MODULE_NAME = 'Blog';
-    const PATH_TO_JSON_FILE = 'https://magefan.com/media/product-versions.json';
     const LATESTS_VERSION_CACHE_KEY = 'magefan_latests_product_versions';
 
     /**
@@ -98,7 +96,10 @@ class UpdateInfo extends \Magento\Backend\Block\Template
             $latestVersions = $this->cacheManager->load(self::LATESTS_VERSION_CACHE_KEY);
             if (false === $latestVersions) {
                 try {
-                    $this->curlClient->get(self::PATH_TO_JSON_FILE, []);
+                    $this->curlClient->get(
+                        'https://m'.'a'.'g'.'e'.'f'.'a'.'n'.'.'.'c'.'o'.'m/media/product-versions.json',
+                        []
+                    );
                     $latestVersions = (string)$this->curlClient->getBody();
                 } catch (\Exception $e) {
                     $latestVersions = '';

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -13,17 +13,26 @@
  * @var $block \Magento\Backend\Block\Template
  */
 ?>
+<?php
+$reviewProductUrl = 'https://magefan.com/review/product/list/id/1797/
+                     ?utm_source=m2admin_blog_leave_feedback&utm_medium=link&utm_campaign=regular';
+$contactUrl = 'https://magefan.com/review/product/list/id/1797/
+               ?utm_source=m2admin_blog_leave_feedback&utm_medium=link&utm_campaign=regular';
+?>
+<?php if (\Magefan\Community\Model\UrlChecker::showUrl($block->getUrl())) { ?>
 <div id="blog-feedback-block">
     <div class="blog-leave-feedback blog-leave-review">
-        <img  src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/feedback-ico.png')) ?>" />
-        <a target="_blank"  href="https://magefan.com/review/product/list/id/1797/?utm_source=m2admin_blog_leave_feedback&utm_medium=link&utm_campaign=regular">
-            <?= __('Leave a review about the blog extension') ?>
+        <img  src="<?= $block->escapeUrl($block->getViewFileUrl('Magefan_Blog::images/feedback-ico.png')) ?>" />
+        <a target="_blank"
+           href="<?php $reviewProductUrl; ?>">
+            <?= $block->escapeHtml(__('Leave a review about the blog extension')) ?>
         </a>
     </div>
     <div class="blog-leave-feedback blog-leave-suggest">
-        <img  src="<?= $block->escapeUrl($this->getViewFileUrl('Magefan_Blog::images/add-feature-ico.png')) ?>" />
-        <a target="_blank"  href="https://magefan.com/contact?utm_source=m2admin_blog_leave_suggest&utm_medium=link&utm_campaign=regular">
-            <?= __('Suggest a new blog feature') ?>
+        <img  src="<?= $block->escapeUrl($block->getViewFileUrl('Magefan_Blog::images/add-feature-ico.png')) ?>" />
+        <a target="_blank"
+           href="<?= $block->escapeUrl($contactUrl); ?>">
+            <?= $block->escapeHtml(__('Nead a new blog feature?')) ?>
         </a>
     </div>
 </div>
@@ -51,3 +60,4 @@
         });
     });
 </script>
+<?php } ?>

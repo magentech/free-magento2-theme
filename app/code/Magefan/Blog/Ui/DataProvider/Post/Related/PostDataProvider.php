@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -14,7 +14,7 @@ use Magefan\Blog\Model\ResourceModel\Post\CollectionFactory;
 use Magento\Framework\App\RequestInterface;
 
 /**
- * Class PostDataProvider
+ * Class PostDataProvider get post data
  */
 class PostDataProvider extends AbstractDataProvider
 {

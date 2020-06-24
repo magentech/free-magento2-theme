@@ -27,6 +27,11 @@ class Sections
     protected $info;
 
     /**
+     * @var ResourceConnection
+     */
+    protected $resource;
+
+    /**
      * Sections constructor.
      * @param ResourceConnection $resource
      * @param SectionFactory $sectionFactory
@@ -62,6 +67,9 @@ class Sections
         foreach ($connection->fetchAll($select) as $config) {
             $matches = false;
             preg_match("/(.*)\/" . str_replace('/', '\/', $path) . "/", $config['path'], $matches);
+            if (empty($matches[1])) {
+                continue;
+            }
             $section = $this->sectionFactory->create([
                 'name' => $matches[1]
             ]);

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -19,7 +19,7 @@ class PostList extends \Magefan\Blog\Block\Post\PostList\AbstractList
      * Block template file
      * @var string
      */
-    protected $_defaultToolbarBlock = 'Magefan\Blog\Block\Post\PostList\Toolbar';
+    protected $_defaultToolbarBlock = \Magefan\Blog\Block\Post\PostList\Toolbar::class;
 
     /**
      * Preparing global layout
@@ -141,10 +141,6 @@ class PostList extends \Magefan\Blog\Block\Post\PostList\AbstractList
      */
     protected function getBreadcrumbsBlock()
     {
-        if ($this->_scopeConfig->getValue('web/default/show_cms_breadcrumbs', ScopeInterface::SCOPE_STORE)) {
-            return $this->getLayout()->getBlock('breadcrumbs');
-        }
-
-        return false;
+        return $this->getLayout()->getBlock('breadcrumbs');
     }
 }

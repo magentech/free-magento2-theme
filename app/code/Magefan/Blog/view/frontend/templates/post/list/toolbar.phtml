@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -14,8 +14,10 @@
  */
 ?>
 <?php if ($block->getCollection()->getSize()) { ?>
-	<?php $woj = $block->getWidgetOptionsJson() ?>
-    <div class="toolbar toolbar-blog-posts" <?php if ($woj) echo 'data-mage-init="'.$woj.'"' ?>>
-        <?php echo $block->getPagerHtml() ?>
+    <?php $woj = $block->getWidgetOptionsJson() ?>
+    <div class="toolbar toolbar-blog-posts"
+        <?= /*@noEscape*/ ($woj) ? 'data-mage-init="'.$woj.'"' : ''; ?>
+    >
+        <?= /*@noEscape*/ $block->getPagerHtml() ?>
     </div>
 <?php } ?>

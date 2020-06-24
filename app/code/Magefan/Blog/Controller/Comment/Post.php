@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -102,6 +102,14 @@ class Post extends \Magefan\Blog\App\Action\Action
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         )) {
             /* Guest can post review */
+            if (!trim($request->getParam('author_nickname')) || !trim($request->getParam('author_email')) ) {
+               $this->getResponse()->setBody(json_encode([
+                    'success' => false,
+                    'message' => __('Please enter your name and email'),
+                ]));
+                return; 
+            }
+            
             $comment->setCustomerId(0)->setAuthorType(
                 \Magefan\Blog\Model\Config\Source\AuthorType::GUEST
             );
@@ -178,7 +186,6 @@ class Post extends \Magefan\Blog\App\Action\Action
         if (!$post->getIsActive()) {
             return false;
         }
-
         return $post;
     }
 

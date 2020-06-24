@@ -117,7 +117,7 @@
                 <field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
-											<p>Vesion: 1.0.0</p>
+											<p>Vesion: 1.1.0</p>
 											<p>Userguide: <a target="_blank" title="Usergide" href="http://www.magentech.com/documentation/sm-magetheme/">Userguide</a></p>
 											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">http://www.magentech.com/forum</a></p>
 								]]></label>

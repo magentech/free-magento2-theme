@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -9,7 +9,7 @@
 namespace Magefan\Blog\Block;
 
 /**
- * Class Link
+ * Class Link block
  */
 class Link extends \Magento\Framework\View\Element\Html\Link
 {

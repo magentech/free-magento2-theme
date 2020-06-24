@@ -1,20 +1,27 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
 
 namespace Magefan\Blog\Model;
 
-use Magefan\Blog\Model\Url;
+use Magefan\Blog\Api\AuthorInterface;
+use Magento\Framework\Model\AbstractModel;
 
 /**
  * Blog author model
  */
-class Author extends \Magento\Framework\Model\AbstractModel
+class Author extends AbstractModel implements AuthorInterface
 {
+
+    /**
+     * @var string
+     */
+    protected $controllerName;
+
     /**
      * Initialize dependencies.
      *
@@ -48,7 +55,9 @@ class Author extends \Magento\Framework\Model\AbstractModel
      */
     protected function _construct()
     {
-        $this->_init('Magefan\Blog\Model\ResourceModel\Author');
+        $this->_init(\Magefan\Blog\Model\ResourceModel\Author::class);
+        $this->_collectionName = \Magefan\Blog\Model\ResourceModel\Author\Collection::class;
+        $this->controllerName = URL::CONTROLLER_AUTHOR;
     }
 
     /**
@@ -58,6 +67,39 @@ class Author extends \Magento\Framework\Model\AbstractModel
     public function getTitle()
     {
         return $this->getName();
+    }
+
+    /**
+     * Retrieve meta title
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        $title = $this->getData('meta_title');
+        if (!$title) {
+            $title = $this->getTitle();
+        }
+
+        return trim($title);
+    }
+
+    /**
+     * Retrieve meta description
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        $desc = $this->getData('meta_description');
+        if (!$desc) {
+            $desc = $this->getData('content');
+        }
+
+        $desc = strip_tags($desc);
+        if (mb_strlen($desc) > 300) {
+            $desc = mb_substr($desc, 0, 300);
+        }
+
+        return trim($desc);
     }
 
     /**
@@ -119,5 +161,45 @@ class Author extends \Magento\Framework\Model\AbstractModel
     public function getName($separator = ' ')
     {
         return $this->getFirstname() . $separator . $this->getLastname();
+    }
+
+    /**
+     * Prepare all additional data
+     * @return array
+     */
+    public function getDynamicData()
+    {
+        $data = $this->getData();
+
+        $keys = [
+            'meta_description',
+            'meta_title',
+            'author_url',
+            'name',
+            'title',
+            'identifier',
+        ];
+
+        $data['author_id'] = $this->getId();
+
+        foreach ($keys as $key) {
+            $method = 'get' . str_replace(
+                '_',
+                '',
+                ucwords($key, '_')
+            );
+            $data[$key] = $this->$method();
+        }
+
+        return $data;
+    }
+
+    /**
+     * Retrieve controller name
+     * @return string
+     */
+    public function getControllerName()
+    {
+        return $this->controllerName;
     }
 }

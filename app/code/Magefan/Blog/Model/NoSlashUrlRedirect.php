@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
 namespace Magefan\Blog\Model;
 
 use Magento\Framework\UrlInterface;
@@ -8,8 +13,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
 /**
- * Class NoSlashUrlRedirect
- * @package Magefan\Blog\Model\Config\Source
+ * Class NoSlashUrlRedirect Model
  */
 class NoSlashUrlRedirect
 {
@@ -60,7 +64,9 @@ class NoSlashUrlRedirect
 
             if ($urlNoSlash != $currentUrl) {
                 $controller = $observer->getEvent()->getData('controller_action');
-                if ($controller->getRequest()->isXmlHttpRequest()) {
+                if ($controller->getRequest()->isXmlHttpRequest()
+                    || $controller->getRequest()->isPost()
+                ) {
                     return;
                 }
                 $this->actionFlag->set('', \Magento\Framework\App\ActionInterface::FLAG_NO_DISPATCH, true);

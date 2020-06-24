@@ -196,12 +196,11 @@ abstract class Actions extends \Magento\Backend\App\Action
             $this->messageManager->addException(
                 $e,
                 __(
-                    'Something went wrong while saving this %1. %2',
-                    strtolower($model->getOwnTitle()),
+                    'Something went wrong: %1',
                     $e->getMessage()
                 )
             );
-            $this->_redirect('*/*/', [$this->_idKey => $model->getId()]);
+            $this->_redirect('*/*/');
         }
     }
 
@@ -303,7 +302,7 @@ abstract class Actions extends \Magento\Backend\App\Action
                 $e,
                 __(
                     'Something went wrong while saving this %1. %2',
-                    strtolower($model->getOwnTitle()),
+                    strtolower(isset($model) ? $model->getOwnTitle() : 'item'),
                     $e->getMessage()
                 )
             );
@@ -358,7 +357,7 @@ abstract class Actions extends \Magento\Backend\App\Action
         $error = false;
         try {
             foreach ($ids as $id) {
-                $this->_objectManager->create($this->_modelClass)->setId($id)->delete();
+                $this->_objectManager->create($this->_modelClass)->load($id)->delete();
             }
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             $error = true;
@@ -515,6 +514,11 @@ abstract class Actions extends \Magento\Backend\App\Action
             $this->_model = $this->_objectManager->create($this->_modelClass);
 
             $id = (int)$this->getRequest()->getParam($this->_idKey);
+            $idFieldName = $this->_model->getResource()->getIdFieldName();
+            if (!$id && $this->_idKey !== $idFieldName) {
+                $id = (int)$this->getRequest()->getParam($idFieldName);
+            }
+
             if ($id && $load) {
                 $this->_model->load($id);
             }

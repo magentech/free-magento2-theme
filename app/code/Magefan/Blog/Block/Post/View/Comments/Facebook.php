@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -15,5 +15,18 @@ use Magefan\Blog\Model\Config\Source\CommetType;
  */
 class Facebook extends \Magefan\Blog\Block\Post\View\Comments
 {
+    /**
+     * @var string
+     */
     protected $commetType = CommetType::FACEBOOK;
+
+    /**
+     * @return string
+     */
+    public function getFbSdkJsUrl()
+    {
+        return '//connect.facebook.net/'.
+            $this->getLocaleCode() . '/sdk.js#xfbml=1&version=v3.3&appId=' .
+            $this->getFacebookAppId() . '&autoLogAppEvents=1';
+    }
 }

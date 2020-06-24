@@ -4,6 +4,10 @@
  *
  * Glory to Ukraine! Glory to the heroes!
  */
+.post-content.post-custom {
+    padding: 20px;
+}
+
 .post-list-wrapper .post-list {
     padding: 0;
 }
@@ -19,6 +23,7 @@
 .post-content.post-custom .post-description .post-ftimg-hld {
     width: 270px;
     margin: 0;
+    float: left;
 }
 
 .post-content.post-custom .post-description .post-info-blog {
@@ -101,6 +106,25 @@
 
 .widget.block-recent-posts .block-content .item {
     padding: 5px 0;
+}
+
+.widget.block-list-posts .block-content .item .post-image {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.widget.block-list-posts .post-item-date {
+    font-size: 90%;
+}
+
+.post-holder {
+    border: none;
+}
+
+.post-content .post-description .post-ftimg-hld img {
+    margin: 0 15px 10px 0;
+    float: left;
 }
 
 .c-replyform {

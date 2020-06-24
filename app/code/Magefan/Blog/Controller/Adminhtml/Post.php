@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -29,7 +29,7 @@ class Post extends Actions
      * Model class name
      * @var string
      */
-    protected $_modelClass      = 'Magefan\Blog\Model\Post';
+    protected $_modelClass      = \Magefan\Blog\Model\Post::class;
 
     /**
      * Active menu key

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -89,6 +89,11 @@ abstract class AbstractImport extends \Magento\Framework\Model\AbstractModel
     protected $_storeManager;
 
     /**
+     * @var \Zend\Db\Adapter\Adapter
+     */
+    protected $dbAdapter;
+
+    /**
      * Initialize dependencies.
      *
      * @param \Magento\Framework\Model\Context $context
@@ -134,13 +139,19 @@ abstract class AbstractImport extends \Magento\Framework\Model\AbstractModel
             'imported_categories_count' => $this->_importedCategoriesCount,
             'imported_tags_count'       => $this->_importedTagsCount,
             'imported_comments_count'   => $this->_importedCommentsCount,
-            'imported_count'            => $this->_importedPostsCount + $this->_importedCategoriesCount + $this->_importedTagsCount + $this->_importedCommentsCount,
+            'imported_count'            => $this->_importedPostsCount +
+                                            $this->_importedCategoriesCount +
+                                            $this->_importedTagsCount +
+                                            $this->_importedCommentsCount,
 
             'skipped_posts'             => $this->_skippedPosts,
             'skipped_categories'        => $this->_skippedCategories,
             'skipped_tags'              => $this->_skippedTags,
             'skipped_comments'          => $this->_skippedComments,
-            'skipped_count'             => count($this->_skippedPosts) + count($this->_skippedCategories) + count($this->_skippedTags) + count($this->_skippedComments),
+            'skipped_count'             => count($this->_skippedPosts) +
+                                            count($this->_skippedCategories) +
+                                            count($this->_skippedTags) +
+                                            count($this->_skippedComments),
         ]);
     }
 
@@ -168,21 +179,6 @@ abstract class AbstractImport extends \Magento\Framework\Model\AbstractModel
     }
 
     /**
-     * Execute mysql query
-     */
-    protected function _mysqliQuery($sql)
-    {
-        $result = mysqli_query($this->_connect, $sql);
-        if (!$result) {
-            throw new \Exception(
-                __('Mysql error: %1.', mysqli_error($this->_connect))
-            );
-        }
-
-        return $result;
-    }
-
-    /**
      * Prepare import identifier
      * @param  string $identifier
      * @return string
@@ -200,5 +196,50 @@ abstract class AbstractImport extends \Magento\Framework\Model\AbstractModel
         }
 
         return $identifier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrefix()
+    {
+        $adapter = $this->getDbAdapter();
+        if ($this->getData('prefix')) {
+            $_pref = $adapter->getPlatform()->quoteValue(
+                $this->getData('prefix')
+            );
+            $_pref = trim($_pref, "'");
+        } else {
+            $_pref = '';
+        }
+
+        return $_pref;
+    }
+
+    /**
+     * @return \Zend\Db\Adapter\Adapter
+     */
+    protected function getDbAdapter()
+    {
+        if (null === $this->dbAdapter) {
+            $connectionConf = [
+                'driver' => 'Pdo_Mysql',
+                'database' => $this->getData('dbname'),
+                'username' => $this->getData('uname'),
+                'password' => $this->getData('pwd'),
+                'charset' => 'utf8',
+            ];
+            
+            if ($this->getData('dbhost')) {
+                $connectionConf['host'] = $this->getData('dbhost');
+            }
+            
+            $this->dbAdapter = new \Zend\Db\Adapter\Adapter($connectionConf);
+
+            if (!$this->dbAdapter) {
+                throw  new \Zend_Db_Exception("Failed connect to magento database");
+            }
+        }
+        return $this->dbAdapter;
     }
 }

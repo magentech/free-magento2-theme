@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -52,9 +52,12 @@ class Custom extends \Magento\Framework\View\Element\Template
     {
         $key = 'content';
         if (!$this->hasData($key)) {
-            $content = $this->_scopeConfig->getValue('mfblog/sidebar/'.$this->_widgetKey.'/html', ScopeInterface::SCOPE_STORE);
+            $content = $this->_scopeConfig->getValue(
+                'mfblog/sidebar/'.$this->_widgetKey.'/html',
+                ScopeInterface::SCOPE_STORE
+            );
             $content = $this->filterProvider->getPageFilter()->filter(
-                $content
+                (string) $content ?: ''
             );
             $this->setData($key, $content);
         }

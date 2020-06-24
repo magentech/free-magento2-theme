@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright © Magefan (support@magefan.com). All rights reserved.
- * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
  *
  * Glory to Ukraine! Glory to the heroes!
  */
@@ -23,8 +23,14 @@ class PermalinkType implements \Magento\Framework\Option\ArrayInterface
     public function toOptionArray()
     {
         return [
-            ['value' => Url::PERMALINK_TYPE_DEFAULT, 'label' => __('Default: mystore.com/{blog_route}/{post_route}/post-title/')],
-            ['value' => Url::PERMALINK_TYPE_SHORT, 'label' => __('Short: mystore.com/{blog_route}/post-title/')],
+            [
+                'value' => Url::PERMALINK_TYPE_DEFAULT,
+                'label' => __('Default: mystore.com/{blog_route}/{post_route}/post-title/')
+            ],
+            [
+                'value' => Url::PERMALINK_TYPE_SHORT,
+                'label' => __('Short: mystore.com/{blog_route}/post-title/')
+            ],
         ];
     }
 
