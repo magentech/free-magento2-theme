@@ -29,7 +29,7 @@
 <h2>Main Features</h2>
 
 <ul>
-    <li>Support Magento 2.1.x, 2.2.x, 2.3.x</li>
+    <li>Support Magento 2.1.x, 2.2.x, 2.3.x, 2.4.x</li>
     <li><strong>Support Right to Left layout</strong></li>
     <li>Support 3 layouts for pages: 1, 2 or 3 columns</li>
     <li><strong>One-click import demo data</strong></li>
@@ -48,6 +48,15 @@
 </ul>
 
 <h2>CHANGE LOGS</h2>
+<strong>Version 2.0.0</strong>
+<ul>
+<li>Update to magento 2.4.0</li>
+<li>Update module Magefan Blog</li>
+<li>Update speed loading image</li>
+<li>Fixed currency error not changing when switch currency</li>
+<li>Fix some errors</li>
+</ul>
+
 <strong>Version 1.1.0</strong>
 <ul>
 <li>Update to magento 2.3.5</li>

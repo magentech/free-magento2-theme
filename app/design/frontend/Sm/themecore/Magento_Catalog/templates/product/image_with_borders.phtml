@@ -3,32 +3,86 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-$_config           = $this->helper('Sm\Themecore\Helper\Data');
-$enableLadyLoading = $_config->getAdvanced('lazyload_group/enable_ladyloading');
-$mediaSrc          = $_config->getMediaUrl();
+?>
+<?php
+/** @var $block \Magento\Catalog\Block\Product\Image */
+/** @var $escaper \Magento\Framework\Escaper */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+/**
+ * Enable lazy loading for images with borders and if variable enable_lazy_loading_for_images_without_borders
+ * is enabled in view.xml. Otherwise small size images without borders may be distorted. So max-width is used for them
+ * to prevent stretching and lazy loading does not work.
+ */
+$borders                         = (bool)$block->getVar('product_image_white_borders', 'Magento_Catalog');
+$enableLazyLoadingWithoutBorders = (bool)$block->getVar(
+    'enable_lazy_loading_for_images_without_borders',
+    'Magento_Catalog'
+);
+$width                           = (int)$block->getWidth();
+$paddingBottom                   = $block->getRatio() * 100;
+$_config                         = $this->helper('Sm\Themecore\Helper\Data');
+$enableLadyLoading               = $_config->getAdvanced('lazyload_group/enable_ladyloading');
+$mediaSrc                        = $_config->getMediaUrl();
 if ($enableLadyLoading) {
     $imgClass = 'lazyload';
 } else {
     $imgClass = '';
 }
 ?>
-<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+<span class="product-image-container product-image-container-<?= /* @noEscape */
+$block->getProductId() ?>" style="width: <?php echo $width . "px"; ?>">
+    <span class="product-image-wrapper">
+        <img class="<?= $escaper->escapeHtmlAttr($block->getClass()) ?> <?php echo $imgClass; ?>"
+            <?php foreach ($block->getCustomAttributes() as $name => $value): ?>
+                <?= $escaper->escapeHtmlAttr($name) ?>="<?= $escaper->escapeHtmlAttr($value) ?>"
+            <?php endforeach; ?>
 
-<span class="product-image-container"
-      style="width:<?= /* @escapeNotVerified */ $block->getWidth() ?>px;">
-    <span class="product-image-wrapper"
-          style="padding-bottom: <?= /* @escapeNotVerified */ ($block->getRatio() * 100) ?>%;">
-        <img class="<?= /* @escapeNotVerified */ $block->getClass() ?> <?php echo $imgClass; ?>"
-            <?= /* @escapeNotVerified */ $block->getCustomAttributes() ?>
-			
-			<?php if ($enableLadyLoading) { ?>
-				src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>" 
-				data-src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
-			<?php } else { ?>
-				src="<?php /* @escapeNotVerified */  echo $block->getImageUrl(); ?>"
-			<?php } ?>
-			
-            width="<?= /* @escapeNotVerified */ $block->getWidth() ?>"
-            height="<?= /* @escapeNotVerified */ $block->getHeight() ?>"
-            alt="<?= /* @escapeNotVerified */ $block->stripTags($block->getLabel(), null, true) ?>"/></span>
+        <?php if ($enableLadyLoading) { ?>
+            src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>"
+            data-src="<?= $escaper->escapeUrl($block->getImageUrl()) ?>"
+        <?php } else { ?>
+            src="<?= $escaper->escapeUrl($block->getImageUrl()) ?>"
+        <?php } ?>
+
+            loading="lazy"
+            <?php if ($borders || $enableLazyLoadingWithoutBorders): ?>
+                width="<?= $escaper->escapeHtmlAttr($block->getWidth()) ?>"
+                height="<?= $escaper->escapeHtmlAttr($block->getHeight()) ?>"
+            <?php else: ?>
+                max-width="<?= $escaper->escapeHtmlAttr($block->getWidth()) ?>"
+                max-height="<?= $escaper->escapeHtmlAttr($block->getHeight()) ?>"
+            <?php endif; ?>
+            alt="<?= $escaper->escapeHtmlAttr($block->getLabel()) ?>"/></span>
 </span>
+<?php
+$styles = <<<STYLE
+/**
+.product-image-container-{$block->getProductId()} {
+    width: {$width}px;
+}
+*/
+.product-image-container-{$block->getProductId()} span.product-image-wrapper {
+    padding-bottom: {$paddingBottom}%;
+}
+STYLE;
+//In case a script was using "style" attributes of these elements
+$script = <<<SCRIPT
+prodImageContainers = document.querySelectorAll(".product-image-container-{$block->getProductId()}");
+/**
+for (var i = 0; i < prodImageContainers.length; i++) {
+    prodImageContainers[i].style.width = "{$width}px";
+}
+*/
+prodImageContainersWrappers = document.querySelectorAll(
+    ".product-image-container-{$block->getProductId()}  span.product-image-wrapper"
+);
+for (var i = 0; i < prodImageContainersWrappers.length; i++) {
+    prodImageContainersWrappers[i].style.paddingBottom = "{$paddingBottom}%";
+}
+SCRIPT;
+
+?>
+<?= /* @noEscape */
+$secureRenderer->renderTag('style', [], $styles, false) ?>
+<?= /* @noEscape */
+$secureRenderer->renderTag('script', ['type' => 'text/javascript'], $script, false) ?>

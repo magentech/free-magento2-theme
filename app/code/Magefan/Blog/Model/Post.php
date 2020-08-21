@@ -955,9 +955,10 @@ class Post extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
 
     /**
      * Prepare all additional data
+     * @param null|array $fields
      * @return array
      */
-    public function getDynamicData()
+    public function getDynamicData($fields = null)
     {
         $data = $this->getData();
 
@@ -976,28 +977,63 @@ class Post extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
         ];
 
         foreach ($keys as $key) {
-            $method = 'get' . str_replace(
-                '_',
-                '',
-                ucwords($key, '_')
-            );
-            $data[$key] = $this->$method();
+            if (null === $fields || array_key_exists($key, $fields)) {
+                $method = 'get' . str_replace(
+                    '_',
+                    '',
+                    ucwords($key, '_')
+                );
+                $data[$key] = $this->$method();
+            }
         }
 
-        $tags = [];
-        foreach ($this->getRelatedTags() as $tag) {
-            $tags[] = $tag->getDynamicData();
+        if (null === $fields || array_key_exists('tags', $fields)) {
+            $tags = [];
+            foreach ($this->getRelatedTags() as $tag) {
+                $tags[] = $tag->getDynamicData(
+                    // isset($fields['tags']) ? $fields['tags'] : null
+                );
+            }
+            $data['tags'] = $tags;
         }
-        $data['tags'] = $tags;
 
-        $categories = [];
-        foreach ($this->getParentCategories() as $category) {
-            $categories[] = $category->getDynamicData();
+        /* Do not use check for null === $fields here
+         * this checks is used for REST, and related data was not provided via reset */
+        if (is_array($fields) && array_key_exists('related_posts', $fields)) {
+            $relatedPosts = [];
+            foreach ($this->getRelatedPosts() as $relatedPost) {
+                $relatedPosts[] = $relatedPost->getDynamicData(
+                    isset($fields['related_posts']) ? $fields['related_posts'] : null
+                );
+            }
+            $data['related_posts'] = $relatedPosts;
         }
-        $data['categories'] = $categories;
 
-        if ($author = $this->getAuthor()) {
-            $data['author'] = $author->getDynamicData();
+        /* Do not use check for null === $fields here */
+        if (is_array($fields) && array_key_exists('related_products', $fields)) {
+            $relatedProducts = [];
+            foreach ($this->getRelatedProducts() as $relatedProduct) {
+                $relatedProducts[] = $relatedProduct->getSku();
+            }
+            $data['related_products'] = $relatedProducts;
+        }
+
+        if (null === $fields || array_key_exists('categories', $fields)) {
+            $categories = [];
+            foreach ($this->getParentCategories() as $category) {
+                $categories[] = $category->getDynamicData(
+                    isset($fields['categories']) ? $fields['categories'] : null
+                );
+            }
+            $data['categories'] = $categories;
+        }
+
+        if (null === $fields || array_key_exists('author', $fields)) {
+            if ($author = $this->getAuthor()) {
+                $data['author'] = $author->getDynamicData(
+                    //isset($fields['author']) ? $fields['author'] : null
+                );
+            }
         }
 
         return $data;

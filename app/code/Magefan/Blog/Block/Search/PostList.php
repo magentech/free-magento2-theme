@@ -21,7 +21,7 @@ class PostList extends \Magefan\Blog\Block\Post\PostList
      */
     public function getQuery()
     {
-        return urldecode($this->getRequest()->getParam('q'));
+        return (string)urldecode($this->getRequest()->getParam('q'));
     }
 
     /**
@@ -66,6 +66,13 @@ class PostList extends \Magefan\Blog\Block\Post\PostList
         if ($page < 2) {
             $robots = $this->config->getSearchRobots();
             $this->pageConfig->setRobots($robots);
+        }
+
+        $pageMainTitle = $this->getLayout()->getBlock('page.main.title');
+        if ($pageMainTitle) {
+            $pageMainTitle->setPageTitle(
+                $this->escapeHtml($title)
+            );
         }
 
         return parent::_prepareLayout();

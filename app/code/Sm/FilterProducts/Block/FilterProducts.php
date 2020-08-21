@@ -71,6 +71,7 @@ class FilterProducts extends \Magento\Catalog\Block\Product\AbstractProduct
             'BLOCK_TPL_SM_FILTER_PRODUCTS',
             $this->_storeManager->getStore()->getCode(),
             $this->_storeManager->getStore()->getId(),
+            $this->_storeManager->getStore()->getCurrentCurrencyCode(),
             $this->getNameInLayout(),
             $this->getTemplateFile(),
             'base_url' => $this->getBaseUrl(),
