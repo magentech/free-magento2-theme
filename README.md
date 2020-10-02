@@ -1,5 +1,5 @@
 <h1>SM MageTheme - Responsive MultiPurpose Free Magento 2 Theme(Support Right to Left - Arabic language)</h1>
-<h2><a href="http://magento2.flytheme.net/themes/sm_magetheme/" target="_blank">DEMO</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.magentech.com/the-best-responsive-magento2-theme-with-specific-mobile-layout/" target="_blank">PRO VERSION</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://documentation.flytheme.net/sm-magetheme/" target="_blank">USER GUIDE</a></h2>
+<h2><a href="http://magento2.magentech.com/themes/sm_magetheme/" target="_blank">DEMO</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.magentech.com/the-best-responsive-magento2-theme-with-specific-mobile-layout/" target="_blank">PRO VERSION</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://documentation.flytheme.net/sm-magetheme/" target="_blank">USER GUIDE</a></h2>
 
 <p>
 <strong>SM MageTheme</strong> is a <strong>Free Magento 2 Theme</strong> that is ideal for any online stores, especially for digital store, hi-tech store, watch store, clothing store and accessories store or mega store with multi-categories. This eCommerce <strong>Magento 2 theme</strong> comes with a flexible layout with <strong>unlimited color</strong> schemes, creative design and ultimate core features to build a robust online store.
