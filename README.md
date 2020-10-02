@@ -8,23 +8,23 @@
 <p>The beautiful store theme integrated many new features such as <strong>powerful admin panel</strong>, <strong>one-click import demo data</strong>, other pages and static blocks. Let's explore the features in the full blog of <strong>SM MageTheme</strong> - A <strong>Best New Magento 2 Theme</strong> for Digital Store/Clothing Store and feel more! </p>
 
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/01_intro.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/01_intro.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/03_Responsvie_Design.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/03_Responsvie_Design.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/05_Unlimited_Colors.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/05_Unlimited_Colors.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/06_One_Click.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/06_One_Click.jpg" >
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/07_Multi_Language_RTL.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/07_Multi_Language_RTL.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/08_Powerful_Admin_Panel.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/08_Powerful_Admin_Panel.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/09_Multiple_Listing_Layouts.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/09_Multiple_Listing_Layouts.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/12_Filter.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/12_Filter.jpg">
 
-<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/14_Newsletter_Popup.jpg" mce_src="http://images.smartaddons.com/magentech/magento/sm-sunshine/1_introduction.jpg">
+<img src="http://images.smartaddons.com/magentech/magento/sm-magetheme/14_Newsletter_Popup.jpg">
 
 <h2>Main Features</h2>
 
